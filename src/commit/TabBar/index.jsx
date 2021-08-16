@@ -2,6 +2,7 @@ import { TabBar } from 'antd-mobile';
 import './index.css'
 import React, { Component } from 'react';
 import Home from '../../pages/Home'
+import Personal from '../../pages/personal';
 class tabbar extends Component {
     constructor(props) {
         super(props);
@@ -77,7 +78,7 @@ class tabbar extends Component {
                         }}
                         data-seed="logId"
                     >
-                      <Home></Home>
+                        <Home></Home>
                     </TabBar.Item>
                     <TabBar.Item
                         icon={
@@ -136,7 +137,8 @@ class tabbar extends Component {
                             });
                         }}
                     >
-                        {this.renderContent('Friend')}
+
+                        <Personal></Personal>
                     </TabBar.Item>
 
                 </TabBar>
