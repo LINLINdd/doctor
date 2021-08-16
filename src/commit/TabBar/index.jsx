@@ -1,8 +1,7 @@
 import { TabBar } from 'antd-mobile';
 import './index.css'
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom'
-import home from '../../pages/Home'
+import Home from '../../pages/Home'
 class tabbar extends Component {
     constructor(props) {
         super(props);
@@ -78,7 +77,7 @@ class tabbar extends Component {
                         }}
                         data-seed="logId"
                     >
-                       <h1>1111</h1>
+                      <Home></Home>
                     </TabBar.Item>
                     <TabBar.Item
                         icon={
