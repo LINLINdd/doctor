@@ -1,8 +1,8 @@
-
+import TabBar from './commit/TabBar/index.jsx'
 function App() {
   return (
     <div className="App">
-        SSSSSSSSSSSSSS
+      <TabBar></TabBar>
     </div>
   );
 }
