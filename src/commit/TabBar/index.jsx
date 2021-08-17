@@ -7,7 +7,7 @@ class tabbar extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            selectedTab: 'redTab',
+            selectedTab: 'greenTab',
             hidden: false,
             fullScreen: false,
         };
@@ -16,8 +16,7 @@ class tabbar extends Component {
     renderContent(pageText) {
         return (
             <div style={{ backgroundColor: 'white', height: '100%', textAlign: 'center' }}>
-                <div style={{ paddingTop: 60 }}>Clicked “{pageText}” tab， show “{pageText}” information</div>
-                <a style={{ display: 'block', marginTop: 40, marginBottom: 20, color: '#108ee9' }}
+                <a style={{ display: 'block', color: '#108ee9' }}
                     onClick={(e) => {
                         e.preventDefault();
                         this.setState({
@@ -25,17 +24,7 @@ class tabbar extends Component {
                         });
                     }}
                 >
-                    Click to show/hide tab-bar
-                </a>
-                <a style={{ display: 'block', marginBottom: 600, color: '#108ee9' }}
-                    onClick={(e) => {
-                        e.preventDefault();
-                        this.setState({
-                            fullScreen: !this.state.fullScreen,
-                        });
-                    }}
-                >
-                    Click to switch fullscreen
+                    隐藏导航栏
                 </a>
             </div>
         );
@@ -52,7 +41,7 @@ class tabbar extends Component {
                     id='tabbar'
                 >
                     <TabBar.Item
-                        title="Life"
+                        title="首页"
                         key="Life"
                         icon={
                             <svg className="icon" aria-hidden="true" style={{
@@ -70,7 +59,7 @@ class tabbar extends Component {
                         </svg>
                         }
                         selected={this.state.selectedTab === 'blueTab'}
-                        badge={1}
+                        badge={0}
                         onPress={() => {
                             this.setState({
                                 selectedTab: 'blueTab',
@@ -78,6 +67,7 @@ class tabbar extends Component {
                         }}
                         data-seed="logId"
                     >
+                        {this.renderContent('Life')}
                         <Home></Home>
                     </TabBar.Item>
                     <TabBar.Item
@@ -97,9 +87,9 @@ class tabbar extends Component {
                                 <use xlinkHref="#icon-yiliao-copy"></use>
                             </svg>
                         }
-                        title="Koubei"
+                        title="健康咨询"
                         key="Koubei"
-                        badge={'new'}
+                        badge={0}
                         selected={this.state.selectedTab === 'redTab'}
                         onPress={() => {
                             this.setState({
@@ -127,7 +117,7 @@ class tabbar extends Component {
                                 <use xlinkHref="#icon-wode1-copy"></use>
                             </svg>
                         }
-                        title="Friend"
+                        title="个人中心"
                         key="Friend"
                         dot
                         selected={this.state.selectedTab === 'greenTab'}
@@ -137,7 +127,6 @@ class tabbar extends Component {
                             });
                         }}
                     >
-
                         <Personal></Personal>
                     </TabBar.Item>
 
