@@ -62,7 +62,9 @@ class login_input extends Component {
                     value={this.state.value}
                 >密码</InputItem>
 
-                <Button type="primary" className='button' onClick={}>登录</Button>
+                <Button type="primary" className='button' onClick={()=>{
+                    
+                }}>登录</Button>
             </div>
         );
     }
