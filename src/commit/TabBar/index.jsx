@@ -7,27 +7,28 @@ class tabbar extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            selectedTab: 'greenTab',
+            selectedTab: 'Life',
             hidden: false,
             fullScreen: false,
         };
     }
 
     renderContent(pageText) {
-        return (
-            <div style={{ backgroundColor: 'white', height: '100%', textAlign: 'center' }}>
-                <a style={{ display: 'block', color: '#108ee9' }}
-                    onClick={(e) => {
-                        e.preventDefault();
-                        this.setState({
-                            hidden: !this.state.hidden,
-                        });
-                    }}
-                >
-                    隐藏导航栏
-                </a>
-            </div>
-        );
+        // return (
+        //     <div style={{ backgroundColor: 'white', height: '100%', textAlign: 'center' }}>
+        //         <a style={{ display: 'block', color: '#108ee9' }}
+        //             onClick={(e) => {
+        //                 e.preventDefault();
+        //                 this.setState({
+        //                     hidden: !this.state.hidden,
+        //                 });
+        //             }}
+        //         >
+        //             隐藏导航栏
+        //         </a>
+        //     </div>
+            
+        // );
     }
 
     render() {

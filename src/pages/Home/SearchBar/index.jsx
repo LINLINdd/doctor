@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Icon, Grid } from 'antd-mobile';
 import { withRouter } from 'react-router';
-// import "Https//at.alicdn.com/t/font_2749644_yiu8wc5ja8m.js"
 import './index.css'
 
 class SearchBar extends Component {
