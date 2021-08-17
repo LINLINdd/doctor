@@ -1,4 +1,46 @@
 .login {
-    height: 7.5rem;
-    background-color: blue;
+  height: 12.5rem;
+  background-color: #fff;
+  line-height: 12.5rem;
+  display: flex;
+  background: url(https://img1.dxycdn.com/2019/0916/325/3368544956980800707-22.png) center no-repeat;
+}
+.login .login_in {
+  flex: 1;
+  height: 50px;
+}
+.login .login_in a {
+  font-size: 2rem;
+  color: #333;
+  font-weight: 700;
+  margin-left: 1.875rem;
+}
+.login .login_img {
+  width: 3.125rem;
+  height: 3.125rem;
+  margin-right: 3.125rem;
+  margin-top: 1.3625rem;
+}
+.login .login_img img {
+  width: 100%;
+}
+.Set ul {
+  padding-left: 0;
+}
+.Set li {
+  list-style-type: none;
+  height: 3.75rem;
+  font-size: 1.5rem;
+  line-height: 3.75rem;
+  border-bottom: 0.0625rem solid #ccc;
+  padding: 0 0.625rem;
+  margin: 0.625rem 0.3125rem;
+}
+.Set li span {
+  color: #5a5555;
+}
+.Set li .am-icon {
+  float: right;
+  margin-top: 0.9375rem;
+  color: #5a5555;
 }
