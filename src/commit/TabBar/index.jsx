@@ -7,7 +7,7 @@ class tabbar extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            selectedTab: 'blueTab',
+            selectedTab: 'greenTab',
             hidden: false,
             fullScreen: false,
         };
