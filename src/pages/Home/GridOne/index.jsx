@@ -10,9 +10,7 @@ const data = Array.from(new Array(3)).map((_val, i) => ({
 }));
 
 class GridOne extends Component {
-    constructor(props){
-      
-    }
+  
 
   render() {
     return (
