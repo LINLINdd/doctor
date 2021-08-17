@@ -1,3 +1,10 @@
-.signing-up {
+.login_ .signing-up {
   margin: 10px;
+}
+.login_ .register {
+  text-align: center;
+  margin: 1.875rem 0;
+}
+.login_ .register span {
+  margin: 0 1.25rem;
 }

@@ -1,22 +1,20 @@
 import React, { Component } from 'react';
-import Login_input from './login_input';
-import './index.css'
-class login extends Component {
+import Login_input from './register_input';
+
+class register extends Component {
     render() {
         return (
             <div className='login_'>
-                <h1 >登录</h1>
+                <h1 >注册</h1>
                 <div className='signing-up'>
                     <Login_input></Login_input>
                 </div>
                 <div className='register'>
-                    <a href="/register">注册</a>
-                    <span>|</span>
-                    <a href="">忘记密码</a>
+                    <span>已有账号？</span><a href="/login">马上登录</a>
                 </div>
             </div>
         );
     }
 }
 
-export default login;
+export default register;

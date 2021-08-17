@@ -3,11 +3,12 @@ import './index.css'
 import React, { Component } from 'react';
 import Home from '../../pages/Home'
 import Personal from '../../pages/personal';
+import Health from '../../pages/Health';
 class tabbar extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            selectedTab: 'greenTab',
+            selectedTab: 'redTab',
             hidden: false,
             fullScreen: false,
         };
@@ -67,7 +68,6 @@ class tabbar extends Component {
                         }}
                         data-seed="logId"
                     >
-                        {this.renderContent('Life')}
                         <Home></Home>
                     </TabBar.Item>
                     <TabBar.Item
@@ -98,7 +98,7 @@ class tabbar extends Component {
                         }}
                         data-seed="logId1"
                     >
-                        {this.renderContent('Koubei')}
+                        <Health></Health>
                     </TabBar.Item>
                     <TabBar.Item
                         icon={

@@ -49,7 +49,7 @@ class login_input extends Component {
 
     render() {
         return (
-            <div className='login_input'>
+            <div className='register_input'>
                 <List renderHeader={() => '请输入账号密码进行登录'}></List>
                 <InputItem
                     type="text"
@@ -67,10 +67,18 @@ class login_input extends Component {
                     onChange={this.onChange}
                     value={this.state.value}
                 >密码</InputItem>
+                <InputItem
+                    type="password"
+                    placeholder="再次输入密码"
+                    error={this.state.hasError}
+                    onErrorClick={this.onErrorClick}
+                    onChange={this.onChange}
+                    value={this.state.value}
+                >确认密码</InputItem>
 
                 <Button type="primary" className='button' onClick={() => {
                     console.log(1111);
-                }}>登录</Button>
+                }}>注册</Button>
             </div>
         );
     }

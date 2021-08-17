@@ -1,13 +1,15 @@
-import { Route, Switch,Redirect } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import TabBar from './commit/TabBar/index.jsx'
 import login from '../src/pages/personal/login'
+import register from '../src/pages/personal/register'
 function App() {
   return (
     <div className="App">
       <Switch>
         <Route path='/login' component={login}></Route>
+        <Route path='/register' component={register}></Route>
         <Route path='/TabBar' component={TabBar}></Route>
-        <Redirect to="/TabBar"/>
+        <Redirect to="/TabBar" />
       </Switch>
     </div>
   );
