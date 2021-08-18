@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { List, InputItem, Toast, Button } from 'antd-mobile';
+import { login } from '../../../../network/login'
+import axios from 'axios'
 import './index.css'
 class login_input extends Component {
     state = {
@@ -46,7 +48,13 @@ class login_input extends Component {
             name: value,
         });
     }
-
+    async login() {
+        // const { data: res } = await login('1234', '1234')
+        // console.log(res);
+        axios.post('/api123/login?username=1234&passwork=1234').then(res => {
+            console.log(res);
+        })
+    }
     render() {
         return (
             <div className='login_input'>
@@ -70,6 +78,7 @@ class login_input extends Component {
 
                 <Button type="primary" className='button' onClick={() => {
                     console.log(1111);
+                    this.login()
                 }}>登录</Button>
             </div>
         );
