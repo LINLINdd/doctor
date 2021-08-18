@@ -15,7 +15,7 @@ class List extends Component {
         },
         {
           id: '0002',
-          title: 'SSSSSSSSSSSSSSSSSSSSS',
+          title: 'SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS',
           src: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201605%2F10%2F20160510001106_2YjCN.thumb.700_0.jpeg&refer=http%3A%2F%2Fb-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1631845792&t=035db7042bd4364fb1a98e2ed71eee11'
         },
       ]
