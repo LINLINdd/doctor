@@ -3,10 +3,14 @@
   font-size: 14px;
   padding: 15px 0 9px 15px;
 }
-.am-grid-icon {
-  width: 70px;
-  height: 70px;
+.not-square-grid .am-grid-icon {
+  width: 40px;
+  height: 60px;
 }
-.am-grid.am-grid-square .am-grid-item .am-grid-item-inner-content .am-grid-icon{
-  width: 4.666667rem !important;
+.am-grid .am-flexbox .am-flexbox-item .am-grid-item-content{
+  padding: 0;
+}
+.ico{
+  width: 70px !important;
+  height: 70px !important;
 }
