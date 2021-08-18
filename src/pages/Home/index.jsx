@@ -5,6 +5,7 @@ import GridOne from './GridOne';
 import GridTwo from './GridTwo';
 import Slideshow from './Slideshow';
 import List from './List';
+import Trouble from './Trouble';
 
 class index extends Component {
     render() {
@@ -16,6 +17,7 @@ class index extends Component {
                 <GridTwo></GridTwo>
                 <Slideshow></Slideshow>
                 <List></List>
+                <Trouble></Trouble>
             </div>
         );
     }

@@ -1,0 +1,57 @@
+.title {
+  padding: 0 16px;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px !important;
+}
+
+h3 span {
+  font-size: .875rem;
+  color: #b3b3b3;
+}
+
+.am-icon {
+  margin: 0;
+  vertical-align: middle;
+}
+
+.list {
+  padding: 0 15px;
+}
+
+.articl {
+  padding: 15px 0;
+  border-bottom: 0.5px solid rgb(0 0 0 / 12%);
+  display: flex;
+  justify-content: space-between;
+}
+
+.artcil-left {
+  width: 248px;
+  font-size: 17px;
+  font-weight: 500;
+  color: #333;
+  line-height: 24px;
+
+  word-break: break-all;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.artcil-right {
+  width: 5rem;
+  height: 5rem;
+  background-color: red;
+}
+.artcil-right img{
+  width: 5rem;
+  height: 5rem;
+}

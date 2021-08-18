@@ -1,0 +1,113 @@
+.trouble {
+  padding: 0 16px;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px !important;
+}
+
+h3 span {
+  font-size: .875rem;
+  color: #b3b3b3;
+}
+
+.am-icon {
+  margin: 0;
+  vertical-align: middle;
+}
+
+.am-flexbox-item {
+  margin: 0 !important;
+  text-align: center;
+  color: #4d4d4d;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  white-space: nowrap;
+}
+
+.flex-container {
+  margin: 0 15px;
+}
+
+.flex-container .inline {
+  width: 80px !important;
+  margin: 9px 9px 9px 0;
+}
+
+.flex-container .small {
+  height: 20px !important;
+  line-height: 20px !important;
+}
+
+.sub-title {
+  color: #888;
+  font-size: 14px;
+  padding: 30px 0 18px 0;
+}
+
+.placeholder {
+  background-color: #ebebef;
+  color: #bbb;
+  text-align: center;
+  height: 30px;
+  line-height: 30px;
+  margin: 0 0 .8125rem .8125rem;
+}
+
+#troubleBox {
+  height: 777px;
+}
+
+.diseases {
+  padding: 1.25rem 1rem;
+  height: 6.625rem;
+}
+
+.SpanDisease {
+  padding: 12px;
+}
+
+.AskList {
+  padding: 1.25rem 1rem;
+}
+
+.AskList_head {
+  line-height: 20px;
+}
+
+.AskList_head i {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.AskList_head i img {
+  width: 16px;
+  height: 16px;
+}
+
+.AskList_body {
+  height: 72px;
+  width: 343px;
+  border-bottom: 1px solid #6666661a;
+}
+
+.AskList_body p {
+  width: 343px;
+}
+
+.AskList_foot {
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 14px;
+  color: #999;
+  margin-top: 12px;
+}

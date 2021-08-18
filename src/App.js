@@ -3,6 +3,7 @@ import TabBar from './commit/TabBar/index.jsx'
 import login from '../src/pages/personal/login'
 import Search from '../src/pages/Search'
 import Epidemic from '../src/pages/Epidemic'
+
 function App() {
   return (
     <div className="App">
@@ -11,7 +12,7 @@ function App() {
         <Route path='/TabBar' component={TabBar}></Route>
         <Route path='/Search' component={Search}></Route>
         <Route path='/Epidemic' component={Epidemic}></Route>
-    
+       
         <Redirect to="/TabBar"/>
       </Switch>
     </div>
