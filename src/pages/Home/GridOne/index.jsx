@@ -35,6 +35,7 @@ class GridOne extends Component {
 
       <div>
             <Grid data={data} hasLine={false} columnNum={3}  />
+            
       </div>
     );
   }

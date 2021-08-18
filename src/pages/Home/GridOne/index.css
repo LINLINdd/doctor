@@ -7,3 +7,6 @@
   width: 70px;
   height: 70px;
 }
+.am-grid.am-grid-square .am-grid-item .am-grid-item-inner-content .am-grid-icon{
+  width: 4.666667rem !important;
+}
