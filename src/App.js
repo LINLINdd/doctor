@@ -2,7 +2,7 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import routerMap from './routerMap'
 import FrontendAuth from './FrontendAuth'
 
-import TabBar from './commit/TabBar/'
+import TabBar from './commit/TabBar/index.jsx'
 import login from '../src/pages/personal/login'
 import Register from '../src/pages/personal/register'
 import Category from '../src/pages/Health/category'
