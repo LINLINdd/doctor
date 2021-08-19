@@ -3,7 +3,7 @@ import Login_input from './login_input';
 import './index.css'
 class login extends Component {
     login = () => {
-        this.props.history.push('TabBar')
+        this.props.history.push('/TabBar')
         // this.prosp.history.push('/TabBar')
     }
     render() {

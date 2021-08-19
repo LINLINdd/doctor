@@ -17,14 +17,15 @@ function App() {
       {/* {path: "/Category", name: "Category", component: Category }, */}
       {/* {path: "/personal", name: "personal", component: personal }, */}
       {/* {path: "/set", name: "set", component: set }, */}
-
-      <Route path="/TabBar" component={TabBar}></Route>
-      <Route path="/Register" component={Register}></Route>
-      <Route path="/login" component={login}></Route>
-      <Route path="/set" component={set}></Route>
-      <Route path="/personal" component={personal}></Route>
-      <Route path="/Category" component={Category}></Route>
-      <Redirect to='/TabBar'></Redirect>
+      <Switch>
+        <Route path="/TabBar" component={TabBar}></Route>
+        <Route path="/register" component={Register}></Route>
+        <Route path="/login" component={login}></Route>
+        <Route path="/set" component={set}></Route>
+        <Route path="/personal" component={personal}></Route>
+        <Route path="/Category" component={Category}></Route>
+        <Redirect to='/TabBar'></Redirect>
+      </Switch>
       {/* <Route>
         <div>
           <Switch>

@@ -64,11 +64,10 @@ class login_input extends Component {
             this.successToast(res.login)
             sessionStorage.setItem('username', JSON.stringify(res.data[0].username))
             sessionStorage.setItem('cookie', JSON.stringify(res.data[0]._id))
-            // this.props.history.push('TabBar')
+            // this.props.history.push('/TabBar')
             this.props.login()
             // this.prosp.history.push('/TabBar')
         }
-
     }
     render() {
         return (
