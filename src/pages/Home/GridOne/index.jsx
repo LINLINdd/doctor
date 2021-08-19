@@ -11,47 +11,45 @@ class GridOne extends Component {
     super(props)
     this.state = {
       arr: [
-        {
-          id: '01',
-          icon: 'https://gw.alipayobjects.com/zos/rmsportal/nywPmnTAvTmLusPxHPSu.png',
-          text: '问医生'
-        },
-        {
-          id: '02',
-          icon: 'https://img1.dxycdn.com/2020/0622/428/8789480606239050243-22.png',
-          text: '特惠义诊'
-        },
+        {id: '01', icon: 'https://z3.ax1x.com/2021/08/19/fHaDvq.png', text: '问医生',
+        text2:'按科室找医生' },
+        {id: '02', icon: 'https://z3.ax1x.com/2021/08/19/fHayrV.png', text: '特惠义诊',
+        text2:'问诊一元起'
+       },
+        {id: '03', icon: 'https://z3.ax1x.com/2021/08/19/fHasK0.png', text: '电话急诊',
+        text2:'一对一电话咨询'
+       },
       ]
     }
   }
 
-
-  render() {
+      render() {
     const data1 = this.state.arr.map((item, i) => ({
-      icon: item.icon,
+        icon: item.icon,
       text: item.text,
+      text2:item.text2,
 
     }));
-    return (
+      return (
 
 
       <div>
         <Grid data={data1}
-        hasLine={false} 
+          hasLine={false}
           columnNum={3}
           renderItem={dataItem => (
             <div style={{ padding: '12.5px' }}>
               <img className="ico" src={dataItem.icon} alt="" />
-              <div >
-                <span className="spanOne">I am title..</span><br></br>
-                <span className="spanTwo">I am title..</span>
+              <div className="spanBox">
+                <span className="spanOne">{dataItem.text}</span><br></br>
+                <span className="spanTwo">{dataItem.text2}</span>
               </div>
             </div>
           )}
         />
       </div>
-    );
+      );
   }
 }
 
-export default GridOne;
+      export default GridOne;

@@ -10,11 +10,11 @@ module.exports = function (app) {
     pathRewrite: {
       '^/api': ''
     }
-  }), createProxyMiddleware('/apiA', {
+  }), createProxyMiddleware('/dxy', {
     target: 'https://dxy.com/',
     changeOrigin: true,
     pathRewrite: {
-      '^/apiA': ''
+      '^/dxy': ''
     }
   }));
 };

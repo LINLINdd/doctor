@@ -3,10 +3,11 @@
   font-size: 14px;
   padding: 14px 0 9px 0px;
 }
-.not-square-grid .am-grid-icon {
-  width: 40px;
-  height: 60px;
-}
 #GTwo .am-grid-text{
-  color: #666 ;
+  color: rgb(0, 0, 0) ;
+  margin-top: .25rem !important;
+}
+#GTwo .am-grid-icon{
+  height: 2.5rem;
+  width: 2.5rem !important;
 }

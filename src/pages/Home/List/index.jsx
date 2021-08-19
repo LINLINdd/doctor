@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './index.css'
 import { Icon } from 'antd-mobile';
-
+import {getScience} from '../../../network/Health_category'
 
 class List extends Component {
   constructor(props) {
@@ -9,19 +9,23 @@ class List extends Component {
     this.state = {
       data: [
         {
-          id: '0001',
-          title: 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
-          src: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201605%2F10%2F20160510001106_2YjCN.thumb.700_0.jpeg&refer=http%3A%2F%2Fb-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1631845792&t=035db7042bd4364fb1a98e2ed71eee11'
-        },
-        {
-          id: '0002',
-          title: 'SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS',
-          src: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201605%2F10%2F20160510001106_2YjCN.thumb.700_0.jpeg&refer=http%3A%2F%2Fb-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1631845792&t=035db7042bd4364fb1a98e2ed71eee11'
+          id: '',
+          title: '',
+          cover: ''
         },
       ]
     }
   }
 
+  componentDidMount(){
+    this.getScience()
+  }
+//  获取科普数据
+  getScience=async()=>{
+    const {data:res}= await getScience(3,20,0)
+    console.log(res.data.items);
+    this.setState({data:res.data.items})
+  }
 
   GotoArticl = () => {
     console.log(1);
@@ -46,7 +50,7 @@ class List extends Component {
               data.map((item,index)=>{
                 return <div className="articl" key={item.id}>
                         <div className="artcil-left">{item.title}</div>
-                        <div className="artcil-right"><img src={item.src} alt="" /></div>
+                        <div className="artcil-right"><img src={item.cover} alt="" /></div>
                       </div>
               })
          }

@@ -6,10 +6,10 @@ module.exports = function (app) {
             changeOrigin: true,
             pathRewrite: { '^/api': '' }
         }),
-        createProxyMiddleware('/apiA', {
+        createProxyMiddleware('/dxy', {
             target: 'https://dxy.com/',
             changeOrigin: true,
-            pathRewrite: { '^/apiA': '' }
+            pathRewrite: { '^/dxy': '' }
         }),
        
     )

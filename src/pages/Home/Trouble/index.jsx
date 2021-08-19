@@ -5,11 +5,13 @@ import { Flex, WhiteSpace } from 'antd-mobile';
 import axios from 'axios';
 import { getDiseasesList } from '../../../network/Health_category'
 class Trouble extends Component {
+ 
   constructor(props) {
-    super(props)
+    super(props)  
     this.state = {
       DiseasesName: [],
       DiseasesList: [],
+      flagColor : ''
     }
   }
 
@@ -19,19 +21,18 @@ class Trouble extends Component {
 
   }
 
-
+// 公开问题的病型
   getDiseasesName = async () => {
     const { data: res } = await axios.get('http://localhost:4000/data')
     console.log(res);
     this.setState({ DiseasesName: res })
   }
-
-  getDiseasesList = async () => {
-
-    const { data: res } =await getDiseasesList(0, 6533, 1, 3)
-    // const{data:res}=await axios.get('/apiA/app/i/ask/question/public/search?section_group_id=0&tag_id=6533&page_index=1&items_per_page=3')
-    console.log(res);
-    // this.setState({DiseasesList:res.data.items})
+// 公开问题的病情
+  getDiseasesList = async (id=732) => {
+    
+    const { data: res } = await getDiseasesList(0, id, 1, 3)
+    console.log(res.data.items);
+    this.setState({ DiseasesList: res.data.items })
   }
 
   // 查看更多
@@ -39,15 +40,17 @@ class Trouble extends Component {
     console.log(2);
   }
 
-  // 切换病因
-  Cut = () => {
-    console.log(2);
+  // 切换病因 颜色
+  Cut = (id,index) => {
+    this.getDiseasesList(id)
+    console.log(id);
+    this.setState({flagColor:index})
   }
 
   render() {
     const { DiseasesName } = this.state
-
-
+    const { DiseasesList } = this.state
+    const { flagColor }    = this.state
     return (
       <div id="troubleBox">
         {/* 标题 */}
@@ -67,10 +70,14 @@ class Trouble extends Component {
                 const PlaceHolder = ({ className = '', ...restProps }) => (
                   <div className={`${className} placeholder`} {...restProps}><span className="SpanDisease">{item.name}</span></div>
                 );
-                return <PlaceHolder className="inline" key={item.id} onClick={this.Cut} />
-
-
-
+                return <PlaceHolder 
+                          className="inline" key={item.id} 
+                          style={{color:flagColor===index?'#00c792':''}}
+                          onClick={()=>{
+                            this.Cut(item.id,index)
+                          }}  
+                          />
+                      
               })
             }
 
@@ -80,13 +87,15 @@ class Trouble extends Component {
         {/* 内容2 */}
         <div className="ASK">
           {
-
+            DiseasesList.map((item, index) => {
+              return <div className="AskList" key={item.id}>
+                <div className="AskList_head"> <i><img src="https://img1.dxycdn.com/2020/0605/837/3417351013269782963-22.png" alt="" /></i>{item.anonymous_name}</div>
+                <div className="AskList_body">{item.content}</div>
+                <div className="AskList_foot">{item.create_time_str}</div>
+              </div>
+            })
           }
-          <div className="AskList">
-            <div className="AskList_head"> <i><img src="https://img1.dxycdn.com/2020/0605/837/3417351013269782963-22.png" alt="" /></i>IUIU</div>
-            <div className="AskList_body">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</div>
-            <div className="AskList_foot">4月15日 06:48</div>
-          </div>
+
         </div>
 
       </div>

@@ -10,7 +10,7 @@ import Trouble from './Trouble';
 class index extends Component {
     render() {
         return (
-            <div>
+            <div id="homeBox">
              
                 <SearchBar></SearchBar>
                 <GridOne></GridOne>

@@ -2,13 +2,12 @@ import axios from "axios";
 
 export function request(config) {
     const instance = axios.create({
-        baseURL: '/apiA/',
+        baseURL: '/dxy/',
         timeout: 5000,
         withCredentials : true
     })
     // axios.defaults.withCredentials = true
     instance.interceptors.request.use(config => {
-        config.headers['Cookie'] = '_ga=GA1.2.1533901395.1629096106'
         return config
     }, err => {
         console.log(err);

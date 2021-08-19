@@ -5,6 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.getHealth_category = getHealth_category;
 exports.getDiseasesList = getDiseasesList;
+exports.getScience = getScience;
 
 var _request = require("./request");
 
@@ -30,4 +31,16 @@ function getDiseasesList(section_group_id, tag_id, page_index, items_per_page) {
       items_per_page: items_per_page
     }
   });
-} // app/i/ask/healthwiki/feed?items_per_page=10&page_index=2&tag_id=0&category_tag_id=24822
+} // app/i/ask/healthwiki/article/hot?page_index=3&items_per_page=20&type=0
+
+
+function getScience(page_index, items_per_page, type) {
+  return (0, _request.request)({
+    url: 'app/i/ask/healthwiki/article/hot',
+    params: {
+      page_index: page_index,
+      items_per_page: items_per_page,
+      type: type
+    }
+  });
+}

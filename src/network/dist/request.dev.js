@@ -11,14 +11,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 function request(config) {
   var instance = _axios["default"].create({
-    baseURL: '/apiA/',
+    baseURL: '/dxy/',
     timeout: 5000,
     withCredentials: true
   }); // axios.defaults.withCredentials = true
 
 
   instance.interceptors.request.use(function (config) {
-    config.headers['Cookie'] = '_ga=GA1.2.1533901395.1629096106';
     return config;
   }, function (err) {
     console.log(err);
