@@ -14,3 +14,17 @@
   width: 70px !important;
   height: 70px !important;
 }
+.spanTwo{
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 14px;
+  color: #666;
+  margin-top: 4px;
+}
+.spanOne{
+ 
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 17px;
+  color: #1a1a1a;
+}

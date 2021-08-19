@@ -41,10 +41,10 @@ class GridOne extends Component {
           columnNum={3}
           renderItem={dataItem => (
             <div style={{ padding: '12.5px' }}>
-              <img className="ico" src={dataItem.icon} style={{ width: '75px', height: '75px' }} alt="" />
-              <div style={{ color: '#888', fontSize: '14px', marginTop: '12px' }}>
-                <span>I am title..</span><br></br>
-                <span className="">I am title..</span>
+              <img className="ico" src={dataItem.icon} alt="" />
+              <div >
+                <span className="spanOne">I am title..</span><br></br>
+                <span className="spanTwo">I am title..</span>
               </div>
             </div>
           )}
