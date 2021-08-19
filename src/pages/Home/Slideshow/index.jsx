@@ -26,7 +26,7 @@ class Slideshow extends Component {
   }
   render() {
     return (
-      <div>
+      <div id="slideshow">
           <WingBlank>
         <WhiteSpace />
         <Carousel

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './index.css'
 import { Icon } from 'antd-mobile';
 import { Flex, WhiteSpace } from 'antd-mobile';
-import axios from '_axios@0.21.1@axios';
+import axios from 'axios';
 import { getDiseasesList } from '../../../network/Health_category'
 class Trouble extends Component {
   constructor(props) {
@@ -84,7 +84,7 @@ class Trouble extends Component {
           }
           <div className="AskList">
             <div className="AskList_head"> <i><img src="https://img1.dxycdn.com/2020/0605/837/3417351013269782963-22.png" alt="" /></i>IUIU</div>
-            <div className="AskList_body"><p>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</p></div>
+            <div className="AskList_body">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</div>
             <div className="AskList_foot">4月15日 06:48</div>
           </div>
         </div>
