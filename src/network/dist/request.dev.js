@@ -12,12 +12,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 function request(config) {
   var instance = _axios["default"].create({
-    baseURL: '/apiA/',
+    baseURL: '/dxy/',
     timeout: 5000
   });
 
   instance.interceptors.request.use(function (config) {
-    config.headers['set-cookie'] = 'DOTCOM_CSRFTOKEN=ed63e966-d909-46e9-863e-a8eb90f73c55;Path=/;Domain=.dxy.com;HTTPOnly';
     return config;
   }, function (err) {
     console.log(err);
@@ -32,7 +31,7 @@ function request(config) {
 
 function requestB(config) {
   var open = _axios["default"].create({
-    baseURL: '/apiB/',
+    baseURL: '/shuju/',
     timeout: 5000,
     method: 'POST'
   });

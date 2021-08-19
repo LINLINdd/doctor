@@ -10,3 +10,26 @@
 #tab-bar .demo-preview-item .am-tab-bar {
     background-color: white;
 }
+
+.tab-bar {
+    background-color: white;
+    height: 100%;
+
+}
+
+.tab_bar_bootom {
+    background-color: white;
+    display: flex;
+}
+
+.tab_bar_bootom li {
+    flex: 1;
+    text-align: center;
+    list-style: none;
+    margin-top: .425rem;
+}
+
+.tab_bar_bootom li span {
+    display: block;
+    font-size: .75rem;
+}

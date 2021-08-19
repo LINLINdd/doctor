@@ -2,12 +2,11 @@ import axios from "axios";
 
 export function request(config) {
     const instance = axios.create({
-        baseURL: '/apiA/',
+        baseURL: '/dxy/',
         timeout: 5000
     })
 
     instance.interceptors.request.use(config => {
-        config.headers['set-cookie'] = 'DOTCOM_CSRFTOKEN=ed63e966-d909-46e9-863e-a8eb90f73c55;Path=/;Domain=.dxy.com;HTTPOnly';
         return config
     }, err => {
         console.log(err);
@@ -25,9 +24,9 @@ export function request(config) {
 
 export function requestB(config) {
     const open = axios.create({
-        baseURL: '/apiB/',
+        baseURL: '/shuju/',
         timeout: 5000,
-        method:'POST'
+        method: 'POST'
     })
 
     open.interceptors.request.use(config => {

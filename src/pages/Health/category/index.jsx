@@ -19,15 +19,10 @@ class category extends Component {
 
         const reD = await axios({
             method: 'get',
-            url: "/apiA/app/i/ask/healthwiki/feed?items_per_page=10&page_index=1&tag_id=25281&category_tag_id=24824",
+            url: "/dxy/app/i/ask/healthwiki/feed?items_per_page=10&page_index=1&tag_id=25281&category_tag_id=24824",
             timeout: 5000,
             withCredentials: true,
             headers: {
-                // 'Authorization': 'DOTCOM_CSRFTOKEN=84e7143a-5dd4-43d6-9eca-f3044accce2c',
-                // // 'authority ': 'dxy.com',
-                // 'path': '/app/i/ask/healthwiki/feed?items_per_page=10&page_index=2&tag_id=0&category_tag_id=24821',
-                // 'scheme': 'https',
-                // 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
                 'Cookie': 'DOTCOM_CSRFTOKEN=84e7143a-5dd4-43d6-9eca-f3044accce2c'
             }
         })

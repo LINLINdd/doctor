@@ -1,20 +1,20 @@
 const { createProxyMiddleware } = require('http-proxy-middleware');
 module.exports = function (app) {
     app.use(
-        // createProxyMiddleware('/api', {
-        //     target: 'https://ask.dxy.com/',
-        //     changeOrigin: true,
-        //     pathRewrite: { '^/api': '' }
-        // }),
-        createProxyMiddleware('/apiA', {
+        createProxyMiddleware('/api', {
+            target: 'https://ask.dxy.com/',
+            changeOrigin: true,
+            pathRewrite: { '^/api': '' }
+        }),
+        createProxyMiddleware('/dxy', {
             target: 'https://dxy.com/',
             changeOrigin: true,
-            pathRewrite: { '^/apiA': '' }
+            pathRewrite: { '^/dxy': '' }
         }),
-        // createProxyMiddleware('/api123', {
-        //     target: 'http://localhost:3000/',
-        //     changeOrigin: true,
-        //     pathRewrite: { '^/api123': '' }
-        // })
+        createProxyMiddleware('/shuju', {
+            target: 'http://localhost:3000/',
+            changeOrigin: true,
+            pathRewrite: { '^/shuju': '' }
+        })
     )
 }

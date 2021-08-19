@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { List, InputItem, Toast, Button } from 'antd-mobile';
 import { login } from '../../../../network/login'
-import axios from 'axios'
 import './index.css'
 class login_input extends Component {
     state = {
         hasError: false,
         nameError: false,
-        value: '',
-        name: ''
+        username: '111111',
+        password: '1111111',
+
     }
     onErrorName = () => {
         if (this.state.nameError) {
@@ -31,7 +31,7 @@ class login_input extends Component {
             });
         }
         this.setState({
-            value,
+            password: value,
         });
     }
     username = (value) => {
@@ -45,15 +45,30 @@ class login_input extends Component {
             });
         }
         this.setState({
-            name: value,
+            username: value,
         });
     }
-    async login() {
-        // const { data: res } = await login('1234', '1234')
-        // console.log(res);
-        axios.post('/api123/login?username=1234&passwork=1234').then(res => {
-            console.log(res);
-        })
+    failToast = (value) => {
+        Toast.fail(value, 1);
+    }
+    successToast = (value) => {
+        Toast.success(value, 1);
+    }
+    login = async () => {
+        const { username, password } = this.state
+        const { data: res } = await login(username, password)
+        console.log(res);
+        if (res.Status !== 200) {
+            return this.failToast(res.login)
+        } else {
+            this.successToast(res.login)
+            sessionStorage.setItem('username', JSON.stringify(res.data[0].username))
+            sessionStorage.setItem('cookie', JSON.stringify(res.data[0]._id))
+            // this.props.history.push('TabBar')
+            this.props.login()
+            // this.prosp.history.push('/TabBar')
+        }
+
     }
     render() {
         return (
@@ -65,7 +80,7 @@ class login_input extends Component {
                     error={this.state.nameError}
                     onErrorClick={this.onErrorName}
                     onChange={this.username}
-                    value={this.state.name}
+                    value={this.state.username}
                 >用户名</InputItem>
                 <InputItem
                     type="password"
@@ -73,7 +88,7 @@ class login_input extends Component {
                     error={this.state.hasError}
                     onErrorClick={this.onErrorClick}
                     onChange={this.onChange}
-                    value={this.state.value}
+                    value={this.state.password}
                 >密码</InputItem>
 
                 <Button type="primary" className='button' onClick={() => {
