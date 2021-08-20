@@ -14,11 +14,23 @@ class Search extends Component {
 
 
 
+  // SearchD = (e) => {
+  //   // console.log(e.target.value);
+  //   this.getSearchD(e.target.value)
+  // }
   SearchD = (e) => {
-    // console.log(e.target.value);
-    this.getSearchD(e.target.value)
+     let finish = null
+     return function(){
+       if (finish){window.clearTimeout(finish)}
+       finish=setTimeout(()=>{
+        this.getSearchD(e.target.value)
+        finish = null
+       },1000)
+     }
+
   }
 
+  // 请求搜索的数据
   getSearchD = async (value) => {
     const { data: res } = await getSearchD(value);
     console.log(res);
