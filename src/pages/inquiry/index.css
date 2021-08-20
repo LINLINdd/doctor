@@ -1,0 +1,105 @@
+.inquiry {
+  background-color: #ccc;
+}
+.inquiry .left {
+  text-align: left;
+  margin-top: 0.625rem;
+}
+.inquiry .left .title {
+  display: flex;
+}
+.inquiry .left .title .img {
+  width: 2.05rem;
+  height: 2.05rem;
+  border: 1px solid #ccc;
+}
+.inquiry .left .title .name {
+  margin-top: 0.425rem;
+  margin-left: 0.3125rem;
+  font-size: 0.75rem;
+}
+.inquiry .left .title .title_content {
+  flex: 1;
+  font-size: 0.1rem;
+  margin-left: 0.6125rem;
+  padding: 0.3125rem;
+  border: 2px solid #0db32b;
+  border-radius: 7px;
+  /*圆角弧度为7px*/
+  position: relative;
+}
+.inquiry .left .title .title_content::before {
+  content: '';
+  width: 0;
+  height: 0;
+  border: 10px solid;
+  position: absolute;
+  top: 0;
+  left: -1.275rem;
+  border-color: transparent #0db32b transparent transparent;
+}
+.inquiry .right {
+  margin-top: 0.625rem;
+}
+.inquiry .right .title {
+  display: flex;
+}
+.inquiry .right .title .img {
+  width: 2.05rem;
+  height: 2.05rem;
+  border: 1px solid #ccc;
+}
+.inquiry .right .title .name {
+  margin-top: 0.425rem;
+  margin-left: 0.7125rem;
+  margin-right: 0.125rem;
+  justify-content: center;
+  font-size: 0.75rem;
+}
+.inquiry .right .title .title_content {
+  flex: 1;
+  justify-content: right;
+  align-items: center;
+  font-size: 0.1rem;
+  padding: 0.3125rem;
+  border: 2px solid red;
+  border-radius: 7px;
+  /*圆角弧度为7px*/
+  position: relative;
+}
+.inquiry .right .title .title_content::before {
+  content: '';
+  width: 0;
+  height: 0;
+  border: 10px solid;
+  position: absolute;
+  top: 0;
+  right: -1.275rem;
+  border-color: transparent transparent transparent red;
+}
+.inquiry img {
+  width: 100%;
+}
+.inquiry .title_body {
+  padding-bottom: 2.8125rem;
+}
+.inquiry .am-card {
+  height: calc(100vh - 50px);
+}
+.inquiry .am-card .am-card-footer {
+  width: 100%;
+  border-top: 0.0625rem solid #ccc;
+  position: fixed;
+  bottom: 0;
+  padding: 0;
+}
+.inquiry .am-card .am-card-footer .am-list-item {
+  flex: 1;
+}
+.inquiry .am-card .button_title {
+  display: flex;
+}
+.inquiry .am-card .button_title .button {
+  margin-right: 0.5625rem;
+  margin-top: 0.5rem;
+}

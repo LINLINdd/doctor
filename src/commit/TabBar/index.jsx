@@ -1,4 +1,4 @@
-import { TabBar } from 'antd-mobile';
+import { TabBar, Badge } from 'antd-mobile';
 import './index.css'
 import React, { Component } from 'react';
 import Home from '../../pages/Home'
@@ -15,13 +15,14 @@ class tabbar extends Component {
             hidden: false,
             fullScreen: false,
 
-
             home: true,
             Personal: false,
             Health: false,
-
         };
-        console.log(this);
+    }
+    componentDidMount() {
+        let pathname = this.props.location.pathname.split('/')
+        this.dateswitch(pathname[2])
     }
     dateswitch = (value) => {
         switch (value) {
@@ -46,7 +47,6 @@ class tabbar extends Component {
                     Health: true,
                 })
                 break;
-
         }
 
     }
@@ -74,7 +74,9 @@ class tabbar extends Component {
                         }}>
                             <use xlinkHref={home ? '#icon-shouye-copy' : '#icon-shouye'}></use>
                         </svg>
-                        <span>首页</span>
+                        <Badge dot>
+                            <span>首页</span>
+                        </Badge>
                     </li>
                     <li onClick={() => {
                         this.dateswitch('Health')

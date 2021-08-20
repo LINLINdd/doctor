@@ -20,9 +20,16 @@
   height: 3.125rem;
   margin-right: 3.125rem;
   margin-top: 1.3625rem;
+  position: relative;
 }
 .login .login_img img {
   width: 100%;
+}
+.login .login_img .img_src {
+  position: absolute;
+  bottom: -42px;
+  left: 0;
+  opacity: 0;
 }
 .Set ul {
   padding-left: 0;

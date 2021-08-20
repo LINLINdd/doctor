@@ -5,8 +5,11 @@ class login_input extends Component {
     state = {
         hasError: false,
         nameError: false,
-        value: '',
-        name: ''
+        paswordError: false,
+
+        username: '',
+        pasword: '',
+        confirmpasword: ''
     }
     onErrorName = () => {
         if (this.state.nameError) {
@@ -18,18 +21,50 @@ class login_input extends Component {
             Toast.info('密码需要6位以上');
         }
     }
+    onErrorpassworw = () => {
+        if (this.state.hasError) {
+            Toast.info('密码需要6位以上');
+        }
+    }
     onChange = (value) => {
         if (value.replace(/\s/g, '').length < 6) {
             this.setState({
                 hasError: true,
             });
+            if (this.state.confirmpasword !== '') {
+                if (value !== this.state.confirmpasword) {
+                    console.log(value);
+                    console.log(this.state.confirmpasword);
+                    Toast.info('密码不符合');
+                    this.setState({
+                        hasError: true,
+                    });
+                }
+            }
+
         } else {
             this.setState({
                 hasError: false,
             });
         }
         this.setState({
-            value,
+            pasword: value,
+        });
+    }
+    confirmpasword = (value) => {
+        if (value.replace(/\s/g, '').length < 6 || value !== this.state.pasword) {
+            console.log(value);
+            Toast.info('与密码不符');
+            this.setState({
+                paswordError: true,
+            });
+        } else {
+            this.setState({
+                paswordError: false,
+            });
+        }
+        this.setState({
+            confirmpasword: value,
         });
     }
     username = (value) => {
@@ -43,7 +78,7 @@ class login_input extends Component {
             });
         }
         this.setState({
-            name: value,
+            username: value,
         });
     }
 
@@ -57,7 +92,7 @@ class login_input extends Component {
                     error={this.state.nameError}
                     onErrorClick={this.onErrorName}
                     onChange={this.username}
-                    value={this.state.name}
+                    value={this.state.username}
                 >用户名</InputItem>
                 <InputItem
                     type="password"
@@ -65,15 +100,15 @@ class login_input extends Component {
                     error={this.state.hasError}
                     onErrorClick={this.onErrorClick}
                     onChange={this.onChange}
-                    value={this.state.value}
+                    value={this.state.pasword}
                 >密码</InputItem>
                 <InputItem
                     type="password"
                     placeholder="再次输入密码"
-                    error={this.state.hasError}
-                    onErrorClick={this.onErrorClick}
-                    onChange={this.onChange}
-                    value={this.state.value}
+                    error={this.state.paswordError}
+                    onErrorClick={this.onErrorpassworw}
+                    onChange={this.confirmpasword}
+                    value={this.state.confirmpasword}
                 >确认密码</InputItem>
 
                 <Button type="primary" className='button' onClick={() => {

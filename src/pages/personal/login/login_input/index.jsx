@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { List, InputItem, Toast, Button } from 'antd-mobile';
 import { login } from '../../../../network/login'
 import './index.css'
+
 class login_input extends Component {
     state = {
         hasError: false,
@@ -54,10 +55,23 @@ class login_input extends Component {
     successToast = (value) => {
         Toast.success(value, 1);
     }
+
+    debounce = (fn, delay) => {
+        let timer = null
+        return function () {
+            if (timer) {
+                clearTimeout(timer)
+                timer = setTimeout(fn, delay)
+            } else {
+                timer = setTimeout(fn, delay)
+            }
+        }
+    }
+
+
     login = async () => {
         const { username, password } = this.state
         const { data: res } = await login(username, password)
-        console.log(res);
         if (res.Status !== 200) {
             return this.failToast(res.login)
         } else {
@@ -68,6 +82,7 @@ class login_input extends Component {
             this.props.login()
             // this.prosp.history.push('/TabBar')
         }
+
     }
     render() {
         return (
@@ -90,10 +105,9 @@ class login_input extends Component {
                     value={this.state.password}
                 >密码</InputItem>
 
-                <Button type="primary" className='button' onClick={() => {
-                    console.log(1111);
-                    this.login()
-                }}>登录</Button>
+                <Button type="primary" className='button' onClick={
+                    this.debounce(this.login, 300)
+                }>登录</Button>
             </div>
         );
     }
