@@ -1,0 +1,34 @@
+.Health .bottom {
+  padding: 3.125rem 0;
+}
+.Health .bottom img {
+  width: 100%;
+}
+.Health .bottom_title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Health .bottom_title .title {
+  color: #dbdbdb;
+  font-size: 1.125rem;
+}
+.Health .bottom_title .bottom_img {
+  width: 3.125rem;
+  height: 3.125rem;
+}
+.Health .bottom_introduce {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.625rem;
+}
+.Health .bottom_introduce span {
+  width: 3rem;
+  border-bottom: 0.0625rem solid #dbdbdb;
+  margin: 0 0.625rem;
+}
+.Health .bottom_introduce div {
+  color: #dbdbdb;
+  font-size: 0.5rem;
+}

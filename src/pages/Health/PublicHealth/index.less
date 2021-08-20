@@ -1,0 +1,23 @@
+.module-body {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 0 16px;
+    text-align: center;
+
+    .module-body-item {
+        width: calc(33.33333% - 9.33333px);
+        margin-right: 14px;
+        margin-top: 14px;
+
+        .item-img {
+            width: 100%;
+            display: block;
+            font-size: 0;
+        }
+    }
+
+    .module-body-item:nth-child(3n+0) {
+        margin-right: 0;
+
+    }
+}
