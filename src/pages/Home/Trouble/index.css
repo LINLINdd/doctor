@@ -1,26 +1,22 @@
-.trouble {
+#troubleBox .trouble {
   padding: 0 16px;
 }
-
-h3 {
+#troubleBox h3 {
   font-size: 1.25rem;
   font-weight: 500;
   display: flex;
   justify-content: space-between;
   margin-bottom: 5px !important;
 }
-
-h3 span {
-  font-size: .875rem;
+#troubleBox h3 span {
+  font-size: 0.875rem;
   color: #b3b3b3;
 }
-
-.am-icon {
+#troubleBox .am-icon {
   margin: 0;
   vertical-align: middle;
 }
-
-.am-flexbox-item {
+#troubleBox .am-flexbox-item {
   margin: 0 !important;
   text-align: center;
   color: #4d4d4d;
@@ -29,54 +25,44 @@ h3 span {
   line-height: 16px;
   white-space: nowrap;
 }
-.flex-container {
+#troubleBox .flex-container {
   margin: 0 15px;
 }
-
-.flex-container .inline {
+#troubleBox .flex-container .inline {
   width: 80px !important;
   margin: 9px 9px 9px 0;
 }
-
-.flex-container .small {
+#troubleBox .flex-container .small {
   height: 20px !important;
   line-height: 20px !important;
 }
-
-.sub-title {
+#troubleBox .sub-title {
   color: #888;
   font-size: 14px;
   padding: 30px 0 18px 0;
 }
-
-.placeholder {
+#troubleBox .placeholder {
   background-color: #ebebef;
   color: #bbb;
   text-align: center;
   height: 30px;
   line-height: 30px;
-  margin: 0 0 .8125rem .8125rem;
+  margin: 0 0 0.8125rem 0.8125rem;
 }
-
-
-.diseases {
-  padding: 1.25rem 1rem;
+#troubleBox .diseases {
+  padding: 0.75rem 1rem 0;
   height: 6.625rem;
 }
-
-.SpanDisease {
+#troubleBox .SpanDisease {
   padding: 12px;
 }
-
-.AskList {
-  padding: 1.25rem 1rem;
+#troubleBox .AskList {
+  padding: 0 1rem 1.25rem;
 }
-
-.AskList_head {
+#troubleBox .AskList_head {
   line-height: 20px;
 }
-
-.AskList_head i {
+#troubleBox .AskList_head i {
   width: 20px;
   height: 20px;
   display: inline-block;
@@ -84,17 +70,14 @@ h3 span {
   border-radius: 50%;
   vertical-align: middle;
 }
-
-.AskList_head i img {
+#troubleBox .AskList_head i img {
   width: 16px;
   height: 16px;
 }
-
-.AskList_body {
+#troubleBox .AskList_body {
   height: 72px;
   width: 343px;
   border-bottom: 1px solid #6666661a;
-
   font-size: 16px;
   font-weight: 300;
   line-height: 24px;
@@ -108,8 +91,7 @@ h3 span {
   -webkit-box-orient: vertical;
   white-space: normal;
 }
-
-.AskList_foot {
+#troubleBox .AskList_foot {
   font-size: 12px;
   font-weight: 300;
   line-height: 14px;

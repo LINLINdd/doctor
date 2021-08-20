@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.getHealth_category = getHealth_category;
 exports.getDiseasesList = getDiseasesList;
 exports.getScience = getScience;
+exports.getSearchD = getSearchD;
 
 var _request = require("./request");
 
@@ -41,6 +42,17 @@ function getScience(page_index, items_per_page, type) {
       page_index: page_index,
       items_per_page: items_per_page,
       type: type
+    }
+  });
+} //   https://dxy.com/app/i/columns/search/tips/v2?q=BB
+//   搜索出来的数据
+
+
+function getSearchD(q) {
+  return (0, _request.request)({
+    url: 'app/i/columns/search/tips/v2',
+    params: {
+      q: q
     }
   });
 }

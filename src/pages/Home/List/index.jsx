@@ -34,7 +34,7 @@ class List extends Component {
 
     const {data}= this.state
     return (
-      <div>
+      <div id="ListCss">
         {/* 标题 */}
         <div className="title">
           <h3>科普文章

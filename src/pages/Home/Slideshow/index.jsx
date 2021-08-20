@@ -10,6 +10,11 @@ class Slideshow extends Component {
     slideIndex: 2,
   }
 
+  constructor(props) {
+    super(props);
+    // window.addEventListener("touchmove",beforeChange,{passive:false})
+  }
+  
  componentDidMount() {
     // simulate img loading
     setTimeout(() => {
@@ -30,6 +35,7 @@ class Slideshow extends Component {
           <WingBlank>
         <WhiteSpace />
         <Carousel
+          style={{touchAction:'none'}}
           autoplay={false}
           infinite
           selectedIndex={this.state.slideIndex}

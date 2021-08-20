@@ -17,24 +17,27 @@ class GridTwo extends Component {
       ]
     }
   }
-        componentDidMount() {
+  componentDidMount() {
 
-        }
+  }
 
+  GoHealth=()=>{
+    //  this.props.history.push('/')
+  }
+  
 
-
-        render() {
-    const {arr} = this.state
+  render() {
+    const { arr } = this.state
     const data = arr.map((item, i) => ({
-          icon: item.icon,
-        text: item.text,
+      icon: item.icon,
+      text: item.text,
     }));
-        return (
-        <div id="GTwo">
-          <Grid data={data} hasLine={false} columnNum={4} />
-        </div>
-        );
+    return (
+      <div id="GTwo">
+        <Grid data={data} hasLine={false} columnNum={4} onClick={this.GoHealth}/>
+      </div>
+    );
   }
 }
 
-        export default GridTwo;
+export default GridTwo;

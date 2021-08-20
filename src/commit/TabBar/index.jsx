@@ -2,139 +2,114 @@ import { TabBar } from 'antd-mobile';
 import './index.css'
 import React, { Component } from 'react';
 import Home from '../../pages/Home'
-import Personal from '../../pages/personal';
+import personal from '../../pages/personal';
+import health from '../../pages/Health';
+import { Route, Switch, Link, Redirect } from 'react-router-dom';
+
+
 class tabbar extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            selectedTab: 'Life',
+            selectedTab: 'redTab',
             hidden: false,
             fullScreen: false,
-        };
-    }
 
-    renderContent(pageText) {
-        // return (
-        //     <div style={{ backgroundColor: 'white', height: '100%', textAlign: 'center' }}>
-        //         <a style={{ display: 'block', color: '#108ee9' }}
-        //             onClick={(e) => {
-        //                 e.preventDefault();
-        //                 this.setState({
-        //                     hidden: !this.state.hidden,
-        //                 });
-        //             }}
-        //         >
-        //             隐藏导航栏
-        //         </a>
-        //     </div>
-            
-        // );
+
+            home: true,
+            Personal: false,
+            Health: false,
+
+        };
+        console.log(this);
+    }
+    dateswitch = (value) => {
+        switch (value) {
+            case 'home':
+                this.setState({
+                    home: true,
+                    Personal: false,
+                    Health: false,
+                })
+                break;
+            case 'personal':
+                this.setState({
+                    home: false,
+                    Personal: true,
+                    Health: false,
+                })
+                break;
+            case 'Health':
+                this.setState({
+                    home: false,
+                    Personal: false,
+                    Health: true,
+                })
+                break;
+
+        }
+
     }
 
     render() {
+        const { home, Personal, Health } = this.state
         return (
-            <div style={this.state.fullScreen ? { position: 'fixed', height: '100%', width: '100%', top: 0 } : { height: '100vh' }}>
-                <TabBar
-                    unselectedTintColor="#949494"
-                    tintColor="#33A3F4"
-                    barTintColor="white"
-                    hidden={this.state.hidden}
-                    id='tabbar'
-                >
-                    <TabBar.Item
-                        title="首页"
-                        key="Life"
-                        icon={
-                            <svg className="icon" aria-hidden="true" style={{
-                                width: '22px',
-                                height: '22px'
-                            }}>
-                                <use xlinkHref="#icon-shouye"></use>
-                            </svg>
-                        }
-                        selectedIcon={<svg className="icon" aria-hidden="true" style={{
+            <div className='tab-bar'>
+                <Switch>
+                    <Route path="/TabBar/Personal" component={personal}></Route>
+                    <Route path="/TabBar/health" component={health}></Route>
+                    <Route path="/TabBar/home" component={Home}></Route>
+                    <Redirect to='/TabBar/home'></Redirect>
+                </Switch>
+                <div className='tab_bar_bootom' style={{ position: 'fixed', height: '3.125rem', width: '100%', bottom: 0 }}>
+                    {/* <Setdate ></Setdate> */}
+
+                    <li onClick={() => {
+                        this.dateswitch('home')
+                        this.props.history.push('/TabBar/home');
+                    }}>
+                        <svg className="icon" aria-hidden="true" style={{
                             width: '22px',
                             height: '22px'
                         }}>
-                            <use xlinkHref="#icon-shouye-copy"></use>
+                            <use xlinkHref={home ? '#icon-shouye-copy' : '#icon-shouye'}></use>
                         </svg>
-                        }
-                        selected={this.state.selectedTab === 'blueTab'}
-                        badge={0}
-                        onPress={() => {
-                            this.setState({
-                                selectedTab: 'blueTab',
-                            });
-                        }}
-                        data-seed="logId"
-                    >
-                        {this.renderContent('Life')}
-                        <Home></Home>
-                    </TabBar.Item>
-                    <TabBar.Item
-                        icon={
-                            <svg className="icon" aria-hidden="true" style={{
-                                width: '22px',
-                                height: '22px'
-                            }}>
-                                <use xlinkHref="#icon-yiliao"></use>
-                            </svg>
-                        }
-                        selectedIcon={
-                            <svg className="icon" aria-hidden="true" style={{
-                                width: '22px',
-                                height: '22px'
-                            }}>
-                                <use xlinkHref="#icon-yiliao-copy"></use>
-                            </svg>
-                        }
-                        title="健康咨询"
-                        key="Koubei"
-                        badge={0}
-                        selected={this.state.selectedTab === 'redTab'}
-                        onPress={() => {
-                            this.setState({
-                                selectedTab: 'redTab',
-                            });
-                        }}
-                        data-seed="logId1"
-                    >
-                        {this.renderContent('Koubei')}
-                    </TabBar.Item>
-                    <TabBar.Item
-                        icon={
-                            <svg className="icon" aria-hidden="true" style={{
-                                width: '22px',
-                                height: '22px'
-                            }}>
-                                <use xlinkHref="#icon-wode1"></use>
-                            </svg>
-                        }
-                        selectedIcon={
-                            <svg className="icon" aria-hidden="true" style={{
-                                width: '22px',
-                                height: '22px'
-                            }}>
-                                <use xlinkHref="#icon-wode1-copy"></use>
-                            </svg>
-                        }
-                        title="个人中心"
-                        key="Friend"
-                        dot
-                        selected={this.state.selectedTab === 'greenTab'}
-                        onPress={() => {
-                            this.setState({
-                                selectedTab: 'greenTab',
-                            });
-                        }}
-                    >
-                        <Personal></Personal>
-                    </TabBar.Item>
+                        <span>首页</span>
+                    </li>
+                    <li onClick={() => {
+                        this.dateswitch('Health')
+                        this.props.history.push('/TabBar/Health');
+                    }}>
+                        <svg className="icon" aria-hidden="true" style={{
+                            width: '22px',
+                            height: '22px'
+                        }}>
+                            <use xlinkHref={Health ? '#icon-yiliao-copy' : '#icon-yiliao'}></use>
+                        </svg>
+                        <span>健康咨询</span>
+                    </li>
+                    <li onClick={() => {
+                        this.dateswitch('personal')
+                        this.props.history.push('/TabBar/personal');
 
-                </TabBar>
-            </div>
-        );
+                    }}>
+                        <svg className="icon" aria-hidden="true" style={{
+                            width: '22px',
+                            height: '22px'
+                        }}>
+                            <use xlinkHref={Personal ? '#icon-wode1-copy' : '#icon-wode1'}></use>
+                        </svg>
+                        <span>个人中心</span>
+                    </li>
+                </div >
+            </div >
+
+        )
+
     }
 }
+
+
+
 
 export default tabbar

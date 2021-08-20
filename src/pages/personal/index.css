@@ -10,7 +10,7 @@
   height: 50px;
 }
 .login .login_in a {
-  font-size: 2rem;
+  font-size: 1.75rem;
   color: #333;
   font-weight: 700;
   margin-left: 1.875rem;
@@ -29,10 +29,10 @@
 }
 .Set li {
   list-style-type: none;
-  height: 3.75rem;
-  font-size: 1.5rem;
-  line-height: 3.75rem;
-  border-bottom: 0.0625rem solid #ccc;
+  height: 2.45rem;
+  font-size: 1.1rem;
+  line-height: 2.45rem;
+  border-bottom: 0.0625rem solid #ffffff;
   padding: 0 0.625rem;
   margin: 0.625rem 0.3125rem;
 }
@@ -41,6 +41,7 @@
 }
 .Set li .am-icon {
   float: right;
-  margin-top: 0.9375rem;
+  margin-top: 0.6375rem;
   color: #5a5555;
+  font-size: 1.1rem;
 }

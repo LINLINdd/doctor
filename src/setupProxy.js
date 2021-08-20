@@ -11,6 +11,10 @@ module.exports = function (app) {
             changeOrigin: true,
             pathRewrite: { '^/dxy': '' }
         }),
-       
+        createProxyMiddleware('/shuju', {
+            target: 'http://localhost:3000/',
+            changeOrigin: true,
+            pathRewrite: { '^/shuju': '' }
+        })
     )
 }
