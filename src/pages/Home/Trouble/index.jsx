@@ -23,7 +23,7 @@ class Trouble extends Component {
 
 // 公开问题的病型
   getDiseasesName = async () => {
-    const { data: res } = await axios.get('http://localhost:4000/data')
+    const { data: res } = await axios.get('http://localhost:40000/data')
     console.log(res);
     this.setState({ DiseasesName: res })
   }

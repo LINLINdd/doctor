@@ -1,0 +1,13 @@
+.register_input .am-list-item {
+  margin: 0.625rem 0;
+  border-radius: 1.25rem;
+}
+.register_input .demoTitle:before,
+.register_input .demoTitle:after {
+  border-bottom: none;
+}
+.register_input .button {
+  border-radius: 1.25rem;
+  background-color: green;
+  margin: 1.25rem 1.25rem;
+}
