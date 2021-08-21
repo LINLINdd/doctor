@@ -4,6 +4,8 @@ import { Icon } from 'antd-mobile';
 import { Flex, WhiteSpace } from 'antd-mobile';
 import axios from 'axios';
 import { getDiseasesList } from '../../../network/Health_category'
+import { getProblem } from '../../../network/home'
+
 class Trouble extends Component {
  
   constructor(props) {
@@ -16,22 +18,24 @@ class Trouble extends Component {
   }
 
   componentDidMount() {
-    this.getDiseasesName()
+   
     this.getDiseasesList()
-
+    this.getProblem()
   }
 
+  
+// http://120.27.146.2:1004/getGridTwo
 // 公开问题的病型
-  getDiseasesName = async () => {
-    const { data: res } = await axios.get('http://localhost:40000/data')
-    console.log(res);
+getProblem = async () => {
+  const{data:res} = await getProblem()
+
     this.setState({ DiseasesName: res })
   }
 // 公开问题的病情
   getDiseasesList = async (id=732) => {
     
     const { data: res } = await getDiseasesList(0, id, 1, 3)
-    console.log(res.data.items);
+
     this.setState({ DiseasesList: res.data.items })
   }
 

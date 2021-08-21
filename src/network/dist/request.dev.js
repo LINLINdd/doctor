@@ -5,6 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.request = request;
 exports.requestB = requestB;
+exports.home = home;
 
 var _axios = _interopRequireDefault(require("axios"));
 
@@ -34,6 +35,26 @@ function requestB(config) {
     baseURL: '/shuju/',
     timeout: 5000,
     method: 'POST'
+  });
+
+  open.interceptors.request.use(function (config) {
+    return config;
+  }, function (err) {
+    console.log(err);
+  });
+  open.interceptors.response.use(function (res) {
+    return res;
+  }, function (err) {
+    console.log(err);
+  });
+  return open(config);
+}
+
+function home(config) {
+  var open = _axios["default"].create({
+    baseURL: '/pbm/',
+    timeout: 5000,
+    method: 'GET'
   });
 
   open.interceptors.request.use(function (config) {

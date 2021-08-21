@@ -53,12 +53,14 @@ export function getScience(
 //   https://dxy.com/app/i/columns/search/tips/v2?q=BB
 //   搜索出来的数据
 export function getSearchD(
-    q  
+    q
 ) {
     return request({
-      url:'app/i/columns/search/tips/v2',
-      params:{
-        q,
-      }
+        url: 'app/i/columns/search/tips/v2',
+        params: {
+            q,
+        }
     })
 }
+
+

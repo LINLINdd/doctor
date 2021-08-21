@@ -22,7 +22,11 @@ class GridOne extends Component {
       ]
     }
   }
+    
 
+
+
+  
       render() {
     const data1 = this.state.arr.map((item, i) => ({
         icon: item.icon,

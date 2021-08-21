@@ -3,6 +3,14 @@
   background-color: #fff;
   padding-top: 0.8125rem;
 }
+#SearchCss .history h2 {
+  display: flex;
+  justify-content: space-between;
+}
+#SearchCss .history h2 #h2Icon {
+  width: 16px;
+  height: 16px;
+}
 #SearchCss .SearchPage li {
   height: 59px;
   line-height: 59px;
@@ -11,6 +19,84 @@
   color: #333;
   overflow: hidden;
   border-bottom: 1px solid #3333330d;
+}
+#SearchCss #InputDowm .box {
+  height: 500px;
+}
+#SearchCss #InputDowm .box .partone {
+  height: 6.25rem;
+  width: 23.625rem;
+  display: flex;
+}
+#SearchCss #InputDowm .box .partone .part {
+  padding: 1.25rem 2.8125rem;
+  font-size: 12px;
+}
+#SearchCss #InputDowm .box .partone .part .ysSpan {
+  padding-top: 0.25rem;
+  display: inline-block;
+  width: 1.875rem;
+  text-align: center;
+}
+#SearchCss #InputDowm .box .partone .part .iback {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  line-height: 30px;
+}
+#SearchCss #InputDowm .box .partone .part .iback .icon {
+  padding-left: 5px;
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+#SearchCss #InputDowm .box .partone .sl .iback {
+  background-color: #e0f7f1;
+}
+#SearchCss #InputDowm .box .partone .sl .iback .icon {
+  color: #3fc7a3;
+}
+#SearchCss #InputDowm .box .partone .sc .iback {
+  background-color: #fef1df;
+}
+#SearchCss #InputDowm .box .partone .sc .iback .icon {
+  color: #fbb046;
+}
+#SearchCss #InputDowm .box .partone .sr .iback {
+  background-color: #e2eefe;
+}
+#SearchCss #InputDowm .box .partone .sr .iback .icon {
+  color: #599ef9;
+}
+#SearchCss #InputDowm .box .parttwo {
+  text-indent: 1.25rem;
+}
+#SearchCss #InputDowm .box .parttwo h2 {
+  font-weight: 600;
+}
+#SearchCss #InputDowm .box .partthree {
+  font-size: 0.55rem;
+}
+#SearchCss #InputDowm .box .partthree .hotword {
+  flex-wrap: wrap;
+}
+#SearchCss #InputDowm .box .partthree span {
+  background-color: #fafafa;
+  padding: 5px 8px;
+  margin-bottom: 9px;
+  line-height: 1.9375rem;
+  border-radius: 0.625rem;
+  margin-right: 0.625rem;
+  display: inline-block;
+  height: 1.9375rem;
+}
+#SearchCss #InputDowm .box .partthree span .icon {
+  width: 0.8125rem;
+  height: 1rem;
+  background-color: #ff8339 !important;
+  vertical-align: middle;
 }
 #SearchCss ul,
 #SearchCss li {

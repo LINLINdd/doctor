@@ -1,21 +1,155 @@
-
 #SearchCss {
+   
 
-.SearchPage{
-  li{
-    height: 59px;
-    line-height: 59px;
-    font-weight: 400;
-    font-size: 17px;
-    color: #333;
-    overflow: hidden;
-    border-bottom: 1px solid #3333330d;
- 
+.history{
+
+  h2{
+    display: flex;
+    justify-content: space-between;
+  
+      #h2Icon{
+        width: 16px;
+        height: 16px;
+
+      }
+    
   }
-
 }
 
+  .SearchPage {
+    li {
+      height: 59px;
+      line-height: 59px;
+      font-weight: 400;
+      font-size: 17px;
+      color: #333;
+      overflow: hidden;
+      border-bottom: 1px solid #3333330d;
 
+    }
+
+  }
+
+  #InputDowm {
+  
+    .box {
+
+      height: 500px;
+      // background: rgb(192, 238, 238);
+
+      .partone {
+        height: 6.25rem;
+        width: 23.625rem;
+
+        display: flex;
+        // background-color: aquamarine;
+
+        .part {
+          padding: 1.25rem 2.8125rem;
+          font-size: 12px;
+
+          .ysSpan {
+            padding-top: .25rem;
+            display: inline-block;
+            width: 1.875rem;
+            text-align: center;
+          }
+
+          .iback {
+
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            line-height: 30px;
+
+            .icon {
+              padding-left: 5px;
+              width: 1.5em;
+              height: 1.5em;
+              vertical-align: -0.15em;
+              fill: currentColor;
+              overflow: hidden;
+            }
+
+
+          }
+
+
+
+        }
+
+        .sl {
+          .iback {
+            background-color: #e0f7f1;
+
+            .icon {
+              color: #3fc7a3;
+            }
+          }
+        }
+
+        .sc {
+          .iback {
+            background-color: #fef1df;
+
+            .icon {
+              color: #fbb046;
+            }
+          }
+        }
+
+        .sr {
+          .iback {
+            background-color: #e2eefe;
+
+            .icon {
+              color: #599ef9;
+            }
+          }
+        }
+
+
+      }
+
+      .parttwo {
+        text-indent: 1.25rem;
+      h2{
+        font-weight: 600;
+      }
+      }
+
+      .partthree {
+
+        font-size: .55rem;
+        .hotword{
+      
+          flex-wrap: wrap;
+        
+        }
+
+        span {
+          background-color: #fafafa;
+          padding: 5px 8px;
+          margin-bottom: 9px;
+          line-height: 1.9375rem;
+          border-radius: .625rem;
+          margin-right: .625rem;
+          display:inline-block;
+          height: 1.9375rem;
+         
+          .icon {
+            width: .8125rem;
+            height: 1rem;
+            background-color: #ff8339 !important ;
+            vertical-align: middle;
+          }
+        }
+
+       
+      }
+
+    }
+  }
 
 
 
