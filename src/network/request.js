@@ -43,6 +43,8 @@ export function requestB(config) {
 
     return open(config)
 }
+
+
 export function home(config) {
     const open = axios.create({
         baseURL: '/pbm/',

@@ -8,8 +8,8 @@ export function getProblem() {
 }
 
 // http://120.27.146.2:1004/getgridone
-export function getProblem() {
+export function getGridone() {
   return home({
-    url: '/getgridone',
+    url: '/getGridone',
   })
 }
