@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Grid } from 'antd-mobile';
 import './index.css'
-
+import {getGridone} from '../../../network/home'
 
 
 
@@ -24,9 +24,15 @@ class GridOne extends Component {
   }
     
 
+   componentDidMount() {
+    this.getGridone()
+   }
+   getGridone= async()=>{
+     const{data:res}= await getGridone();
+     this.setState({})
+   }
 
 
-  
       render() {
     const data1 = this.state.arr.map((item, i) => ({
         icon: item.icon,
