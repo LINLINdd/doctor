@@ -11,12 +11,6 @@ class category extends Component {
         this.getHealth_category()
     }
     getHealth_category = async () => {
-        // app/i/ask/healthwiki/feed?items_per_page=10&page_index=2&tag_id=0&category_tag_id=24824
-        // const res = await getHealth_category(10, 3, 0, 24824)
-        // console.log(res);
-
-        // DOTCOM_CSRFTOKEN=648ac870-e9b8-4b35-9935-e40e8d21ba55  Cookie
-
         const reD = await axios({
             method: 'get',
             url: "/dxy/app/i/ask/healthwiki/feed?items_per_page=10&page_index=1&tag_id=25281&category_tag_id=24824",

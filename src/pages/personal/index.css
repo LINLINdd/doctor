@@ -37,7 +37,8 @@
 .Set li {
   list-style-type: none;
   height: 2.45rem;
-  font-size: 1.1rem;
+  font-size: 13px;
+  font-weight: 700;
   line-height: 2.45rem;
   border-bottom: 0.0625rem solid #ffffff;
   padding: 0 0.625rem;

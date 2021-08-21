@@ -43,5 +43,26 @@ export function requestB(config) {
 
     return open(config)
 }
+export function requestC(config) {
+    const open = axios.create({
+        baseURL: '/shuju/',
+        timeout: 5000,
+        method: 'GET'
+    })
+
+    open.interceptors.request.use(config => {
+        return config
+    }, err => {
+        console.log(err);
+    })
+
+    open.interceptors.response.use(res => {
+        return res
+    }, err => {
+        console.log(err);
+    })
+
+    return open(config)
+}
 
 // app/i/ask/healthwiki/feed?items_per_page=10&page_index=2&tag_id=0&category_tag_id=24822
