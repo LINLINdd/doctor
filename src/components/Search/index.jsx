@@ -98,8 +98,8 @@ class Search extends Component {
               {
                 iconame.map((item, index) => {
                   return <div className={"part" + ' ' + (item.CName)} key={item.CName2}>
-                    <div className="iback ">
-                      <svg className="icon " ariaidden="true">
+                    <div className="iback">
+                      <svg className="icon" aria-hidden="true">
                         <use xlinkHref={item.CName2}></use>
                       </svg>
                     </div>
@@ -119,7 +119,7 @@ class Search extends Component {
               <div className="hotword">
                 {
                   hot.map((item, index) => {
-                    return index == 0 && 1 ? <span key={item.text}>
+                    return [0,1].includes(index)? <span key={item.text}>
                       <svg className="icon" aria-hidden="true">
                         <use xlinkHref="#icon-huo"></use>
                       </svg>{item.text}</span> : <span key={item.text}>{item.text}</span>
@@ -136,7 +136,6 @@ class Search extends Component {
                 <span>失眠</span>
                
                 <span>孕育管家</span> */}
-
               </div>
             </div>
 

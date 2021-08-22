@@ -11,14 +11,14 @@ class GridOne extends Component {
     super(props)
     this.state = {
       arr: [
-        {id: '01', icon: 'https://z3.ax1x.com/2021/08/19/fHaDvq.png', text: '问医生',
-        text2:'按科室找医生' },
-        {id: '02', icon: 'https://z3.ax1x.com/2021/08/19/fHayrV.png', text: '特惠义诊',
-        text2:'问诊一元起'
-       },
-        {id: '03', icon: 'https://z3.ax1x.com/2021/08/19/fHasK0.png', text: '电话急诊',
-        text2:'一对一电话咨询'
-       },
+      //   {id: '01', icon: 'https://z3.ax1x.com/2021/08/19/fHaDvq.png', text: '问医生',
+      //   text2:'按科室找医生' },
+      //   {id: '02', icon: 'https://z3.ax1x.com/2021/08/19/fHayrV.png', text: '特惠义诊',
+      //   text2:'问诊一元起'
+      //  },
+      //   {id: '03', icon: 'https://z3.ax1x.com/2021/08/19/fHasK0.png', text: '电话急诊',
+      //   text2:'一对一电话咨询'
+      //  },
       ]
     }
   }
@@ -27,9 +27,11 @@ class GridOne extends Component {
    componentDidMount() {
     this.getGridone()
    }
+   
    getGridone= async()=>{
      const{data:res}= await getGridone();
-     this.setState({})
+     console.log(res);
+     this.setState({arr:res})
    }
 
 

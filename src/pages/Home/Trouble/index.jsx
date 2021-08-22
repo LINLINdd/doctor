@@ -28,7 +28,7 @@ class Trouble extends Component {
 // 公开问题的病型
 getProblem = async () => {
   const{data:res} = await getProblem()
-
+ 
     this.setState({ DiseasesName: res })
   }
 // 公开问题的病情

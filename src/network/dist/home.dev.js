@@ -19,4 +19,4 @@ function getGridone() {
   return (0, _request.home)({
     url: '/getGridone'
   });
-}
+} //
