@@ -14,4 +14,9 @@ export function getGridone() {
   })
 }
 
-// 
+// http://120.27.146.2:1004/getDiseasesName
+export function getDiseasesName(){
+  return home({
+    url:'getDiseasesName',
+  })
+}

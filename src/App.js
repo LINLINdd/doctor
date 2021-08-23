@@ -1,4 +1,4 @@
-import { Route, Switch, Redirect, Router } from 'react-router-dom';
+import { Route, Switch, Redirect,} from 'react-router-dom';
 import routerMap from './routerMap'
 import FrontendAuth from './FrontendAuth'
 
@@ -9,26 +9,33 @@ import Category from '../src/pages/Health/category'
 import personal from '../src/pages/personal'
 import set from '../src/pages/personal/set'
 import Search1 from './components/Search';
+// 带缓存功能的路由组件
+import CacheRoute, { CacheSwitch } from 'react-router-cache-route'
 
 function App() {
   return (
     <div className="App">
+      
       {/* {path: "/", name: "TabBar", component: TabBar, }, */}
       {/* {path: "/login", name: "login", component: login, }, */}
       {/* {path: "/Register", name: "LogiRegistern", component: Register, }, */}
       {/* {path: "/Category", name: "Category", component: Category }, */}
       {/* {path: "/personal", name: "personal", component: personal }, */}
       {/* {path: "/set", name: "set", component: set }, */}
-      <Switch>
-        <Route path="/TabBar" component={TabBar}></Route>
-        <Route path="/register" component={Register}></Route>
-        <Route path="/login" component={login}></Route>
-        <Route path="/set" component={set}></Route>
-        <Route path="/personal" component={personal}></Route>
-        <Route path="/Category" component={Category}></Route>
-        <Route path="/Search" component={Search1}></Route>
+
+
+      {/* 使用 CacheRoute 替换 Route*/}
+      {/* 使用 CacheSwitch 替换 Switch（因为 Switch 组件只保留第一个匹配状态的路由，卸载掉其他路由） */}
+      <CacheSwitch>
+        <CacheRoute path="/TabBar" component={TabBar}></CacheRoute>
+        <CacheRoute path="/register" component={Register}></CacheRoute>
+        <CacheRoute path="/login" component={login}></CacheRoute>
+        <CacheRoute path="/set" component={set}></CacheRoute>
+        <CacheRoute path="/personal" component={personal}></CacheRoute>
+        <CacheRoute path="/Category" component={Category}></CacheRoute>
+        <CacheRoute path="/Search" component={Search1}></CacheRoute>
         <Redirect to='/TabBar'></Redirect>
-      </Switch>
+      </CacheSwitch>
 
       
       {/* <Route>

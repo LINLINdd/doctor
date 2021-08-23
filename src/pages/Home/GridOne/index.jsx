@@ -30,7 +30,6 @@ class GridOne extends Component {
    
    getGridone= async()=>{
      const{data:res}= await getGridone();
-     console.log(res);
      this.setState({arr:res})
    }
 

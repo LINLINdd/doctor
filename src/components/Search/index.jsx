@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Icon } from 'antd-mobile';
 import './index.css'
 import { getSearchD } from '../../network/Health_category'
+import { nanoid } from 'nanoid'
 
 class Search extends Component {
   constructor(props) {
@@ -20,37 +21,72 @@ class Search extends Component {
         { text: '怀孕小能手' },
         { text: '码农怎么挂B的' },
       ],
-      historyArr:[
-        {}
+      historyArr: [
+
+
+        { id: 'ccqweq', text: '神经病' },
+        { id: 'sadad', text: '没有什么病' }
       ],
       flag: true
+    }
+
+
+  }
+
+
+  //  挂载完成 拿localStorage 设置state
+  componentDidMount() {
+    console.log(this.state.flag);
+    this.gethistoryData()
+  }
+
+  gethistoryData() {
+    let historyData = JSON.parse(localStorage.getItem("data"))
+    console.log(historyData);
+    if (historyData == null) {
+      historyData = []
+      this.setState({ historyArr: historyData })
+    } else {
+      this.setState({ historyArr: historyData })
+    }
+
+    // 
+  }
+  // 这个钩子函数在数据发生改变时就会触发 第一个参数是上一次的props，第二个参数是上一次的state
+  componentDidUpdate(preProps, preState) {
+    if (this.state.historyArr.length !== preState.historyArr.length) {
+      localStorage.setItem('data', JSON.stringify(this.state.historyArr))
     }
   }
 
 
-  // SearchD = (e) => {
-  //   // console.log(e.target.value);
-  //   this.getSearchD(e.target.value)
-  // }
-
   //    搜索框   防抖处理
   SearchD() {
     let finish = null
-    this.state.flag = false
 
+    const { historyArr } = this.state
     return (e) => {
       // console.log(Boolean(finish));
+      this.setState({ flag: false })
       if (finish) { clearTimeout(finish) }
       finish = setTimeout(() => {
         this.getSearchD(e.target.value)
         finish = null
       }, 400)
       if (e.keyCode == 13) {
-        console.log(1);
+        if (e.target.value.trim() == "") {
+          alert('搜索内容不能为空')
+        } else {
+          // console.log(e.target.value); historyArr.unshift()
+          this.setState({ historyArr: [...historyArr, { id: nanoid(), text: e.target.value }] })
+        }
       }
+
       if (e.target.value == '') {
-        this.state.flag = true
+        this.setState({ flag: true })
       }
+
+
     }
 
   }
@@ -60,25 +96,41 @@ class Search extends Component {
     const { data: res } = await getSearchD(value);
     // console.log(res);
     this.setState({ disease: res.data.items })
+
   }
 
+  // 清除历搜索
+  deleHistory = () => {
 
+    // let deleHistoryOK =confirm('确定删除历史记录么？') 
+    //  localStorage.clear();
+
+    console.log(1);
+
+
+
+  }
+
+  // 清除搜索框内容
+  slip = () => {
+    this.SearchREF.value = "";
+    console.log(this.SearchREF.value);
+    this.setState({ flag: true })
+  }
 
   render() {
-    const { disease } = this.state
-    const { iconame } = this.state
-    const { flag } = this.state
-    const { hot } = this.state
+    const { disease, iconame, flag, hot, historyArr } = this.state
     return (
       <div className='BoxSearch' id="SearchCss">
         {/* 搜索框 */}
         <div id="Box2Input">
           <Icon type='search' span="Icon" />
-          <input type="text" name="" id="SearchInput" placeholder="搜索疾病/症状/医生/药品/医院" onKeyUp={this.SearchD()} />
+          <input type="text" name="" id="SearchInput" placeholder="搜索疾病/症状/医生/药品/医院" onKeyUp={this.SearchD()} ref={SS => this.SearchREF = SS} />
+          <Icon type='cross-circle' span="Icon" className="slip" style={{ display: flag ? 'none' : 'block' }} onClick={this.slip} />
         </div>
 
         {/* 搜索时的页面 */}
-        <div className="SearchPage">
+        <div className="SearchPage" style={{ display: flag ? 'none' : 'block' }}>
           <ul>
             {
               disease.map((item, index) => {
@@ -90,8 +142,8 @@ class Search extends Component {
         </div>
 
         {/* 搜索框下的页面 */}
-        <div id="InputDowm" style={{ display: flag ? 'block' : 'none' }}>
-          <div className="box">
+        <div id="InputDowm" >
+          <div className="box" style={{ display: flag ? 'block' : 'none' }}>
 
             {/* 3个图标 */}
             <div className="partone">
@@ -119,43 +171,42 @@ class Search extends Component {
               <div className="hotword">
                 {
                   hot.map((item, index) => {
-                    return [0,1].includes(index)? <span key={item.text}>
+                    return [0, 1].includes(index) ? <span key={item.text}>
                       <svg className="icon" aria-hidden="true">
                         <use xlinkHref="#icon-huo"></use>
                       </svg>{item.text}</span> : <span key={item.text}>{item.text}</span>
                   })
                 }
-                {/* <span>
-                  <svg className="icon" aria-hidden="true">
-                    <use xlinkHref="#icon-huo"></use>
-                  </svg>疫情地图</span>
 
-                <span><svg className="icon" aria-hidden="true" >
-                  <use xlinkHref="#icon-huo"></use>
-                </svg>出行政策</span>
-                <span>失眠</span>
-               
-                <span>孕育管家</span> */}
               </div>
             </div>
 
             {/* 搜索历史 */}
 
             <div className="history">
-
+              {/* 标题 */}
               <div className="parttwo">
-                <h2> 
+                <h2>
                   <span>
-                    历史搜索 
+                    历史搜索
                   </span>
-                  <i>
+                  <i onClick={this.deleHistory}>
                     <svg className="icon" aria-hidden="true" id="h2Icon">
-                  <use xlinkHref="#icon-shanchu3"></use></svg>
-                  </i>     
+                      <use xlinkHref="#icon-shanchu3"></use></svg>
+                  </i>
                 </h2>
               </div>
+              {/* 历史内容 */}
+              <div className="partthree">
+                <div className="hotword">
+                  {
+                    historyArr.map((item, index) => {
+                      return <span key={item.id}>{item.text}</span>
+                    })
+                  }
 
-
+                </div>
+              </div>
 
             </div>
 

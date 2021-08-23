@@ -1,22 +1,28 @@
 #SearchCss {
-   
+  height: calc(100vh - 1rem);
+  padding: 0 1rem;
+  background-color: #fff;
+  padding-top: .8125rem;
 
-.history{
+  .history {
 
-  h2{
-    display: flex;
-    justify-content: space-between;
-  
-      #h2Icon{
+    h2 {
+      display: flex;
+      justify-content: space-between;
+
+      #h2Icon {
         width: 16px;
         height: 16px;
 
       }
-    
+
+    }
   }
-}
 
   .SearchPage {
+    ul{
+      padding: 0 !important;
+    }
     li {
       height: 59px;
       line-height: 59px;
@@ -31,7 +37,7 @@
   }
 
   #InputDowm {
-  
+
     .box {
 
       height: 500px;
@@ -113,19 +119,23 @@
 
       .parttwo {
         text-indent: 1.25rem;
-      h2{
-        font-weight: 600;
-      }
+
+        h2 {
+          font-weight: 600;
+        }
       }
 
       .partthree {
-
+        height: 6.25rem;
         font-size: .55rem;
-        .hotword{
-      
+        overflow: hidden;
+
+        .hotword {
+          
           flex-wrap: wrap;
-        
+
         }
+
         span {
           background-color: #fafafa;
           padding: 5px 8px;
@@ -133,19 +143,19 @@
           line-height: 1.9375rem;
           border-radius: .625rem;
           margin-right: .625rem;
-          display:inline-block;
+          display: inline-block;
           height: 1.9375rem;
-         
+
           .icon {
             width: .8125rem;
             height: 1rem;
-            color: #ff8339 !important ;
+            color: #ff8339 !important;
             vertical-align: middle;
           }
         }
 
 
-       
+
       }
 
     }
@@ -158,9 +168,7 @@
     list-style: none;
   }
 
-  padding: 0 1rem;
-  background-color: #fff;
-  padding-top: .8125rem;
+
 
   #Box2Input {
     width: 95%;
@@ -172,7 +180,13 @@
     justify-content: flex-start;
     align-items: center;
     margin: 0 auto;
-    box-shadow: 0 6px 12px 0 rgb(0 0 0 / 5%)
+    box-shadow: 0 6px 12px 0 rgb(0 0 0 / 5%);
+    .slip{
+      margin-right: .9375rem;
+      width: 17px;
+      height: 17px;
+    }
+
   }
 
   #SearchInput {
