@@ -4,6 +4,58 @@
   background-color: #fff;
   padding-top: 0.8125rem;
 }
+#SearchCss .advertising {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 13;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  touch-action: none;
+}
+#SearchCss .advertisingBox {
+  width: 270px;
+  height: 150px;
+  border-radius: 12px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: auto;
+}
+#SearchCss .advertisingBox .advertisingBoxCent {
+  text-align: center;
+  font-size: 14px;
+  line-height: 21px;
+  color: #4d4d4d;
+  margin-top: 16px;
+}
+#SearchCss .advertisingBox .advertisingBoxBtn {
+  bottom: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  border-top: 1px solid #ebebeb;
+  margin-top: 24px;
+}
+#SearchCss .advertisingBox .BoxNo {
+  display: flex;
+  flex: 0.5 1;
+  justify-content: center;
+  align-items: center;
+  padding: 13px 34px;
+}
+#SearchCss .advertisingBox .BoxOk {
+  display: flex;
+  flex: 0.5 1 0%;
+  justify-content: center;
+  align-items: center;
+  padding: 13px 34px;
+  color: #00ff1fcf;
+}
 #SearchCss .history h2 {
   display: flex;
   justify-content: space-between;

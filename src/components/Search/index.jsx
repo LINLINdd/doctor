@@ -27,7 +27,8 @@ class Search extends Component {
         { id: 'ccqweq', text: '神经病' },
         { id: 'sadad', text: '没有什么病' }
       ],
-      flag: true
+      flag: true,
+      hide:true,
     }
 
 
@@ -78,8 +79,8 @@ class Search extends Component {
           alert('搜索内容不能为空')
         } else {
           // console.log(e.target.value); historyArr.unshift()
-          
-          this.setState({ historyArr: [ { id: nanoid(), text: e.target.value },...historyArr] })
+
+          this.setState({ historyArr: [{ id: nanoid(), text: e.target.value }, ...historyArr] })
         }
       }
 
@@ -102,14 +103,18 @@ class Search extends Component {
 
   // 清除历搜索
   deleHistory = () => {
-
-    // let deleHistoryOK =confirm('确定删除历史记录么？') 
+    this.setState({ hide: false })
     //  localStorage.clear();
-
-    console.log(1);
-
-
-
+  }
+  BoxNO=()=>{
+   
+    this.setState({ hide: true })
+  }
+  BoxOK=()=>{
+    localStorage.clear();
+    let sky=[]
+    this.setState({ historyArr: sky })
+    this.setState({ hide: true })
   }
 
   // 清除搜索框内容
@@ -120,9 +125,22 @@ class Search extends Component {
   }
 
   render() {
-    const { disease, iconame, flag, hot, historyArr } = this.state
+    const { disease, iconame, flag, hot, historyArr ,hide} = this.state
     return (
+
       <div className='BoxSearch' id="SearchCss">
+        {/* 弹窗 */}
+        <div className="advertising" style={{ display: hide ? 'none' : 'block' }} >
+          <div className="advertisingBox">
+            <div className="advertisingBoxCent">确定删除全部历史记录么</div>
+            <div className="advertisingBoxBtn">
+              <div className="BoxNo" onClick={this.BoxNO}>取消</div>
+              <div className="BoxOk" onClick={this.BoxOK}>确定</div>
+            </div>
+          </div>
+        </div>
+
+
         {/* 搜索框 */}
         <div id="Box2Input">
           <Icon type='search' span="Icon" />
@@ -214,6 +232,7 @@ class Search extends Component {
 
           </div>
         </div>
+
 
       </div>
     );
