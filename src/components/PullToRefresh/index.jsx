@@ -1,73 +1,164 @@
-// import React, { Component } from 'react';
-// import { ListView } from 'antd-mobile';
+// 新闻列表
+import React, { Component } from 'react';
+import { NavBar, Icon, Tabs, ListView, PullToRefresh } from 'antd - mobile';
+import '.../.../pageCss / newsList / newsList.css'
+import { findGardenInfoAll } from '.../.../api / newsList / newsListApi'
+class News extends Component {
+    constructor(props) {
+        super(props)
+        const dataSource = new ListView.DataSource({
+            rowHasChanged: (row1, row2) => row1 !== row2,
+        });
+        this.state = {
+            tabs: [
+                { title: '全部', sub: '1' },
+                { title: '园区动态', sub: '2' },
+                { title: '木业资讯', sub: '3' }
+            ],
+            tabsIndex: 0,//tab选择的
+            newsList: [],//数据
+            dataSource: dataSource, //列表的初始化
+            refreshing: true, //下拉刷新
+            isLoading: true, //文字显示
+            pages: {
+                pageNum: 1,//第几页
+                pageSize: 10,//每页多少
+                type: 0,//列表的类型
+            }
+        }
+    }
+    componentDidMount() {
+        setTimeout(() => {
+            this.query(this.state.pages)
+            // this.rData = genData();
+            // this.setState({
+            // dataSource: this.state.dataSource.cloneWithRows(this.rData),
+            // isLoading: false,
+            // });
+        }, 600);
+    }
+    query(pages) {//数据请求
+        let _this = this;
+        findGardenInfoAll(pages).then(res => {
+            if (res.pages >= this.state.pages.pageNum) {
+                _this.state.pages.pageNum++;
+                this.state.newsList = [...this.state.newsList, ...res.list]
+                this.setState({
+                    newsList: this.state.newsList,
+                    dataSource: this.state.dataSource.cloneWithRows(this.state.newsList),
+                    isLoading: false,
+                    pages: _this.state.pages,
+                });
+            } else {
+                _this.setState({
+                    isLoading: false
+                })
+            }
+            _this.setState({
+                refreshing: false
+            })
+        })
+    }
+    onRefresh = () => { //下拉刷新
+        this.state.pages.pageNum = 1;
+        this.setState({ refreshing: true, isLoading: true, pages: this.state.pages, newsList: [] });
+        setTimeout(() => {
+            this.query(this.state.pages)
+        }, 600);
+    }
+    onEndReached = (event) => {//触底加载
+        if (this.state.isLoading) {
+            return;
+        }
+        this.setState({ isLoading: true });
+        setTimeout(() => {
+            this.query(this.state.pages)
+        }, 600);
+    }
+    render() {
+        const row = (rowData, sectionID, rowID) => {
+            return (
+                <div key={rowID} style={{ height: '1rem', marginTop: '0.1rem', background: '#ffffff' }}>
+                    {/* {rowData.messageTitle} */}
 
-// class PullToRefresh extends Component {
-//     constructor() {
-//         super();
-//         const ds = new ListView.DataSource({
-//             rowHasChanged: (r1, r2) => r1 !== r2
-//         });
-//         this.state = {
-//             page: "1", //页码
-//             row: '10', // 每页条数
-//             totalPage: "", //总页数
-//             dataSource: ds, //长列表加载数据源
-//             billData: [],  //每页数据
-//             preBillData: [], //原始的订单列表
-//             allBillData: [], //原始的+每一页新的数据
-//             isLoading: true,  //是否加载中
-//             isHasMore: false, //是否还有更多数据
-//         };
+                    return (
+                    <NavBar mode='light' icon={ } onLeftClick={() => this.props.history.go(-1)} />
+                    新闻资讯
+                    < Tabs tabs={this.state.tabs} onTabClick={(tab, index) => { }
+                        // this.state.pages.type = index;
+                        // this.state.pages.pageNum = 1;
+                        // this.setState({ refreshing: true, isLoading: true, pages: this.state.pages, newsList: [] });
+                        // this.query(this.state.pages);
+                        )
+                </div>
+            )
+
+        }
+    }
+    // < ListView ref={el => this.lv = el}
+    //     // dataSource={this.state.dataSource}
+    //     renderFooter={() => (<div style={{ textAlign: 'center' }}>
+    //         {this.state.isLoading ? '加载中...' : '已加载全部'}
+    //         )}
+    //         renderRow={row}
+    //         style={{
+    //             height: '100%',
+    //             overflow: 'auto',
+    //         }}
+    //         pullToRefresh={ }
+    //         scrollRenderAheadDistance={500}
+    //         onEndReached={this.onEndReached}
+    //         onEndReachedThreshold={10}
+    //         )
+    //         )
+
+
+    //  />   }
+}
+export default News;
+
+
+// return (
+//     <div key={rowID} style={{ height:‘1rem’,marginTop:‘0.1rem’,background:’#ffffff’}}>
+//     {rowData.messageTitle}
+
+
+//     );
+//     };
+//     return (
+
+
+//     <NavBar mode=“light” icon={} onLeftClick={() => this.props.history.go(-1)}>
+//     新闻资讯
+//     {/ —/}
+
+//     <Tabs tabs={this.state.tabs} onTabClick={(tab, index) => {
+//     this.state.pages.type = index;
+//     this.state.pages.pageNum = 1;
+//     this.setState({ refreshing: true, isLoading: true ,pages:this.state.pages,newsList:[]});
+//     this.query(this.state.pages);
+//     }}>
+//     {/ ----/}
+
+//     <ListView
+//     ref={el => this.lv = el}
+//     dataSource={this.state.dataSource}
+//     renderFooter={() => (<div style={{ textAlign: ‘center’ }}>
+//     {this.state.isLoading ? ‘加载中…’ : ‘已加载全部’}
+//     )}
+//     renderRow={row}
+//     style={{
+//     height: ‘100%’,
+//     overflow: ‘auto’,
+//     }}
+//     pullToRefresh={}
+//     scrollRenderAheadDistance={500}
+//     onEndReached={this.onEndReached}
+//     onEndReachedThreshold={10}
+//     />
+
+
+
+
+//     )
 //     }
-//     onEndReached = () => {
-
-//         const { page, row, totalPage, isLoading, isHasMore } = this.state
-
-//         //当前已加载的条数小于total总条数 请求下一页数据，否则停止请求数据
-//         if ((Number(page) - 1) < Number(totalPage)) {
-//             this.setState({
-//                 isLoading: true
-//             })
-//             this.getBatchData()
-//         } else {
-//             this.setState({
-//                 isLoading: false,
-//                 isHasMore: false
-//             })
-//         }
-//     }
-//     render() {
-//         <ListView
-//             ref={el => this.lv = el}
-//             dataSource={this.state.dataSource}
-//             renderFooter={() => (<div style={{ padding: 5, textAlign: 'center', fontSize: '14px' }}>
-//                 {
-//                     isHasMore && (isLoading ? <span className='list_loading'>加载中...</span> : '已加载')
-//                 }
-//                 {
-//                     billData.length != 0 && (!isHasMore && '没有更多内容')
-//                 }
-
-//             </div>)}
-//             renderRow={row} //每行数据渲染
-//             style={{
-//                 minHeight: 'calc(100vh - 20px)', //高度需要定义
-//                 overflow: 'auto',
-//             }}
-//             pageSize={10}  //一次渲染几条数据
-//             onEndReached={this.onEndReached}
-//             onEndReachedThreshold={10}
-//         />
-//         const row = (rowData, sectionID, rowID) => {
-//             return (
-//                 <div>
-//                     <div>{rowData.username}</div>
-//                     <div>{rowData.billNo}</div>
-//                     ...
-//                 </div>
-//             )
-//         }
-//     }
-// }
-
-// export default PullToRefresh;
