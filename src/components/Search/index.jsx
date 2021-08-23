@@ -78,7 +78,8 @@ class Search extends Component {
           alert('搜索内容不能为空')
         } else {
           // console.log(e.target.value); historyArr.unshift()
-          this.setState({ historyArr: [...historyArr, { id: nanoid(), text: e.target.value }] })
+          
+          this.setState({ historyArr: [ { id: nanoid(), text: e.target.value },...historyArr] })
         }
       }
 
