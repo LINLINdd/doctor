@@ -1,0 +1,84 @@
+.CheckDisease {
+  background-color: #fff;
+  height: 100vh;
+}
+.CheckDisease .Box1 {
+  width: 100%;
+  position: fixed;
+  top: 2.8125rem;
+  background-color: #fff;
+  z-index: 9;
+}
+.CheckDisease .Box2Input {
+  width: 90%;
+  height: 2.75rem;
+  border: 0.5px solid #7e4242;
+  border-radius: 25px;
+  background-color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 auto;
+  box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.05);
+}
+.CheckDisease .Box2Input .am-icon-md {
+  margin: 0 0.9125rem;
+}
+.CheckDisease #SearchInput {
+  border: none;
+  height: 1.25rem;
+  font-size: 0.9375rem;
+  color: #333;
+  font-weight: 800;
+  width: 78%;
+  background-color: #fff;
+}
+.CheckDisease .am-navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9;
+}
+.CheckDisease .CheckDisease_ul {
+  padding-top: 5.225rem;
+  background-color: #fff;
+}
+.CheckDisease .CheckDisease_ul ul {
+  padding-left: 0;
+}
+.CheckDisease .CheckDisease_ul li {
+  list-style: none;
+  font-size: 1rem;
+  height: auto;
+  padding: 1.25rem 1rem;
+  position: relative;
+}
+.CheckDisease .CheckDisease_ul li::after {
+  position: absolute;
+  right: 16px;
+  bottom: 0;
+  left: 16px;
+  box-sizing: border-box;
+  height: 1px;
+  background-color: #ebebeb;
+  content: "";
+  transform: scaleY(0.5);
+}
+.CheckDisease .black {
+  position: fixed;
+  right: 1.875rem;
+  bottom: 3.125rem;
+  border-radius: 1.25rem;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.CheckDisease .black .icon {
+  height: 2.5rem !important;
+  width: 2.5rem !important;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}

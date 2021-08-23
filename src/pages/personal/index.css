@@ -4,6 +4,7 @@
   line-height: 12.5rem;
   display: flex;
   background: url(https://img1.dxycdn.com/2019/0916/325/3368544956980800707-22.png) center no-repeat;
+  overflow: hidden;
 }
 .login .login_in {
   flex: 1;

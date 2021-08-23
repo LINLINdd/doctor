@@ -1,0 +1,18 @@
+.black {
+  position: fixed;
+  right: 1.875rem;
+  bottom: 3.125rem;
+  border-radius: 1.25rem;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.black .icon {
+  height: 2.5rem !important;
+  width: 2.5rem !important;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}

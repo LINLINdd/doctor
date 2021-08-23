@@ -9,6 +9,8 @@ import Category from '../src/pages/Health/category'
 import personal from '../src/pages/personal'
 import set from '../src/pages/personal/set'
 import inquiry from '../src/pages/inquiry'
+import CheckDisease from '../src/pages/CheckDisease'
+import CheckbBottle from '../src/pages/CheckbBottle'
 function App() {
   return (
     <div className="App">
@@ -25,7 +27,9 @@ function App() {
         <Route path="/set" component={set}></Route>
         <Route path="/personal" component={personal}></Route>
         <Route path="/Category" component={Category}></Route>
+        <Route path="/CheckDisease" component={CheckDisease}></Route>
         <Route path="/inquiry/:id" component={inquiry}></Route>
+        <Route path="/CheckbBottle" component={CheckbBottle}></Route>
         <Redirect to='/TabBar'></Redirect>
       </Switch>
       {/* <Route>
