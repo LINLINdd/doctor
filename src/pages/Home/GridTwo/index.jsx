@@ -27,7 +27,7 @@ class GridTwo extends Component {
 
   getDiseasesName=async()=>{
     const{data:res}=await getDiseasesName()
-    this.setState({arr:res})
+    this.setState({arr:res.data})
   }
 
 

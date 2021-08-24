@@ -13,7 +13,7 @@ class GridOne extends Component {
     this.state = {
       arr: [
       //   {id: '01', icon: 'https://z3.ax1x.com/2021/08/19/fHaDvq.png', text: '问医生',
-      //   text2:'按科室找医生' },
+      //   text2:'按科室找医生',url:"http://baidu.com" },
       //   {id: '02', icon: 'https://z3.ax1x.com/2021/08/19/fHayrV.png', text: '特惠义诊',
       //   text2:'问诊一元起'
       //  },
@@ -31,11 +31,12 @@ class GridOne extends Component {
    
    getGridone= async()=>{
      const{data:res}= await getGridone();
-     this.setState({arr:res})
+     console.log(res)
+     this.setState({arr:res.data})
    }
    
-   GoAskDoctor=()=>{
-    this.props.history.push('/Askdoctor')
+   GoAskDoctor=(e)=>{
+    this.props.history.push(e.url)
 
    }
 
@@ -49,9 +50,10 @@ class GridOne extends Component {
       return (
 
 
-      <div id="GridOneCss" onClick={this.GoAskDoctor}>
+      <div id="GridOneCss" >
         <Grid data={data1}
           hasLine={false}
+          onClick={this.GoAskDoctor}
           columnNum={3}
           renderItem={dataItem => (
             <div style={{ padding: '12.5px' }}>

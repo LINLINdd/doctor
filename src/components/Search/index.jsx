@@ -81,6 +81,8 @@ class Search extends Component {
           // console.log(e.target.value); historyArr.unshift()
 
           this.setState({ historyArr: [{ id: nanoid(), text: e.target.value }, ...historyArr] })
+          // console.log(this.props);
+          this.props.history.push('./SearchContent?value='+e.target.value)
         }
       }
 

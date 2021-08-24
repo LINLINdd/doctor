@@ -28,8 +28,8 @@ class Trouble extends Component {
 // 公开问题的病型
 getProblem = async () => {
   const{data:res} = await getProblem()
- 
-    this.setState({ DiseasesName: res })
+  console.log(res);
+    this.setState({ DiseasesName: res.data })
   }
 // 公开问题的病情
   getDiseasesList = async (id=732) => {
