@@ -21,7 +21,7 @@ export function searchkDisease(search_content,
 
 
 export function searchBottle(items_per_page = 20,
-    page_index = 2,
+    page_index = 1,
     keyword = '') {
     return request({
         url: 'app/i/ask/drug/detail/search/list',

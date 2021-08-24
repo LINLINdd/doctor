@@ -40,8 +40,8 @@
   z-index: 9;
 }
 .CheckbBottle .CheckDisease_ul {
-  padding-top: 5.225rem;
   background-color: #fff;
+  height: calc(100vh - 90px);
 }
 .CheckbBottle .CheckDisease_ul ul {
   padding-left: 0;
