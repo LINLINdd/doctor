@@ -1,8 +1,12 @@
 .earnings-list {
   background: #ffffff;
 }
+.earnings-list .am-list {
+  width: 100%;
+}
 .earnings-list .earnings {
   height: 2.5rem;
+  width: 20rem;
   padding: 0.2rem;
 }
 .earnings-list .earnings h1 {
@@ -32,6 +36,14 @@
 }
 .earnings-list .am-list-body::before {
   background-color: #ffffff !important;
+}
+.earnings-list .am-list-footer {
+  padding: 0;
+}
+.earnings-list .am-list-footer .Bigimg_ {
+  padding: 0 !important;
+  height: 9.375rem;
+  overflow: hidden;
 }
 .earnings-list .earnings-title {
   display: flex;

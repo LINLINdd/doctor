@@ -82,6 +82,7 @@ class Search extends Component {
         })
       }</ul>)
     }
+
     return (
 
       <div className='CheckbBottle'>
@@ -92,14 +93,14 @@ class Search extends Component {
           rightContent={[
           ]}
         >查药品</NavBar>
-        {/* 搜索框 */}
         <div className='Box1'>
           <div className="Box2Input">
             <Icon type='search' span="Icon" />
             <input type="text" name="" id="SearchInput" placeholder="搜索检查，手术词条" onKeyUp={this.GetSearch()} />
           </div>
         </div>
-        <div style={{ height: '90px' }}></div>
+        
+        {/* <div style={{ height: '90px' }}></div> */}
         <div className='CheckDisease_ul'>
           {/* <Bottle></Bottle> */}
           <PullToRefresh></PullToRefresh>

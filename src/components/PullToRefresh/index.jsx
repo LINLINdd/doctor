@@ -10,128 +10,6 @@ export default class Earnings extends Component {
         });
         this.state = {
             dataSource,
-            // firstArr: [
-            //     {
-            //         "id": 14893,
-            //         "show_name": " (新雪颗粒)",
-            //         "company_name": "沈阳东昂制药有限公司",
-            //         "yb": 1
-            //     },
-            //     {
-            //         "id": 2613,
-            //         "show_name": "0号 (复方利血平氨苯蝶啶片)",
-            //         "company_name": "华润双鹤药业股份有限公司",
-            //         "yb": 1
-            //     },
-            //     {
-            //         "id": 17455,
-            //         "show_name": "11478 (注射用阿昔洛韦)",
-            //         "company_name": "武汉普生制药有限公司",
-            //         "yb": 1
-            //     },
-            //     {
-            //         "id": 20064,
-            //         "show_name": "14976 (吉林华侨)",
-            //         "company_name": "吉林省华侨药业有限公司",
-            //         "yb": 0
-            //     },
-            //     {
-            //         "id": 20895,
-            //         "show_name": "18种氨基酸注射液 (福建天泉)",
-            //         "company_name": "福建天泉药业股份有限公司",
-            //         "yb": 0
-            //     },
-            //     {
-            //         "id": 2614,
-            //         "show_name": "21金维他 多维元素片(21)",
-            //         "company_name": "杭州民生健康药业有限公司",
-            //         "yb": 0
-            //     },
-            //     {
-            //         "id": 30175,
-            //         "show_name": "21金维他 多维元素片(21)",
-            //         "company_name": "杭州赛诺菲民生健康药业有限公司",
-            //         "yb": 3
-            //     },
-            //     {
-            //         "id": 1803,
-            //         "show_name": "654-2 (消旋山莨菪碱片)",
-            //         "company_name": "杭州民生药业集团有限公司",
-            //         "yb": 0
-            //     },
-            //     {
-            //         "id": 1008,
-            //         "show_name": "654-2针 (盐酸消旋山莨菪碱注射液)",
-            //         "company_name": "杭州民生药业集团有限公司",
-            //         "yb": 0
-            //     },
-            //     {
-            //         "id": 9215,
-            //         "show_name": "707 (长春益寿膏)",
-            //         "company_name": "CFDA药品说明书范本(OTC)",
-            //         "yb": 0
-            //     },
-            //     {
-            //         "id": 55449,
-            //         "show_name": "707 肺气肿片",
-            //         "company_name": "江苏七0七天然制药有限公司",
-            //         "yb": 3
-            //     },
-            //     {
-            //         "id": 13750,
-            //         "show_name": "707 如意金黄散",
-            //         "company_name": "江苏七0七天然制药有限公司",
-            //         "yb": 1
-            //     },
-            //     {
-            //         "id": 19072,
-            //         "show_name": "8808 聚维酮碘溶液",
-            //         "company_name": "上海运佳黄浦制药",
-            //         "yb": 0
-            //     },
-            //     {
-            //         "id": 4007,
-            //         "show_name": "999 (感冒退热颗粒)",
-            //         "company_name": "北京三九药业有限公司",
-            //         "yb": 1
-            //     },
-            //     {
-            //         "id": 31979,
-            //         "show_name": "999 小柴胡颗粒",
-            //         "company_name": "华润三九医药股份有限公司",
-            //         "yb": 1
-            //     },
-            //     {
-            //         "id": 2615,
-            //         "show_name": "999皮炎平 复方醋酸地塞米松乳膏",
-            //         "company_name": "华润三九医药股份有限公司",
-            //         "yb": 0
-            //     },
-            //     {
-            //         "id": 37626,
-            //         "show_name": "999皮炎平 曲安奈德益康唑乳膏",
-            //         "company_name": "华润三九（南昌）药业有限公司",
-            //         "yb": 1
-            //     },
-            //     {
-            //         "id": 1615,
-            //         "show_name": "安本 (氨甲苯酸氯化钠注射液)",
-            //         "company_name": "江苏晨牌药业有限公司",
-            //         "yb": 0
-            //     },
-            //     {
-            //         "id": 791,
-            //         "show_name": "奥邦 (奥扎格雷钠氯化钠注射液)",
-            //         "company_name": "长春豪邦药业有限公司",
-            //         "yb": 0
-            //     },
-            //     {
-            //         "id": 16994,
-            //         "show_name": "安卜 (复方头孢克洛胶囊)",
-            //         "company_name": "哈尔滨誉衡药业股份有限公司",
-            //         "yb": 0
-            //     }
-            // ],
             firstArr: [],
             firstArr1: [],
             refreshing: false, //上拉刷新
@@ -214,6 +92,9 @@ export default class Earnings extends Component {
                 </div>
             )
         }
+        const Bigimg = () => {
+            return (<img style={{ width: '20rem', }} className='bigimg' src='https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F1b2dac68974a58b3c9d24a249eee9c4c5d6615ed930f-XyisBg_fw658&refer=http%3A%2F%2Fhbimg.b0.upaiyun.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1632409525&t=29fa96dbdfedbe6ac9e5a6af1cb541c6' />)
+        }
         return (
             <div className="earnings-list">
                 <ListView
@@ -232,8 +113,8 @@ export default class Earnings extends Component {
                         </div>
                     )
                     }
-                    renderFooter={() => (<div style={{ padding: 30, textAlign: 'center' }}>
-                        {!this.state.isLoading ? '加载中....' : '我是有底线的'}
+                    renderFooter={() => (<div className='Bigimg_' style={{ padding: 30, textAlign: 'center' }}>
+                        {!this.state.isLoading ? < Bigimg /> : '我是有底线的'}
                     </div>)}
                     style={{ width: '100vw', height: '100vh' }}
                     pullToRefresh={<PullToRefresh // import { PullToRefresh } from 'antd-mobile'

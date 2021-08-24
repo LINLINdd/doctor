@@ -1,0 +1,91 @@
+.CheckbBottle {
+  background-color: #fff;
+}
+.CheckbBottle .Box1 {
+  width: 100%;
+  position: fixed;
+  top: 2.8125rem;
+  background-color: #fff;
+  z-index: 9;
+}
+.CheckbBottle .Box2Input {
+  width: 90%;
+  height: 2.75rem;
+  border: 0.5px solid #7e4242;
+  border-radius: 25px;
+  background-color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 auto;
+  box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.05);
+}
+.CheckbBottle .Box2Input .am-icon-md {
+  margin: 0 0.9125rem;
+}
+.CheckbBottle #SearchInput {
+  border: none;
+  height: 1.25rem;
+  font-size: 0.9375rem;
+  color: #333;
+  font-weight: 800;
+  width: 78%;
+  background-color: #fff;
+}
+.CheckbBottle .am-navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9;
+}
+.CheckbBottle .CheckDisease_ul {
+  background-color: #fff;
+  height: calc(100vh - 90px);
+}
+.CheckbBottle .CheckDisease_ul ul {
+  padding-left: 0;
+}
+.CheckbBottle .CheckDisease_ul li {
+  list-style: none;
+  font-size: 1rem;
+  height: auto;
+  padding: 0.85rem 1rem;
+  position: relative;
+}
+.CheckbBottle .CheckDisease_ul li::after {
+  position: absolute;
+  right: 16px;
+  bottom: 0;
+  left: 16px;
+  box-sizing: border-box;
+  height: 1px;
+  background-color: #ebebeb;
+  content: "";
+  transform: scaleY(0.5);
+}
+.CheckbBottle .CheckDisease_ul li span {
+  display: block;
+  padding: 0.3125rem 0;
+}
+.CheckbBottle .CheckDisease_ul li .two {
+  font-size: 0.75rem;
+  color: #ccc;
+}
+.CheckbBottle .black {
+  position: fixed;
+  right: 1.875rem;
+  bottom: 3.125rem;
+  border-radius: 1.25rem;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.CheckbBottle .black .icon {
+  height: 2.5rem !important;
+  width: 2.5rem !important;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
