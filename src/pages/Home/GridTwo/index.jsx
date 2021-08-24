@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './index.css'
 import { Grid } from 'antd-mobile';
 import { getDiseasesName } from '../../../network/home';
+import { withRouter } from 'react-router-dom';
 
 
 class GridTwo extends Component {
@@ -31,7 +32,8 @@ class GridTwo extends Component {
 
 
   GoHealth=()=>{
-    //  this.props.history.push('/')
+     this.props.history.push('/CheckDisease')
+   
   }
   
 
@@ -49,4 +51,4 @@ class GridTwo extends Component {
   }
 }
 
-export default GridTwo;
+export default withRouter(GridTwo);

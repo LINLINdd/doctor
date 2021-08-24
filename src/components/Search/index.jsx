@@ -144,7 +144,7 @@ class Search extends Component {
         {/* 搜索框 */}
         <div id="Box2Input">
           <Icon type='search' span="Icon" />
-          <input type="text" name="" id="SearchInput" placeholder="搜索疾病/症状/医生/药品/医院" onKeyUp={this.SearchD()} ref={SS => this.SearchREF = SS} />
+          <input type="text"  id="SearchInput" placeholder="搜索疾病/症状/医生/药品/医院" onKeyUp={this.SearchD()} ref={SS => this.SearchREF = SS} />
           <Icon type='cross-circle' span="Icon" className="slip" style={{ display: flag ? 'none' : 'block' }} onClick={this.slip} />
         </div>
 

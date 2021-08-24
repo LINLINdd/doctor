@@ -9,6 +9,12 @@ import Category from '../src/pages/Health/category'
 import personal from '../src/pages/personal'
 import set from '../src/pages/personal/set'
 import Search1 from './components/Search';
+import AskDoctor from '../src/pages/AskDoctor';
+import CheckDisease from '../src/pages/CheckDisease';
+import SearchContent from './pages/SearchContent';
+
+
+
 // 带缓存功能的路由组件
 import CacheRoute, { CacheSwitch } from 'react-router-cache-route'
 
@@ -34,6 +40,10 @@ function App() {
         <CacheRoute path="/personal" component={personal}></CacheRoute>
         <CacheRoute path="/Category" component={Category}></CacheRoute>
         <CacheRoute path="/Search" component={Search1}></CacheRoute>
+        <CacheRoute path="/AskDoctor" component={AskDoctor}></CacheRoute>
+        <CacheRoute path="/CheckDisease" component={CheckDisease}></CacheRoute>
+        <CacheRoute path="/SearchContent" component={SearchContent}></CacheRoute>
+
         <Redirect to='/TabBar'></Redirect>
       </CacheSwitch>
 

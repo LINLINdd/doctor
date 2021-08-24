@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Grid } from 'antd-mobile';
 import './index.css'
 import {getGridone} from '../../../network/home'
+import { withRouter } from 'react-router-dom';
 
 
 
@@ -32,7 +33,11 @@ class GridOne extends Component {
      const{data:res}= await getGridone();
      this.setState({arr:res})
    }
+   
+   GoAskDoctor=()=>{
+    this.props.history.push('/Askdoctor')
 
+   }
 
       render() {
     const data1 = this.state.arr.map((item, i) => ({
@@ -44,7 +49,7 @@ class GridOne extends Component {
       return (
 
 
-      <div id="GridOneCss">
+      <div id="GridOneCss" onClick={this.GoAskDoctor}>
         <Grid data={data1}
           hasLine={false}
           columnNum={3}
@@ -63,4 +68,4 @@ class GridOne extends Component {
   }
 }
 
-      export default GridOne;
+      export default withRouter(GridOne);
