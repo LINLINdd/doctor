@@ -16,7 +16,7 @@ class SearchTabs extends Component {
 
   }
   componentDidMount() {
-    // console.log(this.props.list);
+    console.log(this.props.list);
   }
   
   render() {
@@ -36,7 +36,7 @@ class SearchTabs extends Component {
                 <div className="panel">
                   <div className="panel-title">科普文章</div>
 
-                  {/* {
+                  {
                       this.props.list.map((item,index)=>{
                         return  <div className="search-relative-article">
                         <div className="article">
@@ -56,7 +56,7 @@ class SearchTabs extends Component {
                       </div>
                       })
                    
-                  } */}
+                  }
 
 
 
