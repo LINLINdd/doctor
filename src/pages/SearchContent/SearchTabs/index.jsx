@@ -31,7 +31,7 @@ class SearchTabs extends Component {
           onTabClick={(tab, index) => { console.log('onTabClick', index, tab); }}
         >
           {
-            tabs.map((item, index) => {
+             tabs.map((item, index) => {
               return <div key={item.title} style={{ backgroundColor: '#fff' }}>
                 <div className="panel">
                   <div className="panel-title">科普文章</div>
