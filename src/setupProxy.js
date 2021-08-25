@@ -16,11 +16,13 @@ module.exports = function (app) {
             changeOrigin: true,
             pathRewrite: { '^/shuju': '' }
         }),
+        
         // http://120.27.146.2:1004/getGridTwo
         createProxyMiddleware('/pbm', {
             target: 'http://120.27.146.2:1004/',
             changeOrigin: true,
             pathRewrite: { '^/pbm': '' }
         }),
+       
     )
 }

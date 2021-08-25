@@ -39,6 +39,7 @@ class Search extends Component {
   componentDidMount() {
     console.log(this.state.flag);
     this.gethistoryData()
+    this.slip()
   }
 
   gethistoryData() {
@@ -63,6 +64,7 @@ class Search extends Component {
 
   //    搜索框   防抖处理
   SearchD() {
+
     let finish = null
 
     const { historyArr } = this.state
@@ -82,7 +84,7 @@ class Search extends Component {
 
           this.setState({ historyArr: [{ id: nanoid(), text: e.target.value }, ...historyArr] })
           // console.log(this.props);
-          this.props.history.push('./SearchContent?value='+e.target.value)
+          this.props.history.push('./SearchContent',e.target.value)
         }
       }
 

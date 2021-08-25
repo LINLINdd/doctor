@@ -20,3 +20,5 @@ export function getDiseasesName(){
     url:'getDiseasesName',
   })
 }
+
+

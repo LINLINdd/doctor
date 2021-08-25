@@ -32,20 +32,20 @@ function App() {
 
       {/* 使用 CacheRoute 替换 Route*/}
       {/* 使用 CacheSwitch 替换 Switch（因为 Switch 组件只保留第一个匹配状态的路由，卸载掉其他路由） */}
-      <CacheSwitch>
-        <CacheRoute path="/TabBar" component={TabBar}></CacheRoute>
-        <CacheRoute path="/register" component={Register}></CacheRoute>
-        <CacheRoute path="/login" component={login}></CacheRoute>
-        <CacheRoute path="/set" component={set}></CacheRoute>
-        <CacheRoute path="/personal" component={personal}></CacheRoute>
-        <CacheRoute path="/Category" component={Category}></CacheRoute>
-        <CacheRoute path="/Search" component={Search1}></CacheRoute>
-        <CacheRoute path="/AskDoctor" component={AskDoctor}></CacheRoute>
-        <CacheRoute path="/CheckDisease" component={CheckDisease}></CacheRoute>
-        <CacheRoute path="/SearchContent" component={SearchContent}></CacheRoute>
+      <Switch>
+        <Route path="/TabBar" component={TabBar}></Route>
+        <Route path="/register" component={Register}></Route>
+        <Route path="/login" component={login}></Route>
+        <Route path="/set" component={set}></Route>
+        <Route path="/personal" component={personal}></Route>
+        <Route path="/Category" component={Category}></Route>
+        <Route path="/Search" component={Search1}></Route>
+        <Route path="/AskDoctor" component={AskDoctor}></Route>
+        <Route path="/CheckDisease" component={CheckDisease}></Route>
+        <Route path="/SearchContent" component={SearchContent}></Route>
 
         <Redirect to='/TabBar'></Redirect>
-      </CacheSwitch>
+      </Switch>
 
       
       {/* <Route>

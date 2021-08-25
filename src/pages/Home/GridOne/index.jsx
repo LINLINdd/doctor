@@ -35,8 +35,11 @@ class GridOne extends Component {
      this.setState({arr:res.data})
    }
    
-   GoAskDoctor=(e)=>{
-    this.props.history.push(e.url)
+   GoAskDoctor=(e,index)=>{
+     if(index==0){
+       this.props.history.push('/AskDoctor')
+     }
+    
 
    }
 

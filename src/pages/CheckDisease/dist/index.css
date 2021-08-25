@@ -58,8 +58,11 @@
   font-weight: 300;
   font-size: 14px;
   line-height: 1.14;
-  display: flex;
-  justify-content: space-between;
+}
+.conter .top .right .right-item .Bname {
+  font-size: 1rem;
+  font-weight: 300;
+  padding: 16px 28px 16px 16px;
 }
 .conter .RollConter_nav {
   position: fixed;
