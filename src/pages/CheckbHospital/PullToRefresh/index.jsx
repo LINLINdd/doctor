@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './index.css'
 import { ListView, PullToRefresh } from 'antd-mobile';
-import { searchBottle } from '../../network/CheckDisease'
+import { searchBottle } from '../../../network/CheckDisease'
 export default class Earnings extends Component {
     constructor(props) {
         super(props)
@@ -77,6 +77,9 @@ export default class Earnings extends Component {
                 })
         }, 500)
     }
+    open() {
+        this.props.open()
+    }
     render() {
         const row = (rowData, sectionID, rowID) => {
             // 这里rowData,就是上面方法cloneWithRows的数组遍历的单条数据了，直接用就行
@@ -105,7 +108,21 @@ export default class Earnings extends Component {
                     onEndReached={this.onEndReached}
                     onEndReachedThreshold={10}
                     useBodyScroll={false}
-
+                    renderHeader={() =>
+                    (
+                        <div className='positioning' onClick={() => {
+                            this.open()
+                        }}>
+                            <svg className="icon" aria-hidden="true" style={{
+                                width: '22px',
+                                height: '22px'
+                            }}>
+                                <use xlinkHref='#icon-xingzhuanggongnengtubiao-'></use>
+                            </svg>
+                            <span>全国</span>
+                        </div>
+                    )
+                    }
                     renderFooter={() => (<div className='Bigimg_' style={{ padding: 30, textAlign: 'center' }}>
                         {!this.state.isLoading ? < Bigimg /> : '我是有底线的'}
                     </div>)}
@@ -115,6 +132,7 @@ export default class Earnings extends Component {
                         onRefresh={this.onRefresh}
                     />}
                 />
+
             </div>
         )
     }

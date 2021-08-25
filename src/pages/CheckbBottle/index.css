@@ -1,17 +1,15 @@
 .CheckbBottle {
   background-color: #fff;
-  height: 100vh;
 }
 .CheckbBottle .Box1 {
   width: 100%;
-  position: fixed;
-  top: 2.8125rem;
   background-color: #fff;
   z-index: 9;
+  height: 2.8125rem;
 }
 .CheckbBottle .Box2Input {
   width: 90%;
-  height: 2.75rem;
+  height: 2.55rem;
   border: 0.5px solid #7e4242;
   border-radius: 25px;
   background-color: #fff;
@@ -34,8 +32,6 @@
   background-color: #fff;
 }
 .CheckbBottle .am-navbar {
-  position: fixed;
-  top: 0;
   width: 100%;
   z-index: 9;
 }

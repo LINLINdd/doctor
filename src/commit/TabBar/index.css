@@ -1,6 +1,7 @@
 #tab-bar.demo {
     display: flex;
     flex-direction: column;
+
 }
 
 #tab-bar .demoName {
@@ -16,6 +17,7 @@
     height: 100%;
 
 }
+
 
 .tab_bar_bootom {
     background-color: white;

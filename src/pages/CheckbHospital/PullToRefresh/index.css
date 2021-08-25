@@ -32,6 +32,17 @@
 }
 .earnings-list .am-list-header {
   background: #ffffff;
+  padding: 0;
+}
+.earnings-list .am-list-header .positioning {
+  height: 2rem;
+  padding-left: 1.25rem;
+  line-height: 2rem;
+  width: 3.125rem;
+}
+.earnings-list .am-list-header .positioning .icon {
+  vertical-align: middle;
+  margin-bottom: 0.325rem;
 }
 .earnings-list .am-list-body::after {
   background-color: #ffffff !important;

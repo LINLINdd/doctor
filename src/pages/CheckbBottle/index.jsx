@@ -72,17 +72,6 @@ class Search extends Component {
 
   render() {
     const { BottleData } = this.state
-    let Bottle = () => {
-      return (<ul>{
-        BottleData.map((item, index) => {
-          return (<li key={item.id} id={item.tag_id}>
-            <span>{item.show_name}</span>
-            <span className='two'>{item.company_name}</span>
-          </li>)
-        })
-      }</ul>)
-    }
-
     return (
 
       <div className='CheckbBottle'>
@@ -99,13 +88,12 @@ class Search extends Component {
             <input type="text" name="" id="SearchInput" placeholder="搜索检查，手术词条" onKeyUp={this.GetSearch()} />
           </div>
         </div>
-        
+
         {/* <div style={{ height: '90px' }}></div> */}
         <div className='CheckDisease_ul'>
-          {/* <Bottle></Bottle> */}
           <PullToRefresh></PullToRefresh>
         </div>
-        <BlackTop />
+        {/* <BlackTop /> */}
       </div>
     );
   }

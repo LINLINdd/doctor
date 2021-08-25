@@ -32,5 +32,10 @@ export function searchBottle(items_per_page = 20,
         }
     })
 }
+export function getbHospitalt() {
+    return request({
+        url: 'app/i/recommend/hospital/combination/page?page_index=1',
+    })
+}
 
 

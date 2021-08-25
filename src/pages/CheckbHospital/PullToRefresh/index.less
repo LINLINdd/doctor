@@ -3,7 +3,7 @@
     background: #ffffff;
     height: 100%;
     touch-action: none;
-
+    
     .am-list {
         width: 100%;
         height: calc(100vh - 90px)
@@ -47,6 +47,18 @@
 
     .am-list-header {
         background: #ffffff;
+        padding: 0;
+
+        .positioning {
+            height: 2rem;
+            padding-left: 1.25rem;
+            line-height: 2rem;
+            width: 3.125rem;
+            .icon {
+                vertical-align: middle;
+                margin-bottom: .325rem;
+            }
+        }
     }
 
     .am-list-body::after {
@@ -86,4 +98,5 @@
             font-size: .24rem;
         }
     }
+  
 }
