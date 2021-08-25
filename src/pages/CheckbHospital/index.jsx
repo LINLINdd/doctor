@@ -12,6 +12,7 @@ class Search extends Component {
     left: [],
     right1: [],
     top: [],
+    firstArr: [],
   }
   componentDidMount() {
     this.getbHospitalt()
@@ -20,9 +21,9 @@ class Search extends Component {
   //请求
   async getbHospitalt() {
     const { data: res } = await getbHospitalt();
-    console.log(res.data.items);
+    // console.log(res.data.items);
     this.setState({
-      BottleData: this.resolveDiseaseData(res.data.items)
+      firstArr: res.data.items
     })
   }
   async getPositioning() {
@@ -34,26 +35,26 @@ class Search extends Component {
     })
   }
   //存储本地
-  resolveDiseaseData(data) {
-    let BottleData = []
-    data.forEach(item => {
-      BottleData = [...BottleData, item]
-    })
-    window.localStorage.setItem('BottleData', JSON.stringify(BottleData))
-    return BottleData
-  }
+  // resolveDiseaseData(data) {
+  //   let BottleData = []
+  //   data.forEach(item => {
+  //     BottleData = [...BottleData, item]
+  //   })
+  //   window.localStorage.setItem('BottleData', JSON.stringify(BottleData))
+  //   return BottleData
+  // }
   //获取本地
-  getDiseaseData() {
-    let BottleData = JSON.parse(window.localStorage.getItem('BottleData'))
-    if (BottleData) {
-      this.setState({
-        BottleData
-      })
-    } else {
-      this.getCheckDisease()
+  // getDiseaseData() {
+  //   let BottleData = JSON.parse(window.localStorage.getItem('BottleData'))
+  //   if (BottleData) {
+  //     this.setState({
+  //       BottleData
+  //     })
+  //   } else {
+  //     this.getCheckDisease()
 
-    }
-  }
+  //   }
+  // }
   //    搜索框   防抖处理
   GetSearch() {
     let finish = null
@@ -106,7 +107,7 @@ class Search extends Component {
     console.log(1111);
   }
   render() {
-    const { BottleData, openMeng, top, right1 } = this.state
+    const { firstArr, openMeng, top, right1 } = this.state
     let Left_1 = () => {
       return (<Fragment>
         {top.map((item, index) => {
@@ -149,7 +150,7 @@ class Search extends Component {
         {/* <div style={{ height: '90px' }}></div> */}
         <div className='CheckDisease_ul'>
 
-          <PullToRefresh open={this.open}></PullToRefresh>
+          <PullToRefresh open={this.open} firstArr={firstArr}></PullToRefresh>
         </div>
         {/* <BlackTop /> */}
         <div className='meng' style={{ display: openMeng ? 'block' : 'none' }} onClick={this.props.click}>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './index.css'
 import { ListView, PullToRefresh } from 'antd-mobile';
-import { searchBottle } from '../../../network/CheckDisease'
+import { searchBottle, getbHospitalt } from '../../../network/CheckDisease'
 export default class Earnings extends Component {
     constructor(props) {
         super(props)
@@ -18,7 +18,16 @@ export default class Earnings extends Component {
         }
     }
     componentDidMount() {
-        this.searchBottle()
+        // this.searchBottle()
+        this.getbHospitalt()
+    }
+    async getbHospitalt() {
+        const { data: res } = await getbHospitalt();
+        // console.log(res.data.items);
+        this.setState({
+            firstArr: res.data.items,
+            dataSource: this.state.dataSource.cloneWithRows({ ...res.data.items })
+        })
     }
     async searchBottle() {
         const { data: res } = await searchBottle()
@@ -89,8 +98,9 @@ export default class Earnings extends Component {
             return (
                 <div className="earnings">
                     <div className="content">
-                        <span className="date box">{rowData.show_name}</span>
-                        <span className="money box">{rowData.company_name}</span>
+                        <span className="date box">{rowData.hospital_name}</span>
+                        <span className="money box">{rowData.address}</span>
+                        <span className="money box">{rowData.hospital_grade}</span>
                     </div>
                 </div>
             )
