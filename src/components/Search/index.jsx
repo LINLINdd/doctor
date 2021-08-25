@@ -69,20 +69,22 @@ class Search extends Component {
 
     const { historyArr } = this.state
     return (e) => {
-      // console.log(Boolean(finish));
+      console.log(Boolean(finish));
       this.setState({ flag: false })
-      if (finish) { clearTimeout(finish) }
-      finish = setTimeout(() => {
-        this.getSearchD(e.target.value)
-        finish = null
-      }, 400)
+      if( e.keyCode != 13){
+        if (finish) { clearTimeout(finish) }
+        finish = setTimeout(() => {
+          this.getSearchD(e.target.value)
+          finish = null
+        }, 400)
+      }
       if (e.keyCode == 13) {
         if (e.target.value.trim() == "") {
           alert('搜索内容不能为空')
         } else {
           // console.log(e.target.value); historyArr.unshift()
 
-          this.setState({ historyArr: [{ id: nanoid(), text: e.target.value }, ...historyArr] })
+          this.setState({ historyArr: [{ id: nanoid(), text: e.target.value }, ...historyArr] },)
           // console.log(this.props);
           this.props.history.push('./SearchContent',e.target.value)
         }
@@ -99,9 +101,13 @@ class Search extends Component {
 
   // 请求搜索的数据
   getSearchD = async (value) => {
-    const { data: res } = await getSearchD(value);
-    // console.log(res);
-    this.setState({ disease: res.data.items })
+    try{
+        let  { data: res } = await getSearchD(value);
+        this.setState({ disease: res.data.items })
+    }catch(err){
+      console.log(err)
+    }
+    
 
   }
 
@@ -129,7 +135,7 @@ class Search extends Component {
   }
 
   render() {
-    const { disease, iconame, flag, hot, historyArr ,hide} = this.state
+    let { disease, iconame, flag, hot, historyArr ,hide} = this.state
     return (
 
       <div className='BoxSearch' id="SearchCss">

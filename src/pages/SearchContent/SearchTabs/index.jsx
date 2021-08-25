@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Tabs, WhiteSpace, Badge } from 'antd-mobile';
-import './dist/index.css'
+import './index.css'
 class SearchTabs extends Component {
   constructor(props) {
     super(props)
@@ -16,16 +16,16 @@ class SearchTabs extends Component {
 
   }
   componentDidMount() {
-    console.log(this.props.list);
+    console.log(this);
   }
-  
+
   render() {
 
     const { tabs } = this.state
     return (
       <div id="SearchTabs">
         <Tabs tabs={tabs}
-          initialPage={1}
+          initialPage={0}
           className={"tabls"}
           onChange={(tab, index) => { console.log('onChange', index, tab); }}
           onTabClick={(tab, index) => { console.log('onTabClick', index, tab); }}
@@ -35,29 +35,37 @@ class SearchTabs extends Component {
               return <div key={item.title} style={{ backgroundColor: '#fff' }}>
                 <div className="panel">
                   <div className="panel-title">科普文章</div>
-
                   {
-                      this.props.list.map((item,index)=>{
-                        return  <div className="search-relative-article">
+                    this.props.list.map((item, index) => {
+                      return <div className="search-relative-article" key={item.id}>
                         <div className="article">
-  
+
                           <div className="article-left">
                             <div>
-                              <div className="high-light">bbb<em>神经病 </em></div>
-                              <div className="high-light2">bbbbbbbbbbBBBBBBBBbbbb</div>
+                              <div className="high-light">{item.article_title_highlight}</div>
+                              <div className="high-light2">{item.search_content_highlight}</div>
                             </div>
                           </div>
-  
+
                           <div className="article-right">
-                            <img src="https://img1.dxycdn.com/2017/1107/624/3242747211676161403-15.jpeg" alt="" className="article-right-img" />
+                            <img src={item.cover_small} alt="" className="article-right-img" />
                           </div>
                         </div>
-  
+
                       </div>
-                      })
+                    })
+
+                  }
+                  <div className="panel-title">公开问题</div>
+                  {
+                    this.props.list2.map((item,index)=>{
+                      return  <div className="AskList" key={item.id}>
+                      <div className="AskList_head"> <i><img src="https://img1.dxycdn.com/2020/0605/837/3417351013269782963-22.png" alt="" /></i>{item.anonymous_name}</div>
+                      <div className="AskList_body">{item.question_highlight}</div>
+                    </div>
+                    })
                    
                   }
-
 
 
                 </div>
