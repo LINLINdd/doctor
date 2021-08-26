@@ -27,14 +27,14 @@ class Trouble extends Component {
 // http://120.27.146.2:1004/getGridTwo
 // 公开问题的病型
 getProblem = async () => {
-  const{data:res} = await getProblem()
+  let {data:res} = await getProblem()
   console.log(res);
     this.setState({ DiseasesName: res.data })
   }
 // 公开问题的病情
   getDiseasesList = async (id=732) => {
     
-    const { data: res } = await getDiseasesList(0, id, 1, 3)
+    let { data: res } = await getDiseasesList(0, id, 1, 3)
 
     this.setState({ DiseasesList: res.data.items })
   }

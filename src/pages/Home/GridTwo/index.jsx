@@ -38,8 +38,8 @@ class GridTwo extends Component {
   
 
   render() {
-    const { arr } = this.state
-    const data = arr.map((item, i) => ({
+    let  { arr } = this.state
+    let data = arr.map((item, i) => ({
       icon: item.icon,
       text: item.text,
     }));

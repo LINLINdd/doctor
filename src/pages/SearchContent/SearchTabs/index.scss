@@ -129,4 +129,65 @@
 .am-tabs-default-bar-tab-active {
   color: #58ff39; 
 }
+// 药品
+.drug-item {
+  display: block;
+}
+.common-cell-large {
+  height: auto;
+  padding: 20px 16px;
+}
+.common-cell-text {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  width: 100%;
+}
+.common-cell-text-title {
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 19px;
+  display: block;
+  color: #333;
+  display: -webkit-box;
+  word-break: break-all;
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+  line-height: 20px;
+}
+.common-cell-text .ellipsis-1, .common-cell-text .ellipsis-2 {
+  display: -webkit-box;
+  word-break: break-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+}
+
+.common-cell-text .ellipsis-2 {
+  -webkit-line-clamp: 2;
+}
+.common-cell-text-sub {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+  margin-top: 10px;
+  color: #999;
+  letter-spacing: normal;
+  font-weight: 300;
+}
+.common-cell:after {
+  position: absolute;
+  right: 16px;
+  bottom: 0;
+  left: 16px;
+  box-sizing: border-box;
+  height: 1px;
+  background-color: #ebebeb;
+  content: "";
+  transform: scaleY(.5);
+}
 }

@@ -28,7 +28,7 @@ class Search extends Component {
         { id: 'sadad', text: '没有什么病' }
       ],
       flag: true,
-      hide:true,
+      hide: true,
     }
 
 
@@ -55,11 +55,11 @@ class Search extends Component {
     // 
   }
   // 这个钩子函数在数据发生改变时就会触发 第一个参数是上一次的props，第二个参数是上一次的state
-  componentDidUpdate(preProps, preState) {
-    if (this.state.historyArr.length !== preState.historyArr.length) {
-      localStorage.setItem('data', JSON.stringify(this.state.historyArr))
-    }
-  }
+  // componentDidUpdate(preProps, preState) {
+  //   if (this.state.historyArr.length !== preState.historyArr.length) {
+  //     localStorage.setItem('data', JSON.stringify(this.state.historyArr))
+  //   }
+  // }
 
 
   //    搜索框   防抖处理
@@ -71,7 +71,7 @@ class Search extends Component {
     return (e) => {
       console.log(Boolean(finish));
       this.setState({ flag: false })
-      if( e.keyCode != 13){
+      if (e.keyCode != 13) {
         if (finish) { clearTimeout(finish) }
         finish = setTimeout(() => {
           this.getSearchD(e.target.value)
@@ -82,32 +82,39 @@ class Search extends Component {
         if (e.target.value.trim() == "") {
           alert('搜索内容不能为空')
         } else {
-          // console.log(e.target.value); historyArr.unshift()
+          new Promise(
+            (res, rej) => {
+              this.props.history.push('./SearchContent', e.target.value)
 
-          this.setState({ historyArr: [{ id: nanoid(), text: e.target.value }, ...historyArr] },)
-          // console.log(this.props);
-          this.props.history.push('./SearchContent',e.target.value)
+              res(
+                this.setState({ historyArr: [{ id: nanoid(), text: e.target.value }, ...historyArr] },),
+                localStorage.setItem('data', JSON.stringify(this.state.historyArr))
+              )
+              //     this.setState({ historyArr: [{ id: nanoid(), text: e.target.value }, ...historyArr] },)
+              // localStorage.setItem('data', JSON.stringify(this.state.historyArr))
+
+              // this.props.history.push('./SearchContent',e.target.value)
+
+
+            })
+
         }
       }
 
       if (e.target.value == '') {
         this.setState({ flag: true })
       }
-
-
     }
-
   }
-
   // 请求搜索的数据
   getSearchD = async (value) => {
-    try{
-        let  { data: res } = await getSearchD(value);
-        this.setState({ disease: res.data.items })
-    }catch(err){
+    try {
+      let { data: res } = await getSearchD(value);
+      this.setState({ disease: res.data.items })
+    } catch (err) {
       console.log(err)
     }
-    
+
 
   }
 
@@ -116,13 +123,13 @@ class Search extends Component {
     this.setState({ hide: false })
     //  localStorage.clear();
   }
-  BoxNO=()=>{
-   
+  BoxNO = () => {
+
     this.setState({ hide: true })
   }
-  BoxOK=()=>{
+  BoxOK = () => {
     localStorage.clear();
-    let sky=[]
+    let sky = []
     this.setState({ historyArr: sky })
     this.setState({ hide: true })
   }
@@ -135,7 +142,7 @@ class Search extends Component {
   }
 
   render() {
-    let { disease, iconame, flag, hot, historyArr ,hide} = this.state
+    let { disease, iconame, flag, hot, historyArr, hide } = this.state
     return (
 
       <div className='BoxSearch' id="SearchCss">
@@ -154,7 +161,7 @@ class Search extends Component {
         {/* 搜索框 */}
         <div id="Box2Input">
           <Icon type='search' span="Icon" />
-          <input type="text"  id="SearchInput" placeholder="搜索疾病/症状/医生/药品/医院" onKeyUp={this.SearchD()} ref={SS => this.SearchREF = SS} />
+          <input type="text" id="SearchInput" placeholder="搜索疾病/症状/医生/药品/医院" onKeyUp={this.SearchD()} ref={SS => this.SearchREF = SS} />
           <Icon type='cross-circle' span="Icon" className="slip" style={{ display: flag ? 'none' : 'block' }} onClick={this.slip} />
         </div>
 

@@ -18,12 +18,14 @@ class CheckDisease extends Component {
 
   componentDidMount() {
     this.getdocter()
+    console.log(this.state.diseases);
   }
   getdocter = async () => {
     const { data: res } = await getdocter();
     console.log(res.data[0].diseases);
     this.setState({sections:res.data[0].sections})
     this.setState({diseases:res.data[0].diseases})
+   
   }
 
   // 搜索
@@ -35,7 +37,9 @@ class CheckDisease extends Component {
     this.setState({ flagColor: index })
     
   }
-
+  ClickD=(NameD)=>{
+    this.props.history.push('./SearchContent', NameD)
+  }
 
   render() {
     const { flag, sections, flagColor,diseases } = this.state
@@ -99,7 +103,7 @@ class CheckDisease extends Component {
                   <div>{item.index_name}</div>
                  {
                    item.tag_list.map((item2,index2)=>{
-                     return <div key={item2.tag_id} className="Bname">{item2.tag_name}</div>
+                     return <div key={item2.tag_id} className="Bname" onClick={()=>{this.ClickD(item2.tag_name)}}>{item2.tag_name}</div>
                    })
                  }
               </div>

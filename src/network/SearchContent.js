@@ -41,3 +41,15 @@ export function getdocter(){
     })
   }
   
+// https://dxy.com/app/i/ask/drug/detail/search?keyword=A&page_index=1&items_per_page=20
+export function getMedicine(keyword, page_index, items_per_pagee) {
+    return request({
+      url: 'app/i/ask/drug/detail/search',
+      params: {
+        keyword: keyword,
+        page_index: page_index,
+        items_per_pagee: items_per_pagee
+      }
+    });
+  } 
+  

@@ -12,6 +12,7 @@ class SearchContent extends Component {
       DiseaseValue: '',
       DiseaseDetail:[],
       DiseaseDetail2:[],
+    
     }
 
   }
@@ -19,15 +20,17 @@ class SearchContent extends Component {
   componentDidMount() {
     let DValue = this.props.location.state
     this.setState({ DiseaseValue: DValue })
-    console.log(DValue);
     this.getSearchContent(DValue)
-    // console.log(DiseaseDetail);
-   
   }
   getSearchContent = async (Q) => {
     let { data: res } = await getSearchContent(Q)
-    console.log(res.data.items[1].ask_questions);
+    // console.log(res.data.items[1].ask_questions);
     this.setState({DiseaseDetail:res.data.items[0].articles,DiseaseDetail2:res.data.items[1].ask_questions})
+    if(this.state.DiseaseDetail==undefined){
+      this.props.history.push('./home')
+    }
+    console.log(this.state.DiseaseDetail);
+    console.log(this.state.DiseaseDetail2);
   }
 
   SearchD() {
@@ -54,7 +57,10 @@ class SearchContent extends Component {
             
           </div>
         </div>
-        <SearchTabs list={this.state.DiseaseDetail} list2={this.state.DiseaseDetail2}></SearchTabs>
+        <SearchTabs list={this.state.DiseaseDetail} 
+                    list2={this.state.DiseaseDetail2}
+                    DiseaseValue={this.state.DiseaseValue}
+                     ></SearchTabs>
       </div>
 
     );
