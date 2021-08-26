@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './index.css'
 import { ListView, PullToRefresh } from 'antd-mobile';
-import { searchBottle, getbHospitalt } from '../../../network/CheckDisease'
+import { searchBottle, getbHospitalt, renovateBhospitalt, CheckHospital } from '../../../network/CheckDisease'
+import store from '../../../redux/store'
 export default class Earnings extends Component {
     constructor(props) {
         super(props)
@@ -14,36 +15,69 @@ export default class Earnings extends Component {
             firstArr1: [],
             refreshing: false, //上拉刷新
             isLoading: true, //数据是否加载完毕
-            num: 2
+            num: 2,
+            Stopnum: 999,
+            AreaCode: ''
         }
     }
     componentDidMount() {
         // this.searchBottle()
         this.getbHospitalt()
+        store.subscribe(() => {
+            console.log(store.getState());
+            console.log('改变地区');
+            this.getbHospitalt(1, 10, store.getState().msg)
+            // this.CheckHospital(store.getState().CheckHospital)
+        })
+        // store.subscribe(() => {
+        //     console.log(store.getState().place);
+        // })
     }
-    async getbHospitalt() {
-        const { data: res } = await getbHospitalt();
+    //搜索
+    async CheckHospital(value) {
+        console.log('搜索框');
+        const { data: res } = await CheckHospital(value)
+        this.setState({
+            firstArr: res.data.items,
+            dataSource: this.state.dataSource.cloneWithRows({ ...res.data.items }),
+            Stopnum: 2
+        })
+    }
+
+    async getbHospitalt(page_index,
+        items_per_page,
+        postcode,) {
+        const { data: res } = await getbHospitalt(page_index,
+            items_per_page,
+            postcode);
         // console.log(res.data.items);
+        window.localStorage.setItem('Bhospital', JSON.stringify(res.data.items))
         this.setState({
             firstArr: res.data.items,
             dataSource: this.state.dataSource.cloneWithRows({ ...res.data.items })
         })
     }
-    async searchBottle() {
-        const { data: res } = await searchBottle()
-        // console.log(res.data.items);
+    async renovateBhospitalt(page_index,
+        items_per_page,
+        postcode,) {
+        console.log('刷一下');
+        const { data: res } = await getbHospitalt(page_index,
+            items_per_page,
+            postcode)
+        if (res.data.current_item_count < 10) {
+            this.setState({
+                Stopnum: this.state.num
+            })
+        }
         this.setState({
-            firstArr: res.data.items,
-            dataSource: this.state.dataSource.cloneWithRows({ ...res.data.items })
+            firstArr1: [...res.data.items]
         })
     }
     async getsearchBottle(value) {
         const { data: res } = await searchBottle(20, value)
-
         this.setState({
             firstArr1: [...res.data.items]
         })
-        console.log(this.state.firstArr1);
     }
 
     //下拉刷新
@@ -58,13 +92,13 @@ export default class Earnings extends Component {
     }
     // 滑动到底部时加载更多
     onEndReached = (event) => {
-        this.getsearchBottle(this.state.num)
+        this.renovateBhospitalt(this.state.num, 10, this.state.AreaCode)
         // 显示加载loading....
         this.setState({
             isLoading: false
         })
         // 当this.state.num 》 1时，规定为数据加载完毕
-        if (this.state.num > 10) {
+        if (this.state.num === this.state.Stopnum) {
             console.log('请求？');
             this.setState({
                 isLoading: true
@@ -100,7 +134,7 @@ export default class Earnings extends Component {
                     <div className="content">
                         <span className="date box">{rowData.hospital_name}</span>
                         <span className="money box">{rowData.address}</span>
-                        <span className="money box">{rowData.hospital_grade}</span>
+                        <span className="Grade">{rowData.hospital_grade}</span>
                     </div>
                 </div>
             )
@@ -129,7 +163,7 @@ export default class Earnings extends Component {
                             }}>
                                 <use xlinkHref='#icon-xingzhuanggongnengtubiao-'></use>
                             </svg>
-                            <span>全国</span>
+                            <span>{store.getState().placename}</span>
                         </div>
                     )
                     }
@@ -142,7 +176,6 @@ export default class Earnings extends Component {
                         onRefresh={this.onRefresh}
                     />}
                 />
-
             </div>
         )
     }

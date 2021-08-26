@@ -1,58 +1,58 @@
-.earnings-list {
+.CheckbBottle .earnings-list {
   background: #ffffff;
   height: 100%;
   touch-action: none;
 }
-.earnings-list .am-list {
+.CheckbBottle .earnings-list .am-list {
   width: 100%;
   height: calc(100vh - 90px);
 }
-.earnings-list .earnings {
+.CheckbBottle .earnings-list .earnings {
   height: 2.5rem;
   padding: 0.2rem;
 }
-.earnings-list .earnings h1 {
+.CheckbBottle .earnings-list .earnings h1 {
   margin: 0;
 }
-.earnings-list .earnings .content {
+.CheckbBottle .earnings-list .earnings .content {
   border-bottom: 1px solid #EEEEEE;
   padding: 0 0.4rem;
 }
-.earnings-list .earnings .content .box {
+.CheckbBottle .earnings-list .earnings .content .box {
   font-size: 0.28rem;
   display: block;
 }
-.earnings-list .earnings .content .date {
+.CheckbBottle .earnings-list .earnings .content .date {
   color: #333333;
   font-size: 1.125rem;
 }
-.earnings-list .earnings .content .money {
+.CheckbBottle .earnings-list .earnings .content .money {
   color: #FF7841;
   font-size: 1rem;
 }
-.earnings-list .am-list-header {
+.CheckbBottle .earnings-list .am-list-header {
   background: #ffffff;
 }
-.earnings-list .am-list-body::after {
+.CheckbBottle .earnings-list .am-list-body::after {
   background-color: #ffffff !important;
 }
-.earnings-list .am-list-body::before {
+.CheckbBottle .earnings-list .am-list-body::before {
   background-color: #ffffff !important;
 }
-.earnings-list .am-list-footer {
+.CheckbBottle .earnings-list .am-list-footer {
   padding: 0;
 }
-.earnings-list .am-list-footer .Bigimg_ {
+.CheckbBottle .earnings-list .am-list-footer .Bigimg_ {
   padding: 0 !important;
   height: 5.875rem;
   overflow: hidden;
   position: relative;
 }
-.earnings-list .am-list-footer .Bigimg_ .bigimg {
+.CheckbBottle .earnings-list .am-list-footer .Bigimg_ .bigimg {
   top: 50%;
   margin-top: -4.1625rem;
 }
-.earnings-list .earnings-title {
+.CheckbBottle .earnings-list .earnings-title {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -60,7 +60,7 @@
   line-height: 0.8rem;
   padding: 0 0.2rem;
 }
-.earnings-list .earnings-title span {
+.CheckbBottle .earnings-list .earnings-title span {
   color: #999999;
   font-size: 0.24rem;
 }

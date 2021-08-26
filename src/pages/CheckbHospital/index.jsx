@@ -1,9 +1,12 @@
 import React, { Component, Fragment } from 'react';
 import { Icon, NavBar } from 'antd-mobile';
 import './index.css'
-import { getbHospitalt, getCheckDisease } from '../../network/CheckDisease'
+import { getbHospitalt, CheckHospital } from '../../network/CheckDisease'
 import { getpositioning } from '../../network/positioning'
 import PullToRefresh from './PullToRefresh'
+import store from '../../redux/store'
+import { getposition, getplacename } from '../../redux/actions/msg'
+import { CheckHospital1 } from '../../redux/actions/CheckHospital'
 class Search extends Component {
   state = {
     BottleData: [],
@@ -13,6 +16,7 @@ class Search extends Component {
     right1: [],
     top: [],
     firstArr: [],
+    Municipal: null
   }
   componentDidMount() {
     this.getbHospitalt()
@@ -59,22 +63,22 @@ class Search extends Component {
   GetSearch() {
     let finish = null
     return (e) => {
+      console.log(e.target.value);
       if (e.target.value === '') {
-        let BottleData = JSON.parse(window.localStorage.getItem('BottleData'))
+        let Bhospital = JSON.parse(window.localStorage.getItem('Bhospital'))
         this.setState({
-          BottleData
+          Bhospital
         })
       } else {
         if (finish) { clearTimeout(finish) }
         finish = setTimeout(() => {
           console.log('搜索了');
-          this.searchBottle(e.target.value)
+          store.dispatch(CheckHospital1(e.target.value))
           finish = null
         }, 400)
       }
     }
   }
-
 
   getRegion(id) {
     const data = this.state.top
@@ -90,6 +94,15 @@ class Search extends Component {
     this.setState({
       right1: Region
     })
+  }
+  getMunicipal(id) {
+    this.setState({
+      openMeng: false
+    })
+    console.log(id.target.innerText);
+    store.dispatch(getposition(id.target.id))
+    store.dispatch(getplacename(id.target.innerText))
+
   }
   //请求
   // async searchBottle(value) {
@@ -107,7 +120,7 @@ class Search extends Component {
     console.log(1111);
   }
   render() {
-    const { firstArr, openMeng, top, right1 } = this.state
+    const { firstArr, openMeng, top, right1, Municipal } = this.state
     let Left_1 = () => {
       return (<Fragment>
         {top.map((item, index) => {
@@ -122,10 +135,10 @@ class Search extends Component {
     let Right_1 = () => {
       return (
         right1.map((item, index) => {
-          return (<div key={item.id || 1 + index} id={item.id} className="right-item" onClick={(e) => {
-            console.log(e.target.id);
-          }}>
-            <div>{item.name}</div>
+          return (<div key={item.id || 1 + index} className="right-item">
+            <div id={item.id} onClick={(e) => {
+              this.getMunicipal(e)
+            }} >{item.name}</div>
           </div>)
         })
       )
@@ -139,18 +152,18 @@ class Search extends Component {
           onLeftClick={() => this.props.history.goBack()}
           rightContent={[
           ]}
-        >查药品</NavBar>
+        >查医院</NavBar>
         <div className='Box1'>
           <div className="Box2Input">
             <Icon type='search' span="Icon" />
-            <input type="text" name="" id="SearchInput" placeholder="搜索检查，手术词条" onKeyUp={this.GetSearch()} />
+            <input type="text" name="" id="SearchInput" placeholder="查医院" onKeyUp={this.GetSearch()} />
           </div>
         </div>
 
         {/* <div style={{ height: '90px' }}></div> */}
         <div className='CheckDisease_ul'>
 
-          <PullToRefresh open={this.open} firstArr={firstArr}></PullToRefresh>
+          <PullToRefresh open={this.open} Municipal={Municipal} firstArr={firstArr}></PullToRefresh>
         </div>
         {/* <BlackTop /> */}
         <div className='meng' style={{ display: openMeng ? 'block' : 'none' }} onClick={this.props.click}>

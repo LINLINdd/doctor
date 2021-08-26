@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Icon, NavBar } from 'antd-mobile';
 
 import './index.css'
-import { searchBottle, getCheckDisease } from '../../network/CheckDisease'
+import { searchBottle, getCheckDisease ,searchkDisease} from '../../network/CheckDisease'
 import BlackTop from '../../components/BlackTop'
 class Search extends Component {
   state = {
@@ -63,8 +63,9 @@ class Search extends Component {
     }
   }
   //请求
-  async searchBottle(value) {
-    const { data: res } = await searchBottle(value, (6, 8), 1)
+  async searchkDisease(value) {
+    const { data: res } = await searchkDisease(value, (6, 8), 1)
+    console.log(res);
     this.setState({ DiseaseData: res.data.items })
   }
   //节流

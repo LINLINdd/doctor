@@ -92,9 +92,8 @@
 }
 .CheckbHospital .meng .top .left .depart-item {
   height: 3.125rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  line-height: 3.125rem;
+  text-align: center;
 }
 .CheckbHospital .meng .top .left .depart-item .depart-item-text {
   color: #00c792;
@@ -112,11 +111,9 @@
   width: 0 !important;
 }
 .CheckbHospital .meng .top .right .right-item {
-  padding: 16px;
+  margin: 32px;
   color: #4d4d4d;
   font-weight: 300;
   font-size: 14px;
   line-height: 1.14;
-  display: flex;
-  justify-content: space-between;
 }

@@ -32,10 +32,23 @@ export function searchBottle(items_per_page = 20,
         }
     })
 }
-export function getbHospitalt() {
+//医院
+export function getbHospitalt(page_index = 1, items_per_page = 10, postcode) {
     return request({
-        url: 'app/i/recommend/hospital/combination/page?page_index=1',
+        url: 'app/i/recommend/hospital/combination/page',
+        params: {
+            page_index,
+            items_per_page,
+            postcode,
+        }
     })
 }
-
+export function CheckHospital(q) {
+    return request({
+        url: 'app/i/recommend/hospital/combination/page',
+        params: {
+            q
+        }
+    })
+}
 
