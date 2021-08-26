@@ -112,8 +112,8 @@ class SearchTabs extends Component {
               return <div key={item.title} style={{ backgroundColor: '#fff' }}>
                 <div className="panel">
               
-                  {/* {( this.state.jjjjj == 0 ? <Recommend /> : '')}
-                  {( this.state.jjjjj == 3 ? <MedicineList /> : '')} */}
+                  {( this.state.jjjjj == 0 ? <Recommend /> : '')}
+                  {( this.state.jjjjj == 3 ? <MedicineList /> : '')}
                 </div>
               </div>
             })
