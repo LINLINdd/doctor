@@ -21,12 +21,7 @@ class Search extends Component {
         { text: '怀孕小能手' },
         { text: '码农怎么挂B的' },
       ],
-      historyArr: [
-
-
-        { id: 'ccqweq', text: '神经病' },
-        { id: 'sadad', text: '没有什么病' }
-      ],
+      historyArr: [],
       flag: true,
       hide: true,
     }
@@ -82,21 +77,22 @@ class Search extends Component {
         if (e.target.value.trim() == "") {
           alert('搜索内容不能为空')
         } else {
-          new Promise(
-            (res, rej) => {
-              this.props.history.push('./SearchContent', e.target.value)
+          // new Promise(
+          //   (res, rej) => {
+          //     this.props.history.push('./SearchContent', e.target.value)
 
-              res(
-                this.setState({ historyArr: [{ id: nanoid(), text: e.target.value }, ...historyArr] },),
-                localStorage.setItem('data', JSON.stringify(this.state.historyArr))
-              )
-              //     this.setState({ historyArr: [{ id: nanoid(), text: e.target.value }, ...historyArr] },)
-              // localStorage.setItem('data', JSON.stringify(this.state.historyArr))
+          //     res(
+          //       this.setState({ historyArr: [{ id: nanoid(), text: e.target.value }, ...historyArr] },),
+          //       localStorage.setItem('data', JSON.stringify(this.state.historyArr))
+          //     )
+            // })
+            let SaveDisease=JSON.parse(localStorage.getItem("data"))
+            //  this.setState({ historyArr: [{ id: nanoid(), text: e.target.value }, ...historyArr] },)
+            let NEWARR=[ { id: nanoid(), text: e.target.value }, ...SaveDisease]
+            
+             localStorage.setItem('data', JSON.stringify(NEWARR))
 
-              // this.props.history.push('./SearchContent',e.target.value)
-
-
-            })
+             this.props.history.push('./SearchContent',e.target.value)
 
         }
       }
