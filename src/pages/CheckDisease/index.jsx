@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './dist/index.css'
 import { NavBar, Icon } from 'antd-mobile';
-import { getdocter } from '../../network/SearchContent';
+import { getdocter, getdocter_1 } from '../../network/SearchContent';
 
 class CheckDisease extends Component {
   constructor(props) {
@@ -27,6 +27,14 @@ class CheckDisease extends Component {
     this.setState({diseases:res.data[0].diseases})
    
   }
+  getdocter_1 = async () => {
+    const { data: res } = await getdocter_1();
+    console.log(res.data[0].diseases);
+    this.setState({sections:res.data[0].sections})
+    this.setState({diseases:res.data[0].diseases})
+   
+  }
+
 
   // 搜索
   CheckDs = () => {
@@ -35,7 +43,13 @@ class CheckDisease extends Component {
   //  左边点击
   Cut = (id, index) => {
     this.setState({ flagColor: index })
-    
+     console.log(id )
+    if(id==2781){
+      this.getdocter_1()
+    }else{
+      this.getdocter()
+    }
+
   }
   ClickD=(NameD)=>{
     this.props.history.push('./SearchContent', NameD)

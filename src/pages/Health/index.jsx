@@ -3,16 +3,17 @@ import Handbook from './Handbook';
 import Navigation from './Navigation'
 import PublicHealth from './PublicHealth';
 import './index.css'
-
+import SearchBar from './SearchBar'
 class Health extends Component {
   render() {
 
     return (
       <div className='Health'>
+        <SearchBar></SearchBar>
         <Navigation></Navigation>
-        <h1>大众健康</h1>
+        <h4>大众健康</h4>
         <PublicHealth></PublicHealth>
-        <h1>生活手册</h1>
+        <h4>生活手册</h4>
         <Handbook></Handbook>
         <div className='bottom'>
           <div className='bottom_title'>

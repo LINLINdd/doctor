@@ -40,6 +40,11 @@ export function getdocter(){
       url:'/getdocter',
     })
   }
+export function getdocter_1(){
+    return home({
+      url:'/getdocter_1',
+    })
+  }
   
 // https://dxy.com/app/i/ask/drug/detail/search?keyword=A&page_index=1&items_per_page=20
 export function getMedicine(keyword, page_index, items_per_pagee) {

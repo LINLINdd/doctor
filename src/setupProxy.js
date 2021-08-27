@@ -21,8 +21,6 @@ module.exports = function (app) {
             changeOrigin: true,
             pathRewrite: { '^/positioning': '' }
         }),
-
-        
         // http://120.27.146.2:1004/getGridTwo
         createProxyMiddleware('/pbm', {
             target: 'http://120.27.146.2:1004/',

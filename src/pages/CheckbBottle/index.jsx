@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Icon, NavBar } from 'antd-mobile';
 import './index.css'
-import { searchBottle, getCheckDisease } from '../../network/CheckDisease'
-import BlackTop from '../../components/BlackTop'
+import { searchBottle,  } from '../../network/CheckDisease'
 import PullToRefresh from '../../components/PullToRefresh'
 class Search extends Component {
   state = {
@@ -71,7 +70,6 @@ class Search extends Component {
   // }
 
   render() {
-    const { BottleData } = this.state
     return (
 
       <div className='CheckbBottle'>
@@ -93,7 +91,6 @@ class Search extends Component {
         <div className='CheckDisease_ul'>
           <PullToRefresh></PullToRefresh>
         </div>
-        {/* <BlackTop /> */}
       </div>
     );
   }

@@ -7,9 +7,11 @@
   flex-wrap: nowrap;
   background-color: #fff;
 }
+ 
 .conter .supportH {
   height: 111px;
 }
+
 .conter .RollConter {
   box-sizing: border-box;
   border-top: none;
@@ -20,38 +22,47 @@
   flex: 1 1;
   margin-bottom: 0 !important;
 }
+
 .conter .top {
   display: flex;
   flex-direction: row !important;
   height: 100%;
   margin-top: 111px;
 }
+
 .conter .top .active {
   color: #00c792;
 }
+
 .conter .top .left {
   width: 6.25rem;
   overflow: scroll;
 }
+
 .conter .top .left::-webkit-scrollbar {
   width: 0 !important;
 }
+
 .conter .top .left .depart-item {
   height: 3.125rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .conter .top .left .depart-item .depart-item-text {
   font-weight: 400;
 }
+
 .conter .top .right {
   flex: 1;
   overflow: scroll;
 }
+
 .conter .top .right::-webkit-scrollbar {
   width: 0 !important;
 }
+
 .conter .top .right .right-item {
   padding: 16px;
   color: #4d4d4d;
@@ -61,6 +72,7 @@
   display: flex;
   justify-content: space-between;
 }
+
 .conter .RollConter_nav {
   position: fixed;
   right: 2px;
@@ -73,15 +85,18 @@
   align-items: center;
   z-index: 900;
 }
+
 .conter .RollConter_right {
   overflow: scroll;
   flex: 1 1;
   position: relative;
 }
+
 .conter .RollConter_left {
   width: 108px;
   overflow: scroll;
 }
+
 .conter .conter_head {
   position: fixed;
   top: 0;
@@ -91,6 +106,7 @@
   max-width: 768px;
   margin: 0 auto;
 }
+
 .conter .conter_search {
   padding: 10px 16px;
   background: #fff;
@@ -104,6 +120,7 @@
   position: fixed;
   top: 44px;
 }
+
 .conter #Box2Input {
   width: 95%;
   height: 2.75rem;
@@ -115,14 +132,17 @@
   align-items: center;
   margin: 0 auto;
 }
+
 .conter #Box2Input .am-icon-md {
   padding: 0 10px 0 17px;
 }
+
 .conter #Box2Input .slip {
   margin-right: 0.9375rem;
   width: 17px;
   height: 17px;
 }
+
 .conter #Box2Input #SearchInput {
   border: none;
   height: 1.25rem;

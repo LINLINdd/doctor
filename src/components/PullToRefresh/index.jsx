@@ -73,7 +73,6 @@ export default class Earnings extends Component {
                         num: this.state.num += 1,
                         dataSource: this.state.dataSource.cloneWithRows({ ...this.state.firstArr }),
                     })
-                    console.log(this.state)
                 })
         }, 500)
     }
@@ -115,6 +114,7 @@ export default class Earnings extends Component {
                         onRefresh={this.onRefresh}
                     />}
                 />
+
             </div>
         )
     }

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import './index.css'
 import { ListView, PullToRefresh } from 'antd-mobile';
-import { searchBottle, getbHospitalt, renovateBhospitalt, CheckHospital } from '../../../network/CheckDisease'
+import { searchBottle, getbHospitalt, CheckHospital } from '../../../network/CheckDisease'
 import store from '../../../redux/store'
+
 export default class Earnings extends Component {
     constructor(props) {
         super(props)

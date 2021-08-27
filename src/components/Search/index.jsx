@@ -21,7 +21,12 @@ class Search extends Component {
         { text: '怀孕小能手' },
         { text: '码农怎么挂B的' },
       ],
-      historyArr: [],
+      historyArr: [
+
+
+        { id: 'ccqweq', text: '神经病' },
+        { id: 'sadad', text: '没有什么病' }
+      ],
       flag: true,
       hide: true,
     }
@@ -62,7 +67,7 @@ class Search extends Component {
 
     let finish = null
 
-    const { historyArr } = this.state
+    // const { historyArr } = this.state
     return (e) => {
       console.log(Boolean(finish));
       this.setState({ flag: false })
@@ -85,14 +90,17 @@ class Search extends Component {
           //       this.setState({ historyArr: [{ id: nanoid(), text: e.target.value }, ...historyArr] },),
           //       localStorage.setItem('data', JSON.stringify(this.state.historyArr))
           //     )
-            // })
-            let SaveDisease=JSON.parse(localStorage.getItem("data"))
-            //  this.setState({ historyArr: [{ id: nanoid(), text: e.target.value }, ...historyArr] },)
-            let NEWARR=[ { id: nanoid(), text: e.target.value }, ...SaveDisease]
-            
-             localStorage.setItem('data', JSON.stringify(NEWARR))
+          //   })
+          let NEWhistoryData = JSON.parse(localStorage.getItem("data"))
+          if (NEWhistoryData.length === undefined) {
+            NEWhistoryData = []
+          }
+          // this.setState({ historyArr: [{ id: nanoid(), text: e.target.value }, ...historyArr] },)
+          NEWhistoryData = [{ id: nanoid(), text: e.target.value }, ...NEWhistoryData]
 
-             this.props.history.push('./SearchContent',e.target.value)
+          localStorage.setItem('data', JSON.stringify(NEWhistoryData))
+
+          this.props.history.push('./SearchContent', e.target.value)
 
         }
       }
@@ -117,7 +125,7 @@ class Search extends Component {
   // 清除历搜索
   deleHistory = () => {
     this.setState({ hide: false })
-    //  localStorage.clear();
+    localStorage.clear();
   }
   BoxNO = () => {
 

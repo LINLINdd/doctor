@@ -2,6 +2,9 @@
   background-color: #fff;
   height: 100vh;
 }
+.CheckDisease *::-webkit-scrollbar {
+  width: 0 !important;
+}
 .CheckDisease .Box1 {
   width: 100%;
   position: fixed;

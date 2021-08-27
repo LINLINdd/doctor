@@ -1,10 +1,10 @@
-import { TabBar, Badge } from 'antd-mobile';
+import { Badge } from 'antd-mobile';
 import './index.css'
 import React, { Component } from 'react';
 import Home from '../../pages/Home'
 import personal from '../../pages/personal';
 import health from '../../pages/Health';
-import { Route, Switch, Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import CacheRoute, { CacheSwitch } from 'react-router-cache-route'
 
 
@@ -57,9 +57,9 @@ class tabbar extends Component {
         return (
             <div className='tab-bar'>
                 <CacheSwitch >
-                    <CacheRoute  path="/TabBar/Personal" component={personal}></CacheRoute >
-                    <CacheRoute  path="/TabBar/health" component={health}></CacheRoute >
-                    <CacheRoute  path="/TabBar/home" component={Home}></CacheRoute >
+                    <CacheRoute path="/TabBar/Personal" component={personal}></CacheRoute >
+                    <CacheRoute path="/TabBar/health" component={health}></CacheRoute >
+                    <CacheRoute path="/TabBar/home" component={Home}></CacheRoute >
                     <Redirect to='/TabBar/home'></Redirect>
                 </CacheSwitch >
                 <div className='tab_bar_bootom' style={{ position: 'fixed', height: '3.125rem', width: '100%', bottom: 0 }}>
@@ -75,8 +75,8 @@ class tabbar extends Component {
                         }}>
                             <use xlinkHref={home ? '#icon-shouye-copy' : '#icon-shouye'}></use>
                         </svg>
-                        <Badge dot>
-                            <span>首页</span>
+                        <Badge >
+                            <span style={{ color: home ? '#0db32b' : '#000' }}>首页</span>
                         </Badge>
                     </li>
                     <li onClick={() => {
@@ -89,7 +89,7 @@ class tabbar extends Component {
                         }}>
                             <use xlinkHref={Health ? '#icon-yiliao-copy' : '#icon-yiliao'}></use>
                         </svg>
-                        <span>健康咨询</span>
+                        <span style={{ color: Health ? '#0db32b' : '#000' }}>健康咨询</span>
                     </li>
                     <li onClick={() => {
                         this.dateswitch('personal')
@@ -102,7 +102,7 @@ class tabbar extends Component {
                         }}>
                             <use xlinkHref={Personal ? '#icon-wode1-copy' : '#icon-wode1'}></use>
                         </svg>
-                        <span>个人中心</span>
+                        <span style={{ color: Personal ? '#0db32b' : '#000' }}>个人中心</span>
                     </li>
                 </div >
             </div >

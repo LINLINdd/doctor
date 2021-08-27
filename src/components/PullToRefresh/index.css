@@ -8,7 +8,6 @@
   height: calc(100vh - 90px);
 }
 .CheckbBottle .earnings-list .earnings {
-  height: 2.5rem;
   padding: 0.2rem;
 }
 .CheckbBottle .earnings-list .earnings h1 {
@@ -27,7 +26,7 @@
   font-size: 1.125rem;
 }
 .CheckbBottle .earnings-list .earnings .content .money {
-  color: #FF7841;
+  color: #ccc;
   font-size: 1rem;
 }
 .CheckbBottle .earnings-list .am-list-header {

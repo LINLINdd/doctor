@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { Icon, NavBar } from 'antd-mobile';
 import './index.css'
-import { getbHospitalt, CheckHospital } from '../../network/CheckDisease'
+import { getbHospitalt, } from '../../network/CheckDisease'
 import { getpositioning } from '../../network/positioning'
 import PullToRefresh from './PullToRefresh'
 import store from '../../redux/store'
@@ -34,14 +34,12 @@ class Search extends Component {
   }
   async getbHospitalt() {
     const { data: res } = await getbHospitalt();
-    // console.log(res.data.items);
     this.setState({
       firstArr: res.data.items
     })
   }
   async getPositioning() {
     const { data: res } = await getpositioning()
-    console.log(res);
     this.setState({
       top: res,
       right1: res[0].children

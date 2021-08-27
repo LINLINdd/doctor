@@ -19,7 +19,25 @@ export function request(config) {
 
     return instance(config)
 }
+export function api(config) {
+    const instance = axios.create({
+        baseURL: '/api/',
+    })
 
+    instance.interceptors.request.use(config => {
+        return config
+    }, err => {
+        console.log(err);
+    })
+
+    instance.interceptors.response.use(res => {
+        return res
+    }, err => {
+        console.log(err);
+    })
+
+    return instance(config)
+}
 
 export function requestB(config) {
     const open = axios.create({

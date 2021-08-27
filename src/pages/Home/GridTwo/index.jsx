@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './index.css'
 import { Grid } from 'antd-mobile';
-import { getDiseasesName } from '../../../network/home';
+import { getGridTwo } from '../../../network/home';
 import { withRouter } from 'react-router-dom';
 
 
@@ -22,17 +22,20 @@ class GridTwo extends Component {
 
   // http://120.27.146.2:1004/getDiseasesName
   componentDidMount() {
-    this.getDiseasesName()
+    this.getGridTwo()
   }
 
-  getDiseasesName = async () => {
-    const { data: res } = await getDiseasesName()
+  getGridTwo = async () => {
+    const { data: res } = await getGridTwo()
     this.setState({ arr: res.data })
   }
 
 
-  GoHealth = () => {
-    this.props.history.push('/CheckDisease')
+  GoHealth = (e,index) => {
+    if(index==0){
+         this.props.history.push('/CheckDisease')
+    }
+ 
 
   }
 

@@ -3,6 +3,8 @@ import { Grid } from 'antd-mobile';
 import './index.css'
 import {getGridone} from '../../../network/home'
 import { withRouter } from 'react-router-dom';
+// import { aysncAction } from '../../../redux/actions/gridone';
+// import store from '../../../redux/store'
 
 
 
@@ -11,46 +13,56 @@ class GridOne extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      arr: [
-      //   {id: '01', icon: 'https://z3.ax1x.com/2021/08/19/fHaDvq.png', text: '问医生',
-      //   text2:'按科室找医生',url:"http://baidu.com" },
-      //   {id: '02', icon: 'https://z3.ax1x.com/2021/08/19/fHayrV.png', text: '特惠义诊',
-      //   text2:'问诊一元起'
-      //  },
-      //   {id: '03', icon: 'https://z3.ax1x.com/2021/08/19/fHasK0.png', text: '电话急诊',
-      //   text2:'一对一电话咨询'
-      //  },
-      ]
+      arr: []
     }
+
   }
-    
 
-   componentDidMount() {
+
+  componentDidMount() {
+    // this.aysncAction22()
     this.getGridone()
-   }
-   
-   getGridone= async()=>{
-      let {data:res}= await getGridone();
-     console.log(res)
-     this.setState({arr:res.data})
-   }
-   
-   GoAskDoctor=(e,index)=>{
-     if(index==0){
-       this.props.history.push('/AskDoctor')
-     }
-    
+    // 定阅
+    // this.unsubscribe=store.subscribe(() => {
+    //   // console.log("res---xxx",store.getState());
+    //   this.setState({ arr: store.getState() })
+    // })
+    // store.dispatch(aysncAction())
+  }
 
-   }
 
-      render() {
+  componentWillUnmountn() {
+    // this.unsubscribe();
+  }
+
+
+  aysncAction22 = () => {
+    // store.dispatch(aysncAction(this.setState({arr:res.data})))
+  }
+
+
+  getGridone = async () => {
+    let { data: res } = await getGridone();
+    console.log(res)
+    this.setState({ arr: res.data })
+  }
+
+  GoAskDoctor = (e, index) => {
+    if (index == 0) {
+      this.props.history.push('/AskDoctor')
+    }
+
+
+  }
+
+  render() {
     const data1 = this.state.arr.map((item, i) => ({
-        icon: item.icon,
+      icon: item.icon,
       text: item.text,
-      text2:item.text2,
+      text2: item.text2,
 
     }));
-      return (
+    return (
 
 
       <div id="GridOneCss" >
@@ -69,8 +81,8 @@ class GridOne extends Component {
           )}
         />
       </div>
-      );
+    );
   }
 }
 
-      export default withRouter(GridOne);
+export default withRouter(GridOne);

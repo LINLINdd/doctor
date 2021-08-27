@@ -1,4 +1,4 @@
-import { request } from './request'
+import { request, api } from './request'
 
 
 export function getHealth_category(
@@ -59,6 +59,32 @@ export function getSearchD(q) {
         url: 'app/i/columns/search/tips/v2',
         params: {
             q,
+        }
+    })
+}
+
+export function getVaccine() {
+    return api({
+        url: 'view/i/activity/page/config?dxa_adplatform=m.dxy.com&id=161',
+    })
+}
+export function getAid() {
+    return api({
+        url: 'view/i/activity/page/config?dxa_adplatform=m.dxy.com&id=159',
+    })
+}
+export function getSummer() {
+    return api({
+        url: 'view/i/activity/page/config?dxa_adplatform=m.dxy.com&id=158',
+    })
+}
+export function getScienceVideo(page_index = 0,
+    items_per_page = 10) {
+    return request({
+        url: 'app/i/ask/discover/video/page',
+        params: {
+            page_index,
+            items_per_page
         }
     })
 }

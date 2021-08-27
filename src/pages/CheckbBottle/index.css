@@ -1,6 +1,9 @@
 .CheckbBottle {
   background-color: #fff;
 }
+.CheckbBottle *::-webkit-scrollbar {
+  width: 0 !important;
+}
 .CheckbBottle .Box1 {
   width: 100%;
   background-color: #fff;

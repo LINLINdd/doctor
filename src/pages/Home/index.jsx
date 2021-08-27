@@ -7,7 +7,7 @@ import Slideshow from './Slideshow';
 import List from './List';
 import Trouble from './Trouble';
 import BlackTop from '../../components/BlackTop';
-
+import './index.css'
 class index extends Component {
     render() {
         return (
