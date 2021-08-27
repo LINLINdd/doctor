@@ -1,0 +1,195 @@
+#SearchCss {
+  height: calc(100vh - 1rem);
+  padding: 0 1rem;
+  background-color: #fff;
+  padding-top: 0.8125rem;
+}
+#SearchCss .advertising {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 13;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  touch-action: none;
+}
+#SearchCss .advertisingBox {
+  width: 270px;
+  height: 150px;
+  border-radius: 12px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: auto;
+}
+#SearchCss .advertisingBox .advertisingBoxCent {
+  text-align: center;
+  font-size: 14px;
+  line-height: 21px;
+  color: #4d4d4d;
+  margin-top: 16px;
+}
+#SearchCss .advertisingBox .advertisingBoxBtn {
+  bottom: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  border-top: 1px solid #ebebeb;
+  margin-top: 24px;
+}
+#SearchCss .advertisingBox .BoxNo {
+  display: flex;
+  flex: 0.5 1;
+  justify-content: center;
+  align-items: center;
+  padding: 13px 34px;
+}
+#SearchCss .advertisingBox .BoxOk {
+  display: flex;
+  flex: 0.5 1 0%;
+  justify-content: center;
+  align-items: center;
+  padding: 13px 34px;
+  color: #00ff1fcf;
+}
+#SearchCss .history h2 {
+  display: flex;
+  justify-content: space-between;
+}
+#SearchCss .history h2 #h2Icon {
+  width: 16px;
+  height: 16px;
+}
+#SearchCss .SearchPage ul {
+  padding: 0 !important;
+}
+#SearchCss .SearchPage li {
+  height: 59px;
+  line-height: 59px;
+  font-weight: 400;
+  font-size: 17px;
+  color: #333;
+  overflow: hidden;
+  border-bottom: 1px solid #3333330d;
+}
+#SearchCss #InputDowm .box {
+  height: 500px;
+}
+#SearchCss #InputDowm .box .partone {
+  height: 6.25rem;
+  width: 23.625rem;
+  display: flex;
+}
+#SearchCss #InputDowm .box .partone .part {
+  padding: 1.25rem 2.8125rem;
+  font-size: 12px;
+}
+#SearchCss #InputDowm .box .partone .part .ysSpan {
+  padding-top: 0.25rem;
+  display: inline-block;
+  width: 1.875rem;
+  text-align: center;
+}
+#SearchCss #InputDowm .box .partone .part .iback {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  line-height: 30px;
+}
+#SearchCss #InputDowm .box .partone .part .iback .icon {
+  padding-left: 5px;
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+#SearchCss #InputDowm .box .partone .sl .iback {
+  background-color: #e0f7f1;
+}
+#SearchCss #InputDowm .box .partone .sl .iback .icon {
+  color: #3fc7a3;
+}
+#SearchCss #InputDowm .box .partone .sc .iback {
+  background-color: #fef1df;
+}
+#SearchCss #InputDowm .box .partone .sc .iback .icon {
+  color: #fbb046;
+}
+#SearchCss #InputDowm .box .partone .sr .iback {
+  background-color: #e2eefe;
+}
+#SearchCss #InputDowm .box .partone .sr .iback .icon {
+  color: #599ef9;
+}
+#SearchCss #InputDowm .box .parttwo {
+  text-indent: 1.25rem;
+}
+#SearchCss #InputDowm .box .parttwo h2 {
+  font-weight: 600;
+}
+#SearchCss #InputDowm .box .partthree {
+  height: 6.25rem;
+  font-size: 0.55rem;
+  overflow: hidden;
+}
+#SearchCss #InputDowm .box .partthree .hotword {
+  flex-wrap: wrap;
+}
+#SearchCss #InputDowm .box .partthree span {
+  background-color: #fafafa;
+  padding: 5px 8px;
+  margin-bottom: 9px;
+  line-height: 1.9375rem;
+  border-radius: 0.625rem;
+  margin-right: 0.625rem;
+  display: inline-block;
+  height: 1.9375rem;
+}
+#SearchCss #InputDowm .box .partthree span .icon {
+  width: 0.8125rem;
+  height: 1rem;
+  color: #ff8339 !important;
+  vertical-align: middle;
+}
+#SearchCss ul,
+#SearchCss li {
+  list-style: none;
+}
+#SearchCss #Box2Input {
+  width: 95%;
+  height: 2.75rem;
+  border: 0.5px solid #d9d9d9;
+  border-radius: 22px;
+  background-color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 auto;
+  box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.05);
+}
+#SearchCss #Box2Input .slip {
+  margin-right: 0.9375rem;
+  width: 17px;
+  height: 17px;
+}
+#SearchCss #SearchInput {
+  border: none;
+  height: 1.25rem;
+  font-size: 0.9375rem;
+  color: #333;
+  font-weight: 800;
+  width: 80%;
+  background-color: #fff;
+}
+#SearchCss .am-icon {
+  margin-left: 17px;
+  margin-right: 7px;
+}
+#SearchCss .BoxSearch {
+  padding: 10px 16px;
+}

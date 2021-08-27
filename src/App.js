@@ -1,4 +1,4 @@
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch, Redirect,} from 'react-router-dom';
 import routerMap from './routerMap'
 import FrontendAuth from './FrontendAuth'
 
@@ -12,15 +12,30 @@ import inquiry from '../src/pages/inquiry'
 import Checkoperation from './pages/Checkoperation'
 import CheckbBottle from '../src/pages/CheckbBottle'
 import CheckbHospital from '../src/pages/CheckbHospital'
+import Search1 from './components/Search';
+import AskDoctor from '../src/pages/AskDoctor';
+import CheckDisease from '../src/pages/CheckDisease';
+import SearchContent from './pages/SearchContent';
+
+
+
+// 带缓存功能的路由组件
+import CacheRoute, { CacheSwitch } from 'react-router-cache-route'
+
 function App() {
   return (
     <div className="App">
+      
       {/* {path: "/", name: "TabBar", component: TabBar, }, */}
       {/* {path: "/login", name: "login", component: login, }, */}
       {/* {path: "/Register", name: "LogiRegistern", component: Register, }, */}
       {/* {path: "/Category", name: "Category", component: Category }, */}
       {/* {path: "/personal", name: "personal", component: personal }, */}
       {/* {path: "/set", name: "set", component: set }, */}
+
+
+      {/* 使用 CacheRoute 替换 Route*/}
+      {/* 使用 CacheSwitch 替换 Switch（因为 Switch 组件只保留第一个匹配状态的路由，卸载掉其他路由） */}
       <Switch>
         <Route path="/TabBar" component={TabBar}></Route>
         <Route path="/register" component={Register}></Route>
@@ -32,8 +47,15 @@ function App() {
         <Route path="/inquiry/:id" component={inquiry}></Route>
         <Route path="/CheckbBottle" component={CheckbBottle}></Route>
         <Route path="/CheckbHospital" component={CheckbHospital}></Route>
+        <Route path="/Search" component={Search1}></Route>
+        <Route path="/AskDoctor" component={AskDoctor}></Route>
+        <Route path="/CheckDisease" component={CheckDisease}></Route>
+        <Route path="/SearchContent" component={SearchContent}></Route>
+
         <Redirect to='/TabBar'></Redirect>
       </Switch>
+
+      
       {/* <Route>
         <div>
           <Switch>

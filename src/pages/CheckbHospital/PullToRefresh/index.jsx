@@ -23,15 +23,23 @@ export default class Earnings extends Component {
     componentDidMount() {
         // this.searchBottle()
         this.getbHospitalt()
-        store.subscribe(() => {
+        this.unsubscribe = store.subscribe(() => {
             console.log(store.getState());
             console.log('改变地区');
             this.getbHospitalt(1, 10, store.getState().msg)
             // this.CheckHospital(store.getState().CheckHospital)
+            this.setState({
+                AreaCode: store.getState().msg
+            })
         })
+        // store.Unsubscribe()
         // store.subscribe(() => {
         //     console.log(store.getState().place);
         // })
+    }
+    componentWillUnmount() {
+        this.unsubscribe();
+        // console.log(this);
     }
     //搜索
     async CheckHospital(value) {

@@ -1,0 +1,49 @@
+#ListCss .title {
+  padding: 0 16px;
+}
+#ListCss h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px !important;
+}
+#ListCss h3 span {
+  font-size: 0.875rem;
+  color: #b3b3b3;
+}
+#ListCss .am-icon {
+  margin: 0;
+  vertical-align: middle;
+}
+#ListCss .list {
+  padding: 0 15px;
+}
+#ListCss .articl {
+  padding: 15px 0;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.12);
+  display: flex;
+  justify-content: space-between;
+}
+#ListCss .artcil-left {
+  width: 16.413333rem;
+  height: 3.2rem;
+  font-size: 17px;
+  font-weight: 500;
+  color: #333;
+  line-height: 24px;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+#ListCss .artcil-right {
+  width: 5rem;
+  height: 5rem;
+}
+#ListCss .artcil-right img {
+  width: 5rem;
+  height: 5rem;
+}

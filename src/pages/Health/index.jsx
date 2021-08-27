@@ -9,7 +9,6 @@ class Health extends Component {
 
     return (
       <div className='Health'>
-        <h1>健康质询</h1>
         <Navigation></Navigation>
         <h1>大众健康</h1>
         <PublicHealth></PublicHealth>

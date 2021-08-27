@@ -20,8 +20,17 @@ module.exports = function (app) {
             target: 'https://assets.dxycdn.com/',
             changeOrigin: true,
             pathRewrite: { '^/positioning': '' }
-        })
+        }),
 
+        
+        // http://120.27.146.2:1004/getGridTwo
+        createProxyMiddleware('/pbm', {
+            target: 'http://120.27.146.2:1004/',
+            changeOrigin: true,
+            pathRewrite: { '^/pbm': '' }
+        }),
+        
+       
     )
 }
 // https://dxy.com/app/i/recommend/hospital/combination/page?page_index=1

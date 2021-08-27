@@ -1,0 +1,8 @@
+*{
+  touch-action: pan-y;
+}
+
+#slideshow img{
+  height: 6.25rem;
+  border-radius: 7px;
+}

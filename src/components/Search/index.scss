@@ -1,0 +1,271 @@
+#SearchCss {
+  height: calc(100vh - 1rem);
+  padding: 0 1rem;
+  background-color: #fff;
+  padding-top: .8125rem;
+
+  .advertising {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 13;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    touch-action: none;
+  }
+ .advertisingBox{
+  width: 270px;
+  height: 150px;
+  border-radius: 12px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  height: auto;
+
+ .advertisingBoxCent{
+   text-align: center;
+     font-size: 14px;
+  line-height: 21px;
+  color: #4d4d4d;
+  margin-top: 16px;
+ }
+  
+
+  .advertisingBoxBtn{
+    bottom: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    border-top: 1px solid #ebebeb;
+    margin-top: 24px;
+  }
+  .BoxNo{
+ 
+    display: flex;
+    flex: 0.5 1;
+    justify-content: center;
+    align-items: center;
+    padding: 13px 34px;
+  }
+  .BoxOk{
+    display: flex;
+    flex: 0.5 1 0%;
+    justify-content: center;
+    align-items: center;
+    padding: 13px 34px;
+    color: #00ff1fcf;
+  }
+ }
+
+
+
+  .history {
+
+    h2 {
+      display: flex;
+      justify-content: space-between;
+
+      #h2Icon {
+        width: 16px;
+        height: 16px;
+
+      }
+
+    }
+  }
+
+  .SearchPage {
+    ul {
+      padding: 0 !important;
+    }
+
+    li {
+      height: 59px;
+      line-height: 59px;
+      font-weight: 400;
+      font-size: 17px;
+      color: #333;
+      overflow: hidden;
+      border-bottom: 1px solid #3333330d;
+
+    }
+
+  }
+
+  #InputDowm {
+
+    .box {
+
+      height: 500px;
+      // background: rgb(192, 238, 238);
+
+      .partone {
+        height: 6.25rem;
+        width: 23.625rem;
+
+        display: flex;
+        // background-color: aquamarine;
+
+        .part {
+          padding: 1.25rem 2.8125rem;
+          font-size: 12px;
+
+          .ysSpan {
+            padding-top: .25rem;
+            display: inline-block;
+            width: 1.875rem;
+            text-align: center;
+          }
+
+          .iback {
+
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            line-height: 30px;
+
+            .icon {
+              padding-left: 5px;
+              width: 1.5em;
+              height: 1.5em;
+              vertical-align: -0.15em;
+              fill: currentColor;
+              overflow: hidden;
+            }
+
+
+          }
+
+
+
+        }
+
+        .sl {
+          .iback {
+            background-color: #e0f7f1;
+
+            .icon {
+              color: #3fc7a3;
+            }
+          }
+        }
+
+        .sc {
+          .iback {
+            background-color: #fef1df;
+
+            .icon {
+              color: #fbb046;
+            }
+          }
+        }
+
+        .sr {
+          .iback {
+            background-color: #e2eefe;
+
+            .icon {
+              color: #599ef9;
+            }
+          }
+        }
+
+
+      }
+
+      .parttwo {
+        text-indent: 1.25rem;
+
+        h2 {
+          font-weight: 600;
+        }
+      }
+
+      .partthree {
+        height: 6.25rem;
+        font-size: .55rem;
+        overflow: hidden;
+
+        .hotword {
+
+          flex-wrap: wrap;
+
+        }
+
+        span {
+          background-color: #fafafa;
+          padding: 5px 8px;
+          margin-bottom: 9px;
+          line-height: 1.9375rem;
+          border-radius: .625rem;
+          margin-right: .625rem;
+          display: inline-block;
+          height: 1.9375rem;
+
+          .icon {
+            width: .8125rem;
+            height: 1rem;
+            color: #ff8339 !important;
+            vertical-align: middle;
+          }
+        }
+
+
+
+      }
+
+    }
+  }
+
+
+
+  ul,
+  li {
+    list-style: none;
+  }
+
+
+
+  #Box2Input {
+    width: 95%;
+    height: 2.75rem;
+    border: .5px solid #d9d9d9;
+    border-radius: 22px;
+    background-color: #fff;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 auto;
+    box-shadow: 0 6px 12px 0 rgb(0 0 0 / 5%);
+
+    .slip {
+      margin-right: .9375rem;
+      width: 17px;
+      height: 17px;
+    }
+
+  }
+
+  #SearchInput {
+    border: none;
+    height: 1.25rem;
+    font-size: .9375rem;
+    color: #333;
+    font-weight: 800;
+    width: 80%;
+    background-color: #fff;
+  }
+
+  .am-icon {
+    margin-left: 17px;
+    margin-right: 7px;
+  }
+
+  .BoxSearch {
+    padding: 10px 16px;
+  }
+}

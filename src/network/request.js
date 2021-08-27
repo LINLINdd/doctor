@@ -66,6 +66,19 @@ export function requestC(config) {
 export function positioning(config) {
     const open = axios.create({
         baseURL: '/positioning/',
+        method: 'GET'
+    })
+
+    open.interceptors.request.use(config => {
+        return config
+    }, err => {
+        console.log(err);
+    })
+    return open(config)
+}
+export function home(config) {
+    const open = axios.create({
+        baseURL: '/pbm/',
         timeout: 5000,
         method: 'GET'
     })
@@ -84,5 +97,3 @@ export function positioning(config) {
 
     return open(config)
 }
-// https://assets.dxycdn.com/gitrepo/ask_v2_develop/misc/location_hospital.json?t=2
-// app/i/ask/healthwiki/feed?items_per_page=10&page_index=2&tag_id=0&category_tag_id=24822

@@ -1,0 +1,100 @@
+#troubleBox .trouble {
+  padding: 0 16px;
+}
+#troubleBox h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px !important;
+}
+#troubleBox h3 span {
+  font-size: 0.875rem;
+  color: #b3b3b3;
+}
+#troubleBox .am-icon {
+  margin: 0;
+  vertical-align: middle;
+}
+#troubleBox .am-flexbox-item {
+  margin: 0 !important;
+  text-align: center;
+  color: #4d4d4d;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  white-space: nowrap;
+}
+#troubleBox .flex-container {
+  margin: 0 15px;
+}
+#troubleBox .flex-container .inline {
+  width: 80px !important;
+  margin: 9px 9px 9px 0;
+}
+#troubleBox .flex-container .small {
+  height: 20px !important;
+  line-height: 20px !important;
+}
+#troubleBox .sub-title {
+  color: #888;
+  font-size: 14px;
+  padding: 30px 0 18px 0;
+}
+#troubleBox .placeholder {
+  background-color: #ebebef;
+  color: #bbb;
+  text-align: center;
+  height: 30px;
+  line-height: 30px;
+  margin: 0 0 0.8125rem 0.8125rem;
+}
+#troubleBox .diseases {
+  padding: 0.75rem 1rem 0;
+  height: 6.625rem;
+}
+#troubleBox .SpanDisease {
+  padding: 12px;
+}
+#troubleBox .AskList {
+  padding: 0 1rem 1.25rem;
+}
+#troubleBox .AskList_head {
+  line-height: 20px;
+}
+#troubleBox .AskList_head i {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+#troubleBox .AskList_head i img {
+  width: 16px;
+  height: 16px;
+}
+#troubleBox .AskList_body {
+  height: 72px;
+  width: 343px;
+  border-bottom: 1px solid #6666661a;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 24px;
+  color: #4d4d4d;
+  margin-top: 12px;
+  display: -webkit-box;
+  word-break: break-all;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+}
+#troubleBox .AskList_foot {
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 14px;
+  color: #999;
+  margin-top: 12px;
+}

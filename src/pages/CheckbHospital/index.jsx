@@ -18,11 +18,20 @@ class Search extends Component {
     firstArr: [],
     Municipal: null
   }
+
   componentDidMount() {
     this.getbHospitalt()
     this.getPositioning()
   }
+
   //请求
+  async getbHospitalt() {
+    const { data: res } = await getbHospitalt();
+    // console.log(res.data.items);
+    this.setState({
+      firstArr: res.data.items
+    })
+  }
   async getbHospitalt() {
     const { data: res } = await getbHospitalt();
     // console.log(res.data.items);
@@ -38,28 +47,7 @@ class Search extends Component {
       right1: res[0].children
     })
   }
-  //存储本地
-  // resolveDiseaseData(data) {
-  //   let BottleData = []
-  //   data.forEach(item => {
-  //     BottleData = [...BottleData, item]
-  //   })
-  //   window.localStorage.setItem('BottleData', JSON.stringify(BottleData))
-  //   return BottleData
-  // }
-  //获取本地
-  // getDiseaseData() {
-  //   let BottleData = JSON.parse(window.localStorage.getItem('BottleData'))
-  //   if (BottleData) {
-  //     this.setState({
-  //       BottleData
-  //     })
-  //   } else {
-  //     this.getCheckDisease()
 
-  //   }
-  // }
-  //    搜索框   防抖处理
   GetSearch() {
     let finish = null
     return (e) => {

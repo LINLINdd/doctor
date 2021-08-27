@@ -1,0 +1,60 @@
+.container {
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  background-color: #fff;
+  border-top: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 16px;
+}
+.container .section-block-name {
+  font-size: 20px;
+  font-weight: 500;
+  color: #333;
+  line-height: 22px;
+  margin-top: 20px;
+}
+.container .section-block-area {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.container .section-block-area-item:nth-of-type(3n) {
+  margin-right: 0;
+}
+.container .section-block-area-item {
+  width: calc(33.33333% - 8px);
+  padding: 20px 0;
+  border-radius: 4px;
+  background-color: #fafafa;
+  margin-bottom: 12px;
+  margin-right: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.container .container img {
+  display: block;
+}
+.container .section-block-area-item-img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 6px;
+}
+.container .section-block-area-item-name {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  color: #333;
+  display: -webkit-box;
+  word-break: break-all;
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+}

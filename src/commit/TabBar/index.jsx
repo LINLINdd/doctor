@@ -5,6 +5,7 @@ import Home from '../../pages/Home'
 import personal from '../../pages/personal';
 import health from '../../pages/Health';
 import { Route, Switch, Link, Redirect } from 'react-router-dom';
+import CacheRoute, { CacheSwitch } from 'react-router-cache-route'
 
 
 class tabbar extends Component {
@@ -55,12 +56,12 @@ class tabbar extends Component {
         const { home, Personal, Health } = this.state
         return (
             <div className='tab-bar'>
-                <Switch>
-                    <Route path="/TabBar/Personal" component={personal}></Route>
-                    <Route path="/TabBar/health" component={health}></Route>
-                    <Route path="/TabBar/home" component={Home}></Route>
+                <CacheSwitch >
+                    <CacheRoute  path="/TabBar/Personal" component={personal}></CacheRoute >
+                    <CacheRoute  path="/TabBar/health" component={health}></CacheRoute >
+                    <CacheRoute  path="/TabBar/home" component={Home}></CacheRoute >
                     <Redirect to='/TabBar/home'></Redirect>
-                </Switch>
+                </CacheSwitch >
                 <div className='tab_bar_bootom' style={{ position: 'fixed', height: '3.125rem', width: '100%', bottom: 0 }}>
                     {/* <Setdate ></Setdate> */}
 
