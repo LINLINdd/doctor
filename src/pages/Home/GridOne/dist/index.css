@@ -8,12 +8,8 @@
   height: 60px;
 }
 #GridOneCss .am-grid .am-flexbox .am-flexbox-item .am-grid-item-content {
-  padding-top: 2.6875rem;
+  padding-top: 2rem;
 }
-#GridOneCss .am-grid {
-  height:7.9375rem;
-}
-
 #GridOneCss .ico {
   width: 3.3125rem !important;
   height: 3.3125rem !important;

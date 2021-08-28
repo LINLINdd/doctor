@@ -45,21 +45,14 @@ class Search extends Component {
   gethistoryData() {
     let historyData = JSON.parse(localStorage.getItem("data"))
     console.log(historyData);
-    if (historyData == null) {
+    if (historyData === null) {
       historyData = []
       this.setState({ historyArr: historyData })
     } else {
       this.setState({ historyArr: historyData })
     }
 
-    // 
   }
-  // 这个钩子函数在数据发生改变时就会触发 第一个参数是上一次的props，第二个参数是上一次的state
-  // componentDidUpdate(preProps, preState) {
-  //   if (this.state.historyArr.length !== preState.historyArr.length) {
-  //     localStorage.setItem('data', JSON.stringify(this.state.historyArr))
-  //   }
-  // }
 
 
   //    搜索框   防抖处理
@@ -71,15 +64,15 @@ class Search extends Component {
     return (e) => {
       console.log(Boolean(finish));
       this.setState({ flag: false })
-      if (e.keyCode != 13) {
+      if (e.keyCode !== 13) {
         if (finish) { clearTimeout(finish) }
         finish = setTimeout(() => {
           this.getSearchD(e.target.value)
           finish = null
         }, 400)
       }
-      if (e.keyCode == 13) {
-        if (e.target.value.trim() == "") {
+      if (e.keyCode === 13) {
+        if (e.target.value.trim() === "") {
           alert('搜索内容不能为空')
         } else {
           // new Promise(
@@ -92,7 +85,7 @@ class Search extends Component {
           //     )
           //   })
           let NEWhistoryData = JSON.parse(localStorage.getItem("data"))
-          if (NEWhistoryData.length === undefined) {
+          if (NEWhistoryData == null) {
             NEWhistoryData = []
           }
           // this.setState({ historyArr: [{ id: nanoid(), text: e.target.value }, ...historyArr] },)

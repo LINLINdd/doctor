@@ -3,8 +3,7 @@ import { Grid } from 'antd-mobile';
 import './index.css'
 import {getGridone} from '../../../network/home'
 import { withRouter } from 'react-router-dom';
-// import { aysncAction } from '../../../redux/actions/gridone';
-// import store from '../../../redux/store'
+
 
 
 
@@ -71,7 +70,7 @@ class GridOne extends Component {
           onClick={this.GoAskDoctor}
           columnNum={3}
           renderItem={dataItem => (
-            <div style={{ padding: '12.5px' }}>
+            <div>
               <img className="ico" src={dataItem.icon} alt="" />
               <div className="spanBox">
                 <span className="spanOne">{dataItem.text}</span><br></br>
